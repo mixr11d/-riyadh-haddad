@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - HydroMate Smart Water Bottle</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <i class="fas fa-tint"></i>
+                <h1>HydroMate</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="features.html">Features</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="testimonials.html">Testimonials</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
+        </nav>
+    </header>
+
+    <section class="page-header">
+        <h1>Contact Us</h1>
+        <p>We'd love to hear from you! Reach out with any questions or feedback.</p>
+    </section>
+
+    <section class="contact-options">
+        <div class="contact-grid">
+            <div class="contact-card">
+                <div class="contact-icon">
+                    <i class="fas fa-headset"></i>
+                </div>
+                <h3>Customer Support</h3>
+                <p>Need help with your HydroMate? Our support team is ready to assist you.</p>
+                <div class="contact-info">
+                    <p><i class="fas fa-envelope"></i> support@hydromate.com</p>
+                    <p><i class="fas fa-phone"></i> 1-800-HYDRATE</p>
+                    <p><i class="fas fa-clock"></i> Mon-Fri: 9am-6pm EST</p>
+                </div>
+            </div>
+            <div class="contact-card">
+                <div class="contact-icon">
+                    <i class="fas fa-building"></i>
+                </div>
+                <h3>Business Inquiries</h3>
+                <p>Interested in wholesale orders or partnership opportunities?</p>
+                <div class="contact-info">
+                    <p><i class="fas fa-envelope"></i> business@hydromate.com</p>
+                    <p><i class="fas fa-phone"></i> 1-800-HYDRATE ext. 2</p>
+                    <p><i class="fas fa-clock"></i> Mon-Fri: 9am-5pm EST</p>
+                </div>
+            </div>
+            <div class="contact-card">
+                <div class="contact-icon">
+                    <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <h3>Headquarters</h3>
+                <p>Visit our main office or send us mail.</p>
+                <div class="contact-info">
+                    <p><i class="fas fa-map-pin"></i> 123 Hydration Way</p>
+                    <p>San Francisco, CA 94105</p>
+                    <p>United States</p>
+                </div>
+            </div>
+            <div class="contact-card">
+                <div class="contact-icon">
+                    <i class="fas fa-comments"></i>
+                </div>
+                <h3>Social Media</h3>
+                <p>Connect with us on social media for the latest updates and promotions.</p>
+                <div class="social-links">
+                    <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact-form-section">
+        <div class="contact-container">
+            <div class="contact-form-wrapper">
+                <h2>Send Us a Message</h2>
+                <p>Fill out the form below and we'll get back to you as soon as possible.</p>
+                <form id="contact-form" class="contact-form">
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <select id="subject" name="subject" required>
+                            <option value="" disabled selected>Select a subject</option>
+                            <option value="product-inquiry">Product Inquiry</option>
+                            <option value="order-status">Order Status</option>
+                            <option value="technical-support">Technical Support</option>
+                            <option value="feedback">Feedback</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+                    <div class="form-group checkbox-group">
+                        <input type="checkbox" id="newsletter" name="newsletter">
+                        <label for="newsletter">Subscribe to our newsletter for updates and promotions</label>
+                    </div>
+                    <button type="submit" class="btn primary">Send Message</button>
+                </form>
+                <div id="form-message" class="form-message"></div>
+            </div>
+            <div class="contact-map">
+                <h2>Find Us</h2>
+                <div class="map-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.0968870204824!2d-122.39568492392032!3d37.78992871202427!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8085807abad77c99%3A0x3949a3f9a2d7c3c2!2sSan%20Francisco%2C%20CA%2094105!5e0!3m2!1sen!2sus!4v1682123456789!5m2!1sen!2sus" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="faq-section">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-container">
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>How long does the battery last?</h3>
+                    <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+                </div>
+                <div class="faq-answer">
+                    <p>The HydroMate battery life varies by model: Basic lasts up to 14 days, Pro lasts up to 21 days, and Elite lasts up to 30 days on a single charge with normal use. Battery life may vary based on usage patterns, especially if you use the LED reminder lights frequently.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>Is the HydroMate dishwasher safe?</h3>
+                    <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+                </div>
+                <div class="faq-answer">
+                    <p>No, the HydroMate should not be placed in the dishwasher as it contains electronic components. We recommend hand washing with mild soap and water. The lid can be disassembled for thorough cleaning. Make sure to keep the charging port covered and dry.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>How do I connect my HydroMate to the app?</h3>
+                    <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+                </div>
+                <div class="faq-answer">
+                    <p>Download the HydroMate app from the App Store or Google Play Store. Create an account and follow the in-app instructions to pair your bottle via Bluetooth. Make sure your bottle is charged and Bluetooth is enabled on your phone. The app will guide you through the setup process, which takes less than 2 minutes.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>What's your return policy?</h3>
+                    <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+                </div>
+                <div class="faq-answer">
+                    <p>We offer a 30-day satisfaction guarantee. If you're not completely satisfied with your HydroMate, you can return it within 30 days of purchase for a full refund. The product must be in its original condition with all accessories. Please contact our customer support team to initiate a return.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>Does HydroMate ship internationally?</h3>
+                    <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+                </div>
+                <div class="faq-answer">
+                    <p>Yes, we ship to most countries worldwide. International shipping rates and delivery times vary by location. You can see the shipping options and costs during checkout. Please note that customers are responsible for any import duties or taxes that may apply in their country.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-banner">
+        <div class="cta-content">
+            <h2>Ready to Transform Your Hydration Habits?</h2>
+            <p>Join thousands of satisfied customers who have improved their daily water intake with HydroMate.</p>
+            <a href="#" class="btn primary">Shop Now</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <i class="fas fa-tint"></i>
+                <h2>HydroMate</h2>
+                <p>Stay hydrated, stay smart.</p>
+            </div>
+            <div class="footer-links">
+                <div class="footer-column">
+                    <h3>Products</h3>
+                    <ul>
+                        <li><a href="#">HydroMate Basic</a></li>
+                        <li><a href="#">HydroMate Pro</a></li>
+                        <li><a href="#">HydroMate Elite</a></li>
+                        <li><a href="#">Accessories</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Press</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Support</h3>
+                    <ul>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Shipping</a></li>
+                        <li><a href="#">Returns</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 HydroMate. All rights reserved.</p>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
