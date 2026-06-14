@@ -16,6 +16,57 @@
     <!-- استدعاء ملف التنسيق الموحد الفاخر -->
     <link rel="stylesheet" href="style.css">
 
+    <!-- تنسيقات جمالية مخصصة للواجهة لبروز الخطوط وتسهيل الاتصال بالجوال -->
+    <style>
+        .hero-content h1 {
+            text-shadow: 0 4px 12px rgba(0, 0, 0, 0.95);
+            font-size: 1.95rem;
+            font-weight: 900;
+            letter-spacing: -0.5px;
+            color: #ffffff !important;
+        }
+        .hero-content p {
+            text-shadow: 0 3px 8px rgba(0, 0, 0, 0.95);
+            color: #f8fafc !important; /* اللون الأبيض الناصع فائق البروز والوضوح للقراءة */
+            font-weight: 700;
+            font-size: 1rem;
+            margin-bottom: 25px;
+        }
+        .badge {
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+            font-weight: 800;
+        }
+        
+        /* زر اتصال مخصص ومطور فائق التباين والبروز (إطار سميك وظل عميق) */
+        .btn-luxury-phone {
+            background-color: var(--call-red) !important; /* اللون الأحمر الفخم والمميز الجاذب للانتباه */
+            color: #ffffff !important;
+            border: 3px solid #ffffff !important; /* إطار أبيض عريض 3px للبروز والوضوح التام */
+            font-weight: 900 !important;
+            font-size: 1.15rem !important;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8) !important; /* ظل داكن قوي ليفصل الزر عن الخلفية */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9) !important; /* ظل بارز للنصوص */
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 16px 35px;
+            border-radius: 30px;
+            transition: var(--transition-speed) ease;
+            text-decoration: none;
+            direction: ltr;
+        }
+        .btn-luxury-phone:hover {
+            transform: scale(1.04);
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.95) !important;
+        }
+
+        @media (min-width: 769px) {
+            .hero-content h1 { font-size: 2.8rem; }
+            .hero-content p { font-size: 1.15rem; }
+        }
+    </style>
+
     <!-- [ملاحظة]: تتبع تحويلات إعلانات جوجل يتم تحميله ديناميكياً وعبر النقرات من ملف script.js الموحد -->
 </head>
 <body>
@@ -58,15 +109,16 @@
         </div>
     </header>
 
-    <!-- 3. بانر الصفحة الداخلي الفخم والملائم للجوال -->
-    <section class="hero" style="background-image: url('https://images.unsplash.com/photo-1549576490-b0b4831ef60a?auto=format&fit=crop&w=1200&q=80');">
+    <!-- 3. بانر الصفحة الداخلي الفخم والملائم للجوال (مربوط بصورتك الحقيقية الأولى ومعتم قسرياً لبروز دائم للكلام) -->
+    <section class="hero" style="background-image: linear-gradient(rgba(7, 10, 19, 0.94), rgba(7, 10, 19, 0.96)), url('https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhr7gLVVnhzduG0uxTRzEl8ncjJcrIDpJV556jClZLibPXpIXPPN5rhTCuizoyzuEEap7htiSPoQbTle4a_fdRcJfay4dL0olqhB-jLdMIR_uuI-opyFilt6531-uJA4sP-pKZsHHsN625Imemet5bO0jZRcHO0x-5DlEkEd5CjgYBKvOZLBbdluynoku0/s1000-rw/IMG-20231117-WA0016.jpg');">
         <div class="hero-overlay"></div>
         <div class="container hero-content">
             <span class="badge">حلول تسييج وحماية ممتازة توفر الخصوصية الكاملة</span>
             <h1>تركيب سواتر جدارية لأسوار الفلل بالرياض</h1>
             <p>سواتر حديدية وخشبية فخمة تحمي عائلتك وتحجب الرؤية تماماً بمظهر ديكوري أنيق</p>
             <div class="hero-actions">
-                <a href="tel:0536491079" class="btn btn-gold btn-lg"><i class="fa-solid fa-phone"></i> اتصل الآن: 0536491079</a>
+                <!-- زر الاتصال بلون جديد فاخر ومقاوم تماماً للبهتان والتشويش البصري -->
+                <a href="tel:0536491079" class="btn-luxury-phone"><i class="fa-solid fa-phone"></i> اتصل الآن: 0536491079</a>
             </div>
         </div>
     </section>
@@ -81,28 +133,28 @@
                     <h2 style="color: var(--main-color); font-weight: 900; margin-bottom: 20px;">عزز خصوصية وأمان منزلك مع أفضل السواتر بالرياض</h2>
                     <p class="desc-text" style="text-align: right; text-align-last: right;">يعتبر تركيب السواتر على أسوار المنازل والفلل بالرياض خطوة ضرورية لحجب الرؤية كلياً وحماية الخصوصية الشخصية للعائلات، بالإضافة لتوفير الأمان وحماية المبنى من الرياح العاصفة والأتربة وتوفير مظهر ديكوري خارجي فاخر يتلاءم مع المظهر العام للفيلا.</p>
                     
-                    <!-- عرض مميزات السواتر بالصور المناسبة والخفيفة جداً للتحميل -->
+                    <!-- عرض مميزات السواتر بالصور الحقيقية الفخمة من بلوجر المجهزة والمحولة لـ WebP تلقائياً -->
                     <div class="grid" style="gap: 25px; margin-top: 30px;">
                         
-                        <!-- نوع 1: سواتر حديد شرايح -->
+                        <!-- نوع 1: سواتر حديد شرايح (مربوط بصورتك الحقيقية للساتر الحديدي) -->
                         <div style="background: var(--bg-light); padding: 15px; border-radius: 8px; border-right: 4px solid var(--gold-color);">
                             <h4 style="color: var(--main-color); font-weight: 800; margin-bottom: 10px;">1. سواتر حديد شرايح ومجدول (الأكثر طلباً):</h4>
                             <p class="desc-text" style="text-align: right; text-align-last: right; font-size: 0.9rem; margin-bottom: 15px;">نستخدم حديد بسماكات عالية وتغطية كاملة لحجب الرؤية بنسبة 100% مع دهانات حرارية نارية عازلة للرطوبة وتمنع الصدأ تماماً، وتتميز بثبات هائل وقدرة على صد الرياح العاصفة.</p>
-                            <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=600&q=80" alt="سواتر حديد بالرياض" style="width: 100%; height: 180px; object-fit: cover; border-radius: 8px;">
+                            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiNCxgUr-jhAE1K32rCH4iIXVELE_gTP1Oe4UeBt7NDp54MwHusADtxY7cUMqDfP4whAV5_kJ9HDWAT6tBctR9Vaue1jsF2ezyzLvxZz3ak3LFyKe385DERGLoDWmHehtvX-gUzLUsJKVxpzp-xoUGeeCkONbPyqtvnz5WkT1Q7oHOYssP0lSaQ0EXtv84/s600-rw/IMG-20231117-WA0010.jpg" alt="سواتر حديد بالرياض" style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px; box-shadow: var(--shadow);">
                         </div>
 
-                        <!-- نوع 2: سواتر خشب بلاستيكي معالج -->
+                        <!-- نوع 2: سواتر خشب بلاستيكي معالج (مربوط بصورتك الحقيقية للساتر البلاستيكي الخشبي) -->
                         <div style="background: var(--bg-light); padding: 15px; border-radius: 8px; border-right: 4px solid var(--gold-color);">
                             <h4 style="color: var(--main-color); font-weight: 800; margin-bottom: 10px;">2. سواتر خشبية بلاستيكية معالجة (WPC):</h4>
                             <p class="desc-text" style="text-align: right; text-align-last: right; font-size: 0.9rem; margin-bottom: 15px;">تجمع بين جمال وأناقة مظهر الخشب الطبيعي وصلابة ومقاومة البلاستيك المعالج ضد التآكل والحرارة، تتوفر بأشكال رص متراصة أو مجدولة بألوان ثابتة تدوم طويلاً.</p>
-                            <img src="https://images.unsplash.com/photo-1507089947368-19c1da9775ae?auto=format&fit=crop&w=600&q=80" alt="سواتر خشب بلاستيكي بالرياض" style="width: 100%; height: 180px; object-fit: cover; border-radius: 8px;">
+                            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi5zgVsEm5HTXrzlcBDEgoFpjXQ2APjnT_3FzmdnrTlJ86DP8Vu8zHBI4ei2NLJpyHjxWbq0NFDt5GdjYI6oiwLcqNh2WN6ZUbIqZzon4HPpyb0PxT2OO0zQpTYD8ina-eSIn0LLBuOLbqQUA5RaB-80TuTyNo5on-_wH2x3U_lbziEWVVgiOpohgXts-E/s600-rw/IMG-20231117-WA0019.jpg" alt="سواتر خشب بلاستيكي بالرياض" style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px; box-shadow: var(--shadow);">
                         </div>
 
-                        <!-- نوع 3: سواتر قماشية -->
+                        <!-- نوع 3: سواتر قماشية (مربوط بصورتك الحقيقية للساتر القماشي) -->
                         <div style="background: var(--bg-light); padding: 15px; border-radius: 8px; border-right: 4px solid var(--gold-color);">
                             <h4 style="color: var(--main-color); font-weight: 800; margin-bottom: 10px;">3. سواتر قماش بولي إيثيلين وPVC اقتصادي:</h4>
                             <p class="desc-text" style="text-align: right; text-align-last: right; font-size: 0.9rem; margin-bottom: 15px;">نوفر تغطية وتسييج قماشي فاخر بأسعار اقتصادية متميزة، نستخدم أقمشة كورية وأسترالية شديدة التحمل ومقاومة لحرارة الشمس وسريعة جداً في التركيب والتثبيت.</p>
-                            <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=600&q=80" alt="سواتر قماش بالرياض" style="width: 100%; height: 180px; object-fit: cover; border-radius: 8px;">
+                            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg10DNbeRVqp7RqauZ0-ywKBjhE80lfmYKimd3h6klYd96iuVNrFJZpV5r_UR9NlzKAfQWYHIPlNql7O52VTUy1UQAe6m8ZIUHZFyVwnBnssPj5G34sRc2O7IZQRq65dTYn9KlvUHsNuGbtQC00lpw4UAfpN3FhWit-l5h0vkOVyrm3y21VTN8LewXu3f4/s600-rw/IMG-20231117-WA0018.jpg" alt="سواتر قماش بالرياض" style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px; box-shadow: var(--shadow);">
                         </div>
 
                     </div>
@@ -167,11 +219,11 @@
                 </div>
             </div>
             
-            <!-- شريط الحقوق ورابط المطور الرعد التقني للواتساب -->
+            <!-- شريط الحقوق ورابط المطور الرعد التقني للواتساب بالمعرف الصحيح الجديد -->
             <div class="footer-bottom">
                 <p>جميع الحقوق محفوظة © 2026 مقاول حداد الرياض.</p>
                 <p>تطوير: 
-                    <a href="https://wa.me/966573589687?text=مرحباً%20الرعد%20التقني%20أود%20الاستفسار%20عن%20خدماتكم" target="_blank" rel="noopener noreferrer" class="dev-link">
+                    <a href="https://wa.me/966578539687?text=مرحباً%20الرعد%20التقني%20أود%20الاستفسار%20عن%20خدماتكم" target="_blank" rel="noopener noreferrer" class="dev-link">
                         الرعد التقني <i class="fab fa-whatsapp"></i>
                     </a>
                 </p>
@@ -179,7 +231,7 @@
         </div>
     </footer>
 
-    <!-- 6. الأزرار الثابتة بيمين أسفل الشاشة للاتصال والواتساب السريع (مهمة جداً لعملائنا في قوقل ادز) -->
+    <!-- 6. الأزرار الثابتة بيمين أسفل الشاشة للاتصال والواتساب السريع (مهمة جداً لعملاء إعلانات الجوال) -->
     <div class="fixed-widgets">
         <a href="https://wa.me/966536491079" target="_blank" class="widget-btn widget-wa pulse" aria-label="راسلنا على واتساب"><i class="fa-brands fa-whatsapp"></i></a>
         <a href="tel:0536491079" class="widget-btn widget-phone pulse" aria-label="اتصل بنا الآن"><i class="fa-solid fa-phone"></i></a>
