@@ -1,5 +1,10 @@
 /* ==========================================================================
-   إعدادات الألوان والهوية البصرية للجوال أولاً
+   استيراد خط القاهرة الرسمي (Cairo Font) لجمالية الخطوط وسرعة تحميلها
+   ========================================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap');
+
+/* ==========================================================================
+   إعدادات الألوان والهوية البصرية والمتغيرات الأساسية
    ========================================================================== */
 :root {
     --main-color: #0f172a;       /* كحلي ملكي داكن */
@@ -17,20 +22,26 @@
     --shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
 }
 
-/* تصفير الإعدادات ومنع التمدد الأفقي على الجوال */
+/* ==========================================================================
+   تصفير الإعدادات الافتراضية للغاء الفراغات العشوائية وتسهيل التجاوب
+   ========================================================================== */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-html, body {
+html {
+    scroll-behavior: smooth; /* حركة تصفح وصعود ونزول انسيابية وسريعة */
+}
+
+body {
     font-family: var(--font-main);
     color: var(--text-dark);
     background-color: var(--white);
     line-height: 1.8;
     width: 100%;
-    overflow-x: hidden; /* لمنع أي اهتزاز أو تمدد أفقي في الجوال */
+    overflow-x: hidden; /* منع التمدد الأفقي أو الاهتزاز في شاشات الجوال */
     -webkit-text-size-adjust: 100%;
 }
 
@@ -46,7 +57,7 @@ a {
     margin: 0 auto;
 }
 
-/* مسافات الأقسام للجوال */
+/* مسافات الأقسام لتنظيم تصفح الزائر */
 .section-padding {
     padding: 50px 0;
 }
@@ -59,14 +70,26 @@ a {
     text-align: center;
 }
 
-/* افتراضياً على الجوال: كل العناصر تترتب عمودياً في عمود واحد لمنع الضيق */
+/* تنسيق وترتيب الأوصاف والفقرات النصية لتظهر بشكل مرتب ومريح للقراءة */
+.desc-text {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    line-height: 1.8;
+    text-align: justify;
+    text-align-last: center; /* تنظيم حواف الأسطر مع توسيط السطر الأخير */
+    margin-bottom: 15px;
+}
+
+/* نظام الشبكة الافتراضي للجوال (عمود واحد لمنع الضيق) */
 .grid {
     display: grid;
-    grid-template-columns: 1fr; /* عمود واحد للجوال */
+    grid-template-columns: 1fr; 
     gap: 20px;
 }
 
-/* التنسيق للشاشات الأكبر (الكمبيوتر والتابلت) */
+/* ==========================================================================
+   التجاوب للشاشات الكبيرة (الكمبيوتر والأجهزة اللوحية)
+   ========================================================================== */
 @media (min-width: 769px) {
     .grid-2 { grid-template-columns: repeat(2, 1fr); }
     .grid-3 { grid-template-columns: repeat(3, 1fr); }
@@ -75,7 +98,7 @@ a {
 }
 
 /* ==========================================================================
-   تصميم الهيدر وقائمة الجوال (Hamburger)
+   تنسيق الهيدر، شريط الإعلانات، وروابط الملاحة العلوية
    ========================================================================== */
 .promo-strip {
     background-color: var(--gold-color);
@@ -115,7 +138,7 @@ a {
     color: var(--gold-color);
 }
 
-/* قائمة الملاحة الافتراضية للجوال (مخفية وتظهر كدرج جانبي) */
+/* تنسيق قائمة الجوال الجانبية الافتراضية (مخفية خارج الشاشة) */
 .nav-menu {
     position: fixed;
     top: 0;
@@ -131,6 +154,7 @@ a {
     transition: right 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
+/* الكلاس الخاص بفتح القائمة عبر الـ JavaScript */
 .nav-menu.open {
     right: 0;
 }
@@ -139,6 +163,11 @@ a {
     display: flex;
     flex-direction: column;
     gap: 15px;
+    width: 100%;
+    list-style: none; /* إزالة النقاط الافتراضية للقوائم */
+}
+
+.nav-links li {
     width: 100%;
 }
 
@@ -153,6 +182,8 @@ a {
     display: block;
     border: none;
     text-align: right;
+    cursor: pointer;
+    font-family: var(--font-main);
 }
 
 .nav-links a:hover, .nav-links a.active {
@@ -160,7 +191,7 @@ a {
     color: var(--main-color);
 }
 
-/* القائمة المنسدلة للخدمات على الجوال */
+/* القائمة المنسدلة للخدمات */
 .dropdown {
     position: relative;
     width: 100%;
@@ -193,7 +224,7 @@ a {
     cursor: pointer;
 }
 
-/* تنسيقات الشاشات الكبيرة للهيدر */
+/* تنسيق الهيدر والروابط العلوية للشاشات الكبيرة (الكمبيوتر واللاب توب) */
 @media (min-width: 993px) {
     .nav-menu {
         position: static;
@@ -202,17 +233,25 @@ a {
         background: none;
         box-shadow: none;
         padding: 0;
-        display: block;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
     }
     .nav-links {
         flex-direction: row;
-        gap: 15px;
+        gap: 10px;
     }
     .nav-links a, .dropbtn {
         font-size: 0.95rem;
-        background: rgba(255,255,255,0.05);
+        background: transparent;
+        color: #e2e8f0;
         padding: 8px 16px;
         border-radius: 20px;
+        transition: all 0.2s ease;
+    }
+    .nav-links a:hover, .nav-links a.active {
+        background-color: var(--gold-color);
+        color: var(--main-color);
     }
     .dropdown-content {
         position: absolute;
@@ -221,9 +260,16 @@ a {
         min-width: 180px;
         box-shadow: var(--shadow);
         border-top: 3px solid var(--gold-color);
+        border-radius: 4px;
     }
     .dropdown-content a {
         color: var(--text-dark);
+        border-radius: 0;
+        padding: 10px 15px;
+    }
+    .dropdown-content a:hover {
+        background-color: var(--bg-light);
+        color: var(--main-color);
     }
     .mobile-toggle {
         display: none;
@@ -231,7 +277,7 @@ a {
 }
 
 /* ==========================================================================
-   تنسيق واجهة الهيرو والخصومات (تجاوب مطلق 100% للجوال)
+   قسم الواجهة الرئيسية (Hero Section) والخصومات
    ========================================================================== */
 .hero {
     position: relative;
@@ -260,7 +306,7 @@ a {
 }
 
 .hero h1 {
-    font-size: 1.8rem; /* حجم ممتاز ومريح لجوالات الآيفون والأندرويد */
+    font-size: 1.8rem;
     font-weight: 900;
     line-height: 1.4;
     margin-bottom: 15px;
@@ -293,7 +339,7 @@ a {
     justify-content: center;
     font-family: var(--font-main);
     font-weight: 800;
-    padding: 14px 24px; /* مساحة لمس مريحة جداً للإصبع */
+    padding: 14px 24px;
     border-radius: 30px;
     border: none;
     cursor: pointer;
@@ -312,13 +358,13 @@ a {
 }
 
 .btn-lg {
-    width: 100%; /* تأخذ عرض الشاشة بالكامل في الجوال لتسهيل النقر */
+    width: 100%;
     max-width: 340px;
 }
 
 .hero-actions {
     display: flex;
-    flex-direction: column; /* ترتيب الأزرار عمودياً تحت بعض في الجوال */
+    flex-direction: column;
     align-items: center;
     gap: 15px;
 }
@@ -343,7 +389,7 @@ a {
     margin-bottom: 15px;
 }
 
-/* النص العريض الترويجي للمقاول */
+/* النص الترويجي المكتوب بخط عريض */
 .intro-banner-text {
     background-color: var(--white);
     padding: 25px 15px;
@@ -360,7 +406,7 @@ a {
 }
 
 /* ==========================================================================
-   تنسيق كروت الخدمات وعناصر الصفحة الرئيسية للجوال
+   كروت الخدمات والعناصر المنظمة
    ========================================================================== */
 .section-title {
     margin-bottom: 35px;
@@ -375,7 +421,7 @@ a {
 }
 
 .section-title h2 {
-    font-size: 1.6rem; /* حجم مناسب تماماً لعناوين الجوال */
+    font-size: 1.6rem;
     font-weight: 900;
     color: var(--main-color);
 }
@@ -395,6 +441,10 @@ a {
     text-align: center;
     box-shadow: var(--shadow);
     border: 1px solid #f1f5f9;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
 }
 
 .ser-card i {
@@ -411,19 +461,15 @@ a {
     margin-bottom: 10px;
 }
 
-.ser-card p {
-    color: var(--text-muted);
-    font-size: 0.9rem;
-    margin-bottom: 20px;
-}
-
 .card-link {
     font-weight: 800;
     color: var(--gold-color);
     display: inline-flex;
     align-items: center;
+    justify-content: center;
     gap: 8px;
     font-size: 0.9rem;
+    margin-top: auto; /* ترتيب زر الكرت بالأسفل بشكل ثابت لتنسيق موحد */
 }
 
 /* شعار المؤسسة */
@@ -442,7 +488,7 @@ a {
 .logo-banner img {
     width: 100%;
     max-width: 450px;
-    height: auto; /* منع تشوه الشعار على الجوال */
+    height: auto;
     background: var(--white);
     padding: 10px;
     border-radius: 12px;
@@ -465,7 +511,7 @@ a {
 
 .features-list {
     display: grid;
-    grid-template-columns: 1fr; /* عمود واحد دائماً للجوال */
+    grid-template-columns: 1fr;
     gap: 10px;
     padding: 0;
     text-align: right;
@@ -499,7 +545,24 @@ a {
 }
 
 /* ==========================================================================
-   التذييل والودجت العائمة والأزرار الثابتة (أمان وتجاوب 100%)
+   تنسيق حواضن الإعلانات (لتقليل تراكم انزياح المحتوى CLS وتوافق أدسنس)
+   ========================================================================== */
+.ad-slot-holder {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 25px auto;
+    background-color: #f1f5f9;
+    border: 1px dashed var(--border-color);
+    border-radius: 8px;
+    min-height: 90px; /* يحجز مساحة مسبقة للإعلان لرفع سرعة التحميل وثبات الصفحة */
+    width: 100%;
+    max-width: 728px;
+    overflow: hidden;
+}
+
+/* ==========================================================================
+   التذييل والفوتر
    ========================================================================== */
 .footer-main {
     background-color: #0b0f19;
@@ -535,15 +598,17 @@ a {
     .footer-bottom-flex { flex-direction: row; justify-content: space-between; }
 }
 
-/* الأزرار العائمة يمين (تم تعديل الهوامش والبرمجة لتكون فائقة الحضور والدقة) */
+/* ==========================================================================
+   الأزرار والودجت الثابتة (اتصال مباشر وواتساب)
+   ========================================================================== */
 .fixed-widgets {
     position: fixed;
-    right: 15px; /* مسافة أمان مريحة من حافة شاشة الجوال */
+    right: 15px;
     bottom: 25px;
     display: flex;
     flex-direction: column;
     gap: 12px;
-    z-index: 9999 !important; /* تظهر دائماً فوق كل النصوص والصور والفوتر */
+    z-index: 9999 !important;
 }
 
 .widget-btn {
@@ -567,7 +632,7 @@ a {
     background-color: var(--call-red);
 }
 
-/* تأثير النبض الإعلاني الجاذب للعملاء */
+/* تأثير النبض الجاذب للعملاء */
 .pulse::before {
     content: '';
     position: absolute;
@@ -586,17 +651,19 @@ a {
     100% { transform: scale(1.5); opacity: 0; }
 }
 
-/* زر الصعود للأعلى (يسار - يظهر على الجوال والكمبيوتر بوضوح وسلاسة) */
+/* ==========================================================================
+   تنسيق زر الصعود للأعلى (Back To Top) المحسن للأداء
+   ========================================================================== */
 .back-to-top {
     position: fixed;
     bottom: 25px;
-    left: 15px; /* مسافة مريحة ومطابقة لليمين */
+    left: 15px;
     width: 50px;
     height: 50px;
     background-color: var(--main-color);
     color: var(--white);
     border-radius: 50%;
-    display: none; /* يتم تشغيله تلقائياً بالـ JS عند النزول */
+    display: flex;
     align-items: center;
     justify-content: center;
     z-index: 9999 !important;
@@ -604,7 +671,19 @@ a {
     border: 2px solid var(--gold-color);
     font-size: 1.15rem;
     box-shadow: 0 8px 20px rgba(0,0,0,0.25);
-    transition: var(--transition-speed);
+    transition: opacity var(--transition-speed) ease, transform var(--transition-speed) ease, visibility var(--transition-speed) ease;
+    
+    /* مظهر مخفي افتراضيًا ليتوافق مع معايير سرعة الأداء وتحسين محركات البحث */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(15px);
+}
+
+/* الكلاس الذي تتم إضافته عن طريق الـ JS عند تحريك الصفحة للأسفل */
+.back-to-top.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
 }
 
 .back-to-top:hover {
