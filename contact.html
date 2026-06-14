@@ -16,6 +16,57 @@
     <!-- استدعاء ملف التنسيق الموحد الفاخر -->
     <link rel="stylesheet" href="style.css">
 
+    <!-- تنسيقات مخصصة لبروز نصوص البانر وتلوين زر الاتصال بلون جديد فاخر وجذاب -->
+    <style>
+        .hero-content h1 {
+            text-shadow: 0 4px 12px rgba(0, 0, 0, 0.95);
+            font-size: 1.95rem;
+            font-weight: 900;
+            letter-spacing: -0.5px;
+            color: #ffffff !important;
+        }
+        .hero-content p {
+            text-shadow: 0 3px 8px rgba(0, 0, 0, 0.95);
+            color: #f8fafc !important; /* اللون الأبيض الناصع فائق البروز والوضوح للقراءة */
+            font-weight: 700;
+            font-size: 1rem;
+            margin-bottom: 25px;
+        }
+        .badge {
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+            font-weight: 800;
+        }
+        
+        /* زر اتصال مخصص ومطور فائق التباين والبروز (إطار سميك وظل عميق) */
+        .btn-luxury-phone {
+            background-color: var(--call-red) !important; /* اللون الأحمر الفخم والمميز الجاذب للانتباه */
+            color: #ffffff !important;
+            border: 3px solid #ffffff !important; /* إطار أبيض عريض 3px للبروز والوضوح التام */
+            font-weight: 900 !important;
+            font-size: 1.15rem !important;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8) !important; /* ظل داكن قوي ليفصل الزر عن الخلفية */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9) !important; /* ظل بارز للنصوص */
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 16px 35px;
+            border-radius: 30px;
+            transition: var(--transition-speed) ease;
+            text-decoration: none;
+            direction: ltr;
+        }
+        .btn-luxury-phone:hover {
+            transform: scale(1.04);
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.95) !important;
+        }
+
+        @media (min-width: 769px) {
+            .hero-content h1 { font-size: 2.8rem; }
+            .hero-content p { font-size: 1.15rem; }
+        }
+    </style>
+
     <!-- [ملاحظة]: تتبع تحويلات إعلانات جوجل يتم تحميله ديناميكياً وعبر النقرات من ملف script.js الموحد -->
 </head>
 <body>
@@ -58,15 +109,16 @@
         </div>
     </header>
 
-    <!-- 3. بانر الصفحة الداخلي الفخم والملائم للجوال -->
-    <section class="hero" style="background-image: url('https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80');">
+    <!-- 3. بانر الصفحة الداخلي الفخم والملائم للجوال (معتم قسرياً لبروز الكتابة كلياً) -->
+    <section class="hero" style="background-image: linear-gradient(rgba(7, 10, 19, 0.94), rgba(7, 10, 19, 0.96)), url('https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80');">
         <div class="hero-overlay"></div>
         <div class="container hero-content">
             <span class="badge">خدمة سريعة واستجابة فورية بالرياض</span>
             <h1>تواصل معنا الآن</h1>
             <p>يسعدنا خدمتك والرد على استفسارك ومعاينة موقعك مجاناً على مدار الساعة بجميع أحياء العاصمة</p>
             <div class="hero-actions">
-                <a href="tel:0536491079" class="btn btn-gold btn-lg"><i class="fa-solid fa-phone"></i> اتصل الآن: 0536491079</a>
+                <!-- زر الاتصال بلون أحمر إنشائي فخم ومقاوم تماماً للبهتان والتشويش البصري -->
+                <a href="tel:0536491079" class="btn-luxury-phone"><i class="fa-solid fa-phone"></i> اتصل بنا الآن: 0536491079</a>
             </div>
         </div>
     </section>
@@ -142,11 +194,11 @@
         </div>
     </section>
 
-    <!-- 5. خريطة موقع العمل بالرياض لتسهيل السيو المحلي -->
+    <!-- 5. خريطة تفاعلية نشطة ومصلحة بالكامل للرياض -->
     <section class="map-section" style="padding-bottom: 60px; background-color: var(--bg-light);">
         <div class="container">
-            <div style="width: 100%; height: 300px; border-radius: 12px; overflow: hidden; border: 1px solid var(--border-color); box-shadow: var(--shadow);">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m12!1m3!1d115911.45262799511!2d46.721852!3d24.713552!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e2f03890d48939b%3A0xf2efbeba6e540d58!2sRiyadh%20Saudi%20Arabia!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            <div style="width: 100%; height: 320px; border-radius: 12px; overflow: hidden; border: 2px solid var(--border-color); box-shadow: var(--shadow);">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d230482.59392261587!2d46.72185!3d24.71355!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e2f03890d48939b%3A0xf2efbeba6e540d58!2z2KfZhNix2YrYp9i2INin2YTZgdmE2YPYqSDYp9mE2LPYudmI2K_Zitip!5e0!3m2!1sar!2ssa!4v1718420000000!5m2!1sar!2ssa" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
             </div>
         </div>
     </section>
@@ -184,11 +236,11 @@
                 </div>
             </div>
             
-            <!-- شريط الحقوق ورابط المطور الرعد التقني للواتساب -->
+            <!-- شريط الحقوق ورابط المطور الرعد التقني للواتساب الصحيح الجديد -->
             <div class="footer-bottom">
                 <p>جميع الحقوق محفوظة © 2026 مقاول حداد الرياض.</p>
                 <p>تطوير: 
-                    <a href="https://wa.me/966573589687?text=مرحباً%20الرعد%20التقني%20أود%20الاستفسار%20عن%20خدماتكم" target="_blank" rel="noopener noreferrer" class="dev-link">
+                    <a href="https://wa.me/966578539687?text=مرحباً%20الرعد%20التقني%20أود%20الاستفسار%20عن%20خدماتكم" target="_blank" rel="noopener noreferrer" class="dev-link">
                         الرعد التقني <i class="fab fa-whatsapp"></i>
                     </a>
                 </p>
