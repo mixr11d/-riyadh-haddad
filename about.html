@@ -16,44 +16,49 @@
     <!-- استدعاء ملف التنسيق الموحد الفاخر -->
     <link rel="stylesheet" href="style.css">
 
-    <!-- تنسيقات مخصصة لبروز نصوص البانر وتلوين زر الاتصال بلون جديد فاخر وجذاب -->
+    <!-- تنسيقات جمالية مخصصة لبروز نصوص البانر وتلوين زر الاتصال بلون جديد فاخر وجذاب -->
     <style>
         .hero-content h1 {
             text-shadow: 0 4px 12px rgba(0, 0, 0, 0.95);
             font-size: 1.95rem;
             font-weight: 900;
             letter-spacing: -0.5px;
+            color: #ffffff !important;
         }
         .hero-content p {
             text-shadow: 0 3px 8px rgba(0, 0, 0, 0.95);
-            color: #cbd5e1 !important;
+            color: #f8fafc !important; /* اللون الأبيض الناصع فائق البروز والوضوح للقراءة */
             font-weight: 700;
-            font-size: 0.95rem;
+            font-size: 1rem;
             margin-bottom: 25px;
         }
+        .badge {
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+            font-weight: 800;
+        }
         
-        /* زر اتصال مخصص بلون أحمر إنشائي فخم ومختلف للتحويل السريع */
+        /* زر اتصال مخصص ومطور فائق التباين والبروز (إطار سميك وظل عميق) */
         .btn-luxury-phone {
-            background-color: var(--call-red) !important; /* اللون الأحمر الفخم والمميز المغاير لألوان الموقع */
-            color: var(--white) !important;
-            border: 2px solid var(--white) !important;
+            background-color: var(--call-red) !important; /* اللون الأحمر الفخم والمميز الجاذب للانتباه */
+            color: #ffffff !important;
+            border: 3px solid #ffffff !important; /* إطار أبيض عريض 3px للبروز والوضوح التام */
             font-weight: 900 !important;
-            font-size: 1.1rem !important;
-            box-shadow: 0 6px 20px rgba(220, 38, 38, 0.4) !important;
-            text-shadow: 0 1px 3px rgba(0,0,0,0.5) !important;
+            font-size: 1.15rem !important;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8) !important; /* ظل داكن قوي ليفصل الزر عن الخلفية */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9) !important; /* ظل بارز للنصوص */
             display: inline-flex;
             align-items: center;
             justify-content: center;
             gap: 10px;
-            padding: 15px 30px;
+            padding: 16px 35px;
             border-radius: 30px;
             transition: var(--transition-speed) ease;
             text-decoration: none;
             direction: ltr;
         }
         .btn-luxury-phone:hover {
-            transform: scale(1.03);
-            box-shadow: 0 8px 25px rgba(220, 38, 38, 0.6) !important;
+            transform: scale(1.04);
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.95) !important;
         }
 
         @media (min-width: 769px) {
@@ -104,15 +109,15 @@
         </div>
     </header>
 
-    <!-- 3. بانر الصفحة الداخلي الفخم والملائم للجوال (معتم 100% لمقروئية فائقة) -->
-    <section class="hero" style="background-image: linear-gradient(rgba(11, 15, 25, 0.9), rgba(11, 15, 25, 0.92)), url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=1200&q=80');">
+    <!-- 3. بانر الصفحة الداخلي الفخم والملائم للجوال (معتم قسرياً 100% لمقروئية فائقة وتطابق مع الرئيسية) -->
+    <section class="hero" style="background-image: linear-gradient(rgba(7, 10, 19, 0.94), rgba(7, 10, 19, 0.96)), url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=1200&q=80');">
         <div class="hero-overlay"></div>
         <div class="container hero-content">
             <span class="badge">الريادة الفنية والأمان الهندسي بالرياض</span>
             <h1>مؤسسة حدادة الرياض الفاخرة</h1>
             <p>خبرة عريقة في تصميم وتشييد المظلات الفاخرة والسواتر والهياكل المعدنية بأعلى جودة</p>
             <div class="hero-actions">
-                <!-- زر الاتصال بلون جديد فاخر ومغاير لألوان الموقع للتحويل السريع -->
+                <!-- زر الاتصال بلون جديد فاخر ومقاوم تماماً للبهتان والتشويش البصري -->
                 <a href="tel:0536491079" class="btn-luxury-phone"><i class="fa-solid fa-phone"></i> اتصل بنا الآن: 0536491079</a>
             </div>
         </div>
@@ -192,7 +197,7 @@
                 </div>
             </div>
             
-            <!-- شريط الحقوق ورابط المطور الرعد التقني للواتساب الصحيح الجديد -->
+            <!-- شريط الحقوق ورابط المطور الرعد التقني للواتساب بالمعرف الصحيح الجديد -->
             <div class="footer-bottom">
                 <p>جميع الحقوق محفوظة © 2026 مقاول حداد الرياض.</p>
                 <p>تطوير: 
