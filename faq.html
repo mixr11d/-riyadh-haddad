@@ -16,8 +16,51 @@
     <!-- استدعاء ملف التنسيق الموحد الفاخر -->
     <link rel="stylesheet" href="style.css">
 
-    <!-- تنسيقات تفاعلية مخصصة للأسئلة الشائعة لضمان عملها بمرونة فائقة ومظهر عصري -->
+    <!-- تنسيقات تفاعلية مخصصة للأسئلة الشائعة لضمان عملها بمرونة فائقة ومظهر عصري مع تحسين بروز نصوص البانر -->
     <style>
+        .hero-content h1 {
+            text-shadow: 0 4px 12px rgba(0, 0, 0, 0.95);
+            font-size: 1.95rem;
+            font-weight: 900;
+            letter-spacing: -0.5px;
+            color: #ffffff !important;
+        }
+        .hero-content p {
+            text-shadow: 0 3px 8px rgba(0, 0, 0, 0.95);
+            color: #f8fafc !important; /* اللون الأبيض الناصع فائق البروز والوضوح للقراءة */
+            font-weight: 700;
+            font-size: 1rem;
+            margin-bottom: 25px;
+        }
+        .badge {
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+            font-weight: 800;
+        }
+        
+        /* زر اتصال مخصص ومطور فائق التباين والبروز (إطار سميك وظل عميق) */
+        .btn-luxury-phone {
+            background-color: var(--call-red) !important; /* اللون الأحمر الفخم والمميز الجاذب للانتباه */
+            color: #ffffff !important;
+            border: 3px solid #ffffff !important; /* إطار أبيض عريض 3px للبروز والوضوح التام */
+            font-weight: 900 !important;
+            font-size: 1.15rem !important;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8) !important; /* ظل داكن قوي ليفصل الزر عن الخلفية */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9) !important; /* ظل بارز للنصوص */
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 16px 35px;
+            border-radius: 30px;
+            transition: var(--transition-speed) ease;
+            text-decoration: none;
+            direction: ltr;
+        }
+        .btn-luxury-phone:hover {
+            transform: scale(1.04);
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.95) !important;
+        }
+
         .faq-container {
             max-width: 800px;
             margin: 0 auto;
@@ -74,6 +117,11 @@
             line-height: 1.8;
             border-top: 1px solid #f1f5f9;
         }
+
+        @media (min-width: 769px) {
+            .hero-content h1 { font-size: 2.8rem; }
+            .hero-content p { font-size: 1.15rem; }
+        }
     </style>
 
     <!-- [ملاحظة]: تتبع تحويلات إعلانات جوجل يتم تحميله ديناميكياً وعبر النقرات من ملف script.js الموحد -->
@@ -118,15 +166,16 @@
         </div>
     </header>
 
-    <!-- 3. بانر الصفحة الداخلي الفخم والملائم للجوال -->
-    <section class="hero" style="background-image: url('https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80');">
+    <!-- 3. بانر الصفحة الداخلي الفخم والملائم للجوال (معتم 100% لمقروئية فائقة وتطابق مع بقية الصفحات) -->
+    <section class="hero" style="background-image: linear-gradient(rgba(7, 10, 19, 0.94), rgba(7, 10, 19, 0.96)), url('https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80');">
         <div class="hero-overlay"></div>
         <div class="container hero-content">
             <span class="badge">إجابات كاملة وتفصيلية تهمك بالرياض</span>
             <h1>الأسئلة الشائعة والإجابات</h1>
             <p>إجابات كاملة وشفافة عن كل ما تود معرفته حول الأسعار والضمان وتفاصيل مواد البناء</p>
             <div class="hero-actions">
-                <a href="tel:0536491079" class="btn btn-gold btn-lg"><i class="fa-solid fa-phone"></i> اتصل الآن: 0536491079</a>
+                <!-- زر الاتصال بلون أحمر إنشائي فخم ومقاوم تماماً للبهتان والتشويش البصري -->
+                <a href="tel:0536491079" class="btn-luxury-phone"><i class="fa-solid fa-phone"></i> اتصل بنا الآن: 0536491079</a>
             </div>
         </div>
     </section>
@@ -161,7 +210,7 @@
                 <div class="faq-item">
                     <button class="faq-btn">هل تقدمون ضماناً موثقاً على المظلات والساندوتش بانل؟ <i class="fa-solid fa-plus"></i></button>
                     <div class="faq-content">
-                        <p>نعم، نلتزم بتقديم ضمان رسمي معتمد يمتد من 5 إلى 10 سنوات على كافة أعمال الحدادة، المظلات، السواتر، والساندوتش بانل. ويشمل الضمان سلامة الهيكل المعدني واللحامات وضمان عدم صدأ الحديد وتغطية القماش من التشقق أو تسريب المياه.</p>
+                        <p>نعم, نلتزم بتقديم ضمان رسمي معتمد يمتد من 5 إلى 10 سنوات على كافة أعمال الحدادة، المظلات، السواتر، والساندوتش بانل. ويشمل الضمان سلامة الهيكل المعدني واللحامات وضمان عدم صدأ الحديد وتغطية القماش من التشقق أو تسريب المياه.</p>
                     </div>
                 </div>
 
@@ -176,9 +225,9 @@
             
             <div class="text-center" style="margin-top: 50px;">
                 <p style="margin-bottom: 20px; font-weight: 800; font-size: 1.1rem; color: var(--main-color);">هل لديك استفسار آخر لم تجد إجابته هنا؟</p>
-                <div class="hero-actions">
-                    <a href="tel:0536491079" class="btn btn-gold btn-lg"><i class="fa-solid fa-phone"></i> اتصل بنا الآن: 0536491079</a>
-                    <a href="https://wa.me/966536491079" target="_blank" class="btn btn-whatsapp btn-lg"><i class="fa-brands fa-whatsapp"></i> تواصل عبر الواتساب</a>
+                <div class="hero-actions-container">
+                    <a href="tel:0536491079" class="btn btn-gold btn-lg" style="width: 100%; max-width: 340px;"><i class="fa-solid fa-phone"></i> اتصل بنا الآن: 0536491079</a>
+                    <a href="https://wa.me/966536491079" target="_blank" class="btn btn-whatsapp btn-lg" style="width: 100%; max-width: 340px;"><i class="fa-brands fa-whatsapp"></i> تواصل عبر الواتساب</a>
                 </div>
             </div>
         </div>
@@ -217,11 +266,11 @@
                 </div>
             </div>
             
-            <!-- شريط الحقوق ورابط المطور الرعد التقني للواتساب -->
+            <!-- شريط الحقوق ورابط المطور الرعد التقني للواتساب بالمعرف الصحيح الجديد -->
             <div class="footer-bottom">
                 <p>جميع الحقوق محفوظة © 2026 مقاول حداد الرياض.</p>
                 <p>تطوير: 
-                    <a href="https://wa.me/966573589687?text=مرحباً%20الرعد%20التقني%20أود%20الاستفسار%20عن%20خدماتكم" target="_blank" rel="noopener noreferrer" class="dev-link">
+                    <a href="https://wa.me/966578539687?text=مرحباً%20الرعد%20التقني%20أود%20الاستفسار%20عن%20خدماتكم" target="_blank" rel="noopener noreferrer" class="dev-link">
                         الرعد التقني <i class="fab fa-whatsapp"></i>
                     </a>
                 </p>
