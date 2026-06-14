@@ -5,81 +5,134 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>الأسئلة الشائعة | حدادة الرياض للمظلات والسواتر</title>
     <meta name="description" content="إجابات كاملة وتفصيلية على الأسئلة الشائعة حول أسعار ومواصفات تركيب المظلات، السواتر، وألواح الساندوتش بانل بالرياض. اعرف المزيد عن التفاصيل الفنية والضمان.">
-    <link rel="stylesheet" href="style.css">
+    <meta name="keywords" content="الاسئلة الشائعة حدادة الرياض, اسعار مظلات السيارات الرياض, اسعار السواتر, ضمان الساندوتش بانل">
+    
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- استدعاء ملف التنسيق الموحد الفاخر -->
+    <link rel="stylesheet" href="style.css">
 
-    <!-- Google Ads - كود التتبع التلقائي الخاص بك -->
-    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=AW-xxxxxxxxxx"></script>
-    <script>
-    window.dataLayer=window.dataLayer||[];
-    function gtag(){dataLayer.push(arguments)}
-    gtag('js', new Date());
-    gtag('config', 'AW-xxxxxxxxxxxx');
+    <!-- تنسيقات تفاعلية مخصصة للأسئلة الشائعة لضمان عملها بمرونة فائقة ومظهر عصري -->
+    <style>
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        .faq-item {
+            background-color: var(--white);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition-speed) ease;
+        }
+        .faq-btn {
+            width: 100%;
+            padding: 16px 20px;
+            background: none;
+            border: none;
+            font-family: var(--font-main);
+            font-weight: 800;
+            color: var(--main-color);
+            font-size: 0.95rem;
+            text-align: right;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: var(--transition-speed) ease;
+        }
+        .faq-btn:hover {
+            background-color: var(--bg-light);
+        }
+        .faq-btn i {
+            color: var(--gold-color);
+            font-size: 0.85rem;
+            transition: transform var(--transition-speed) ease;
+        }
+        .faq-btn.active i {
+            transform: rotate(45deg); /* تحويل علامة الزائد لعلامة ضرب عند الفتح برفق */
+            color: var(--call-red);
+        }
+        .faq-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            background-color: #fafbfc;
+        }
+        .faq-content p {
+            padding: 20px;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            line-height: 1.8;
+            border-top: 1px solid #f1f5f9;
+        }
+    </style>
 
-    const G_ID='AW-xxxxxxxxxxxx';
-    const C_L='xxxxxxxxxxxx';
-    const W_L='xxxxxxxxxxxx';
-
-    document.addEventListener('click', function(e){
-      var a = e.target.closest('a');
-      if(!a) return;
-      var href = a.href || '';
-      if(href.startsWith('tel:')){
-        gtag('event','conversion',{'send_to':G_ID+'/'+C_L,'value':50.0,'currency':'SAR'});
-      }
-      if(href.includes('wa.me') || href.includes('whatsapp')){
-        gtag('event','conversion',{'send_to':G_ID+'/'+W_L,'value':40.0,'currency':'SAR'});
-      }
-    }, true);
-    </script>
+    <!-- [ملاحظة]: تتبع تحويلات إعلانات جوجل يتم تحميله ديناميكياً وعبر النقرات من ملف script.js الموحد -->
 </head>
 <body>
 
-    <!-- شريط الإعلان العلوي -->
+    <!-- 1. شريط الخصم والتنبيه العلوي -->
     <div class="promo-strip">
         <div class="container">
-            <span><i class="fa-solid fa-gift"></i> خصم خاص 15% لعملاء إعلانات قوقل الجدد بالرياض - اتصل بنا اليوم!</span>
+            <span><i class="fa-solid fa-gift"></i> خصم خاص 15% للمتصلين الجدد بالرياض - اتصل بنا اليوم!</span>
         </div>
     </div>
 
-    <!-- الهيدر الموحد -->
-    <header class="main-header">
-        <div class="container header-flex">
+    <!-- 2. الهيدر الموحد الفاخر المتوافق مع الجوال -->
+    <header class="main-navigation">
+        <div class="container nav-container">
             <div class="logo">
-                <a href="index.html"><span class="logo-gold">حدادة</span> الرياض</a>
+                <a href="index.html">مقاول <span class="logo-gold">حداد الرياض</span></a>
             </div>
-            <nav class="nav-menu" id="navMenu">
-                <ul>
-                    <li><a href="index.html" class="nav-link">الرئيسية</a></li>
-                    <li><a href="mazallat.html" class="nav-link">مظلات</a></li>
-                    <li><a href="sawater.html" class="nav-link">سواتر</a></li>
-                    <li><a href="sandwich-panel.html" class="nav-link">ساندوتش بانل</a></li>
-                    <li><a href="about.html" class="nav-link">من نحن</a></li>
-                    <li><a href="faq.html" class="nav-link active">الأسئلة الشائعة</a></li>
-                    <li><a href="contact.html" class="nav-link">اتصل بنا</a></li>
-                </ul>
-            </nav>
-            <div class="header-btn">
-                <a href="tel:0536491079" class="btn btn-gold"><i class="fa-solid fa-phone"></i> 0536491079</a>
-            </div>
-            <button class="mobile-toggle" id="mobileToggle" aria-label="قائمة التنقل">
+            
+            <button class="mobile-toggle" id="menuToggle" aria-label="قائمة التنقل">
                 <i class="fa-solid fa-bars"></i>
             </button>
+
+            <nav class="nav-menu" id="navMenu">
+                <ul class="nav-links">
+                    <li><a href="index.html" class="nav-item">الصفحة الرئيسية</a></li>
+                    <li><a href="about.html" class="nav-item">من نحن</a></li>
+                    
+                    <li class="dropdown">
+                        <button class="dropbtn nav-item">مظلات وسواتر <i class="fa-solid fa-chevron-down"></i></button>
+                        <div class="dropdown-content">
+                            <a href="mazallat.html">مظلات السيارات والحدائق</a>
+                            <a href="sawater.html">سواتر الأسوار والفلل</a>
+                        </div>
+                    </li>
+                    
+                    <li><a href="sandwich-panel.html" class="nav-item">ساندوتش بانل</a></li>
+                    <li><a href="contact.html" class="nav-item">تواصل معنا</a></li>
+                </ul>
+            </nav>
         </div>
     </header>
 
-    <!-- بانر الصفحة الداخلي الفخم -->
-    <section class="inner-banner" style="background-image: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.85)), url('https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80');">
-        <div class="inner-banner-overlay"></div>
-        <div class="container inner-banner-content">
+    <!-- 3. بانر الصفحة الداخلي الفخم والملائم للجوال -->
+    <section class="hero" style="background-image: url('https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80');">
+        <div class="hero-overlay"></div>
+        <div class="container hero-content">
+            <span class="badge">إجابات كاملة وتفصيلية تهمك بالرياض</span>
             <h1>الأسئلة الشائعة والإجابات</h1>
-            <p>إجابات كاملة وتفصيلية على كافة الاستفسارات التي تهم عملائنا بالرياض</p>
+            <p>إجابات كاملة وشفافة عن كل ما تود معرفته حول الأسعار والضمان وتفاصيل مواد البناء</p>
+            <div class="hero-actions">
+                <a href="tel:0536491079" class="btn btn-gold btn-lg"><i class="fa-solid fa-phone"></i> اتصل الآن: 0536491079</a>
+            </div>
         </div>
     </section>
 
-    <!-- الأسئلة الشائعة التفاعلية -->
-    <section class="faq section-padding">
+    <!-- 4. الأسئلة الشائعة التفاعلية -->
+    <section class="section-padding bg-light">
         <div class="container">
             <div class="section-title text-center">
                 <span class="section-subtitle">الاستفسارات الأكثر تكراراً</span>
@@ -92,7 +145,7 @@
                 <div class="faq-item">
                     <button class="faq-btn">كم تكلفة تركيب مظلات السيارات في الرياض؟ <i class="fa-solid fa-plus"></i></button>
                     <div class="faq-content">
-                        <p>تختلف التكلفة الكلية بناءً على نوعية التغطية المختارة (مثل قماش PVC الكوري أو الألماني)، ومساحة التظليل الكلية وسماكة الهياكل الحديدية المطلوبة للتثبيت الآمن. نسعد بتقديم زيارة ميدانية مجانية ورفع المقاسات وتقديم كشف سعر تقريبي فور تواصلكم معنا.</p>
+                        <p>تختلف التكلفة الكلية بناءً على نوعية التغطية المختارة (مثل قماش PVC الكوري ذو الكثافة العالية أو القماش الألماني الأصلي)، ومساحة التظليل الكلية وسماكة الهياكل الحديدية المطلوبة للتثبيت الآمن والمقاوم للرياح. نسعد بتقديم زيارة ميدانية مجانية بالكامل لرفع المقاسات وتقديم كشف سعر دقيق ومناسب لميزانيتكم.</p>
                     </div>
                 </div>
 
@@ -100,7 +153,7 @@
                 <div class="faq-item">
                     <button class="faq-btn">ما هي السواتر الأكثر فاعلية لحجب الرؤية لأسوار الفلل؟ <i class="fa-solid fa-plus"></i></button>
                     <div class="faq-content">
-                        <p>تعتبر سواتر الحديد الشرايح (لوفر) وسواتر الخشب البلاستيكي المعالج (WPC) الخيار الأفضل لحجب الرؤية بنسبة 100%، وتتميز بجماليتها ومتانتها العالية ومقاومتها للرياح القوية مع المحافظة على المظهر الفاخر للفلل بالرياض.</p>
+                        <p>تعتبر سواتر الحديد الشرايح (لوفر) وسواتر الخشب البلاستيكي المعالج (WPC) الخيار الأفضل لحجب الرؤية كلياً بنسبة 100%، وتتميز بصلابتها ومتانتها العالية ومقاومتها للرياح القوية مع المحافظة على المظهر الجمالي الفاخر للفلل والمنازل السكنية بالرياض.</p>
                     </div>
                 </div>
 
@@ -108,7 +161,7 @@
                 <div class="faq-item">
                     <button class="faq-btn">هل تقدمون ضماناً موثقاً على المظلات والساندوتش بانل؟ <i class="fa-solid fa-plus"></i></button>
                     <div class="faq-content">
-                        <p>نعم، نلتزم بتقديم ضمان رسمي معتمد يمتد من 5 إلى 10 سنوات على كافة أعمال الحدادة، المظلات، السواتر، والساندوتش بانل، ويشمل الضمان سلامة الحديد واللحامات وتغطية القماش من التشقق أو تسريب المياه.</p>
+                        <p>نعم، نلتزم بتقديم ضمان رسمي معتمد يمتد من 5 إلى 10 سنوات على كافة أعمال الحدادة، المظلات، السواتر، والساندوتش بانل. ويشمل الضمان سلامة الهيكل المعدني واللحامات وضمان عدم صدأ الحديد وتغطية القماش من التشقق أو تسريب المياه.</p>
                     </div>
                 </div>
 
@@ -116,60 +169,105 @@
                 <div class="faq-item">
                     <button class="faq-btn">كم يستغرق تفصيل وتركيب غرف وملاحق الساندوتش بانل؟ <i class="fa-solid fa-plus"></i></button>
                     <div class="faq-content">
-                        <p>تتراوح مدة تشييد وبناء غرف وملاحق الساندوتش بانل للمقاسات المتوسطة من 3 إلى 7 أيام عمل، ويتم ذلك بعد أخذ القياسات الفنية الدقيقة وتجهيز وتفصيل الحديد وتثبيته بشكل كامل في الموقع لضمان أقصى درجات عزل الحرارة والأمطار.</p>
+                        <p>تتراوح مدة تشييد وبناء ملاحق الأسطح وغرف الساندوتش بانل للمقاسات المتوسطة من 3 إلى 7 أيام عمل، ويتم ذلك بعد أخذ القياسات الفنية الدقيقة وتجهيز وتفصيل الهياكل الحديدية وتثبيتها بشكل كامل في الموقع لضمان أقصى درجات العزل ومقاومة الرطوبة والتسريبات.</p>
                     </div>
                 </div>
             </div>
             
             <div class="text-center" style="margin-top: 50px;">
                 <p style="margin-bottom: 20px; font-weight: 800; font-size: 1.1rem; color: var(--main-color);">هل لديك استفسار آخر لم تجد إجابته هنا؟</p>
-                <a href="tel:0536491079" class="btn btn-gold btn-lg"><i class="fa-solid fa-phone"></i> اتصل بنا الآن: 0536491079</a>
+                <div class="hero-actions">
+                    <a href="tel:0536491079" class="btn btn-gold btn-lg"><i class="fa-solid fa-phone"></i> اتصل بنا الآن: 0536491079</a>
+                    <a href="https://wa.me/966536491079" target="_blank" class="btn btn-whatsapp btn-lg"><i class="fa-brands fa-whatsapp"></i> تواصل عبر الواتساب</a>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- فوتر الموقع الموحد -->
+    <!-- 5. التذييل والفوتر الفاخر الموحد المتوافق تماماً مع الجوال -->
     <footer class="footer-main">
-        <div class="container footer-grid">
-            <div class="footer-col">
-                <span class="logo logo-gold">حدادة الرياض</span>
-                <p>مؤسسة متخصصة في توفير وتركيب المظلات الفاخرة، السواتر الحديثة، وهياكل الساندوتش بانل في كافة أحياء مدينة الرياض بأعلى درجات الكفاءة الفنية والضمان وبأسعار مدروسة.</p>
-            </div>
-            <div class="footer-col">
-                <h4>روابط سريعة</h4>
-                <ul>
-                    <li><a href="mazallat.html">تركيب المظلات</a></li>
-                    <li><a href="sawater.html">تركيب السواتر</a></li>
-                    <li><a href="sandwich-panel.html">ساندوتش بانل</a></li>
-                    <li><a href="privacy.html">سياسة الخصوصية</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h4>تواصل معنا</h4>
-                <p><i class="fa-solid fa-phone"></i> <a href="tel:0536491079">0536491079</a></p>
-                <p><i class="fa-solid fa-location-dot"></i> الرياض، المملكة العربية السعودية</p>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <div class="container footer-bottom-flex">
-                <p>&copy; 2026 حدادة الرياض. جميع الحقوق محفوظة.</p>
-                <div class="footer-links">
-                    <a href="privacy.html">سياسة الخصوصية</a>
+        <div class="container">
+            <div class="footer-grid">
+                <!-- نبذة عن المؤسسة -->
+                <div class="footer-col">
+                    <div class="logo" style="border: none; padding: 0; margin-bottom: 15px; font-size: 1.5rem;">
+                        مقاول <span class="logo-gold">حداد الرياض</span>
+                    </div>
+                    <p class="footer-desc">نحن مؤسسة متخصصة في تركيب المظلات الفاخرة، السواتر الحديثة، وهياكل الساندوتش بانل في كافة أحياء مدينة الرياض بأعلى كفاءة فنية وبأسعار مدروسة وضمان طويل المدى.</p>
                 </div>
+                <!-- الروابط السريعة الموحدة للفوتر -->
+                <div class="footer-col">
+                    <h4>روابط سريعة</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html"><i class="fa-solid fa-chevron-left"></i> الصفحة الرئيسية</a></li>
+                        <li><a href="about.html"><i class="fa-solid fa-chevron-left"></i> من نحن</a></li>
+                        <li><a href="mazallat.html"><i class="fa-solid fa-chevron-left"></i> مظلات السيارات والحدائق</a></li>
+                        <li><a href="sawater.html"><i class="fa-solid fa-chevron-left"></i> سواتر الأسوار والفلل</a></li>
+                        <li><a href="sandwich-panel.html"><i class="fa-solid fa-chevron-left"></i> ساندوتش بانل معزول</a></li>
+                        <li><a href="contact.html"><i class="fa-solid fa-chevron-left"></i> تواصل معنا</a></li>
+                    </ul>
+                </div>
+                <!-- روابط الخدمات والدعم الموحدة للفوتر -->
+                <div class="footer-col">
+                    <h4>روابط الدعم والسياسات</h4>
+                    <ul class="footer-links">
+                        <li><a href="faq.html"><i class="fa-solid fa-chevron-left"></i> الأسئلة الشائعة</a></li>
+                        <li><a href="privacy.html"><i class="fa-solid fa-chevron-left"></i> سياسة الخصوصية</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- شريط الحقوق ورابط المطور الرعد التقني للواتساب -->
+            <div class="footer-bottom">
+                <p>جميع الحقوق محفوظة © 2026 مقاول حداد الرياض.</p>
+                <p>تطوير: 
+                    <a href="https://wa.me/966573589687?text=مرحباً%20الرعد%20التقني%20أود%20الاستفسار%20عن%20خدماتكم" target="_blank" rel="noopener noreferrer" class="dev-link">
+                        الرعد التقني <i class="fab fa-whatsapp"></i>
+                    </a>
+                </p>
             </div>
         </div>
     </footer>
 
-    <!-- أزرار الجنب العائمة الثابتة -->
+    <!-- 6. الأزرار الثابتة بيمين أسفل الشاشة للاتصال والواتساب السريع (مهمة جداً لعملاء إعلانات الجوال) -->
     <div class="fixed-widgets">
-        <a href="https://wa.me/966536491079" target="_blank" class="widget-btn widget-wa" aria-label="راسلنا على واتساب"><i class="fa-brands fa-whatsapp"></i></a>
-        <a href="tel:0536491079" class="widget-btn widget-phone" aria-label="اتصل بنا"><i class="fa-solid fa-phone"></i></a>
+        <a href="https://wa.me/966536491079" target="_blank" class="widget-btn widget-wa pulse" aria-label="راسلنا على واتساب"><i class="fa-brands fa-whatsapp"></i></a>
+        <a href="tel:0536491079" class="widget-btn widget-phone pulse" aria-label="اتصل بنا الآن"><i class="fa-solid fa-phone"></i></a>
     </div>
 
-    <!-- زر الصعود للأعلى (يسار) -->
-    <button class="back-to-top" id="backToTop" aria-label="العودة للأعلى"><i class="fa-solid fa-arrow-up"></i></button>
+    <!-- 7. زر الصعود للأعلى يسار الشاشة -->
+    <div class="back-to-top" id="backToTop" title="صعود للأعلى">
+        <i class="fa-solid fa-chevron-up"></i>
+    </div>
 
     <!-- استدعاء ملف الحركات والتفاعل -->
     <script src="script.js"></script>
+
+    <!-- برمجة الفتح والإغلاق التفاعلي للأسئلة بمرونة عالية -->
+    <script>
+        const faqBtns = document.querySelectorAll('.faq-btn');
+        faqBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                // إغلاق أي سؤال مفتوح آخر بشكل تلقائي لتنظيم مظهر الصفحة على الجوال
+                faqBtns.forEach(otherBtn => {
+                    if (otherBtn !== btn && otherBtn.classList.contains('active')) {
+                        otherBtn.classList.remove('active');
+                        otherBtn.nextElementSibling.style.maxHeight = null;
+                    }
+                });
+
+                // تفعيل أو إلغاء تفعيل الزر الحالي
+                this.classList.toggle('active');
+                const content = this.nextElementSibling;
+                
+                // حساب الارتفاع الحركي المناسب لفتح أو إغلاق السؤال بمرونة
+                if (content.style.maxHeight) {
+                    content.style.maxHeight = null;
+                } else {
+                    content.style.maxHeight = content.scrollHeight + "px";
+                }
+            });
+        });
+    </script>
 </body>
 </html>
