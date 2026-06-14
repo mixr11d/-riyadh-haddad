@@ -4,137 +4,149 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>سياسة الخصوصية | حدادة الرياض للمظلات والسواتر</title>
-    <meta name="robots" content="noindex, nofollow">
-    <link rel="stylesheet" href="style.css">
+    <meta name="description" content="تعرف على بنود سياسة الخصوصية والسرية لموقع حدادة الرياض. نحن نلتزم التزاماً كاملاً بحماية بياناتكم الشخصية وفق الأنظمة السائدة بالمملكة العربية السعودية.">
+    <meta name="robots" content="noindex, nofollow"> <!-- حجب صفحات السياسات من أرشفة محركات البحث غير الضرورية -->
+    
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- استدعاء ملف التنسيق الموحد الفاخر -->
+    <link rel="stylesheet" href="style.css">
 
-    <!-- Google Ads - كود التتبع التلقائي الخاص بك -->
-    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=AW-xxxxxxxxxx"></script>
-    <script>
-    window.dataLayer=window.dataLayer||[];
-    function gtag(){dataLayer.push(arguments)}
-    gtag('js', new Date());
-    gtag('config', 'AW-xxxxxxxxxxxx');
-
-    const G_ID='AW-xxxxxxxxxxxx';
-    const C_L='xxxxxxxxxxxx';
-    const W_L='xxxxxxxxxxxx';
-
-    document.addEventListener('click', function(e){
-      var a = e.target.closest('a');
-      if(!a) return;
-      var href = a.href || '';
-      if(href.startsWith('tel:')){
-        gtag('event','conversion',{'send_to':G_ID+'/'+C_L,'value':50.0,'currency':'SAR'});
-      }
-      if(href.includes('wa.me') || href.includes('whatsapp')){
-        gtag('event','conversion',{'send_to':G_ID+'/'+W_L,'value':40.0,'currency':'SAR'});
-      }
-    }, true);
-    </script>
+    <!-- [ملاحظة]: تتبع تحويلات إعلانات جوجل يتم تحميله ديناميكياً وعبر النقرات من ملف script.js الموحد -->
 </head>
 <body>
 
-    <!-- شريط الإعلان العلوي -->
+    <!-- 1. شريط الخصم والتنبيه العلوي -->
     <div class="promo-strip">
         <div class="container">
-            <span><i class="fa-solid fa-gift"></i> خصم خاص 15% لعملاء إعلانات قوقل الجدد بالرياض - اتصل بنا اليوم!</span>
+            <span><i class="fa-solid fa-gift"></i> خصم خاص 15% للمتصلين الجدد بالرياض - اتصل بنا اليوم!</span>
         </div>
     </div>
 
-    <!-- الهيدر الموحد -->
-    <header class="main-header">
-        <div class="container header-flex">
+    <!-- 2. الهيدر الموحد الفاخر المتوافق مع الجوال -->
+    <header class="main-navigation">
+        <div class="container nav-container">
             <div class="logo">
-                <a href="index.html"><span class="logo-gold">حدادة</span> الرياض</a>
+                <a href="index.html">مقاول <span class="logo-gold">حداد الرياض</span></a>
             </div>
-            <nav class="nav-menu" id="navMenu">
-                <ul>
-                    <li><a href="index.html" class="nav-link">الرئيسية</a></li>
-                    <li><a href="mazallat.html" class="nav-link">مظلات</a></li>
-                    <li><a href="sawater.html" class="nav-link">سواتر</a></li>
-                    <li><a href="sandwich-panel.html" class="nav-link">ساندوتش بانل</a></li>
-                    <li><a href="about.html" class="nav-link">من نحن</a></li>
-                    <li><a href="faq.html" class="nav-link">الأسئلة الشائعة</a></li>
-                    <li><a href="contact.html" class="nav-link">اتصل بنا</a></li>
-                </ul>
-            </nav>
-            <div class="header-btn">
-                <a href="tel:0536491079" class="btn btn-gold"><i class="fa-solid fa-phone"></i> 0536491079</a>
-            </div>
-            <button class="mobile-toggle" id="mobileToggle" aria-label="قائمة التنقل">
+            
+            <button class="mobile-toggle" id="menuToggle" aria-label="قائمة التنقل">
                 <i class="fa-solid fa-bars"></i>
             </button>
+
+            <nav class="nav-menu" id="navMenu">
+                <ul class="nav-links">
+                    <li><a href="index.html" class="nav-item">الصفحة الرئيسية</a></li>
+                    <li><a href="about.html" class="nav-item">من نحن</a></li>
+                    
+                    <li class="dropdown">
+                        <button class="dropbtn nav-item">مظلات وسواتر <i class="fa-solid fa-chevron-down"></i></button>
+                        <div class="dropdown-content">
+                            <a href="mazallat.html">مظلات السيارات والحدائق</a>
+                            <a href="sawater.html">سواتر الأسوار والفلل</a>
+                        </div>
+                    </li>
+                    
+                    <li><a href="sandwich-panel.html" class="nav-item">ساندوتش بانل</a></li>
+                    <li><a href="contact.html" class="nav-item">تواصل معنا</a></li>
+                </ul>
+            </nav>
         </div>
     </header>
 
-    <!-- تفاصيل سياسة الخصوصية القانونية الموحدة لبنية الموقع وتوافق قوقل أدز -->
-    <section class="section-padding">
-        <div class="container legal-content" style="max-width: 800px; margin: 0 auto;">
-            <span class="badge">تنظيمات قانونية معتمدة</span>
-            <h1>سياسة الخصوصية</h1>
-            <p>مرحباً بكم في موقع حدادة الرياض. نحن نولي خصوصية بيانات زوارنا الكرام أهمية بالغة ونلتزم تماماً بحماية بياناتكم الشخصية وفق الأنظمة السائدة لحماية البيانات الشخصية بالمملكة العربية السعودية [1].</p>
+    <!-- 3. تفاصيل سياسة الخصوصية القانونية الموحدة لبنية الموقع وتوافق قوقل أدز -->
+    <section class="section-padding bg-light">
+        <div class="container" style="max-width: 800px; margin: 0 auto;">
             
-            <h2>البيانات الشخصية التي نجمعها</h2>
-            <p>نقوم فقط بجمع البيانات التي تقدمونها لنا طواعية ورغبة منكم عند ملء النماذج البرمجية بالموقع، وتشمل هذه البيانات: الاسم بالكامل، رقم جوال الاتصال، ونوع الخدمة المطلوبة. نطلب هذه المعلومات فقط بهدف التواصل الفوري معكم لترتيب زيارات المعاينة وتقديم عروض أسعار دقيقة لمشروعاتكم [1].</p>
+            <div class="why-us-box" style="text-align: right; background-color: var(--white); padding: 30px 20px;">
+                <span class="badge" style="margin-bottom: 15px;">تنظيمات قانونية معتمدة</span>
+                <h1 style="color: var(--main-color); font-weight: 900; font-size: 1.8rem; margin-bottom: 20px;">سياسة الخصوصية للموقع</h1>
+                <p class="desc-text" style="text-align: right; text-align-last: right; font-size: 0.95rem; margin-bottom: 20px;">مرحباً بكم في موقع حدادة الرياض. نحن نولي خصوصية بيانات زوارنا الكرام أهمية بالغة ونلتزم تماماً بحماية بياناتكم الشخصية وفق الأنظمة السائدة لحماية البيانات الشخصية بالمملكة العربية السعودية [1].</p>
+                
+                <h2 style="color: var(--main-color); font-weight: 800; font-size: 1.2rem; margin: 25px 0 10px;">البيانات الشخصية التي نجمعها</h2>
+                <p class="desc-text" style="text-align: right; text-align-last: right; font-size: 0.95rem; margin-bottom: 15px;">نقوم فقط بجمع البيانات التي تقدمونها لنا طواعية ورغبة منكم عند ملء النموذج البرمجي بصفحة الاتصال بنا، وتشمل هذه البيانات: الاسم بالكامل، رقم جوال الاتصال، ونوع الخدمة المطلوبة. نطلب هذه المعلومات فقط بهدف التواصل الفوري معكم لترتيب زيارات المعاينة وتقديم عروض أسعار دقيقة لمشروعاتكم [1].</p>
+                
+                <h2 style="color: var(--main-color); font-weight: 800; font-size: 1.2rem; margin: 25px 0 10px;">كيف نستخدم البيانات؟</h2>
+                <p class="desc-text" style="text-align: right; text-align-last: right; font-size: 0.95rem; margin-bottom: 15px;">تُستخدم البيانات التي يتم جمعها للأغراض التالية فقط:</p>
+                <ul class="features-list" style="margin-bottom: 20px; gap: 8px;">
+                    <li style="padding: 10px; font-size: 0.85rem;">الاتصال بكم لمناقشة متطلبات تفصيل وتركيب المظلات والسواتر والساندوتش بانل [1].</li>
+                    <li style="padding: 10px; font-size: 0.85rem;">تنسيق مواعيد أخذ المقاسات الميدانية لمواقعكم مجاناً بجميع أحياء الرياض.</li>
+                    <li style="padding: 10px; font-size: 0.85rem;">تأكيد الضمانات الرسمية لأعمال الحدادة والتركيبات المعدنية المنفذة لمصلحتكم.</li>
+                </ul>
+
+                <h2 style="color: var(--main-color); font-weight: 800; font-size: 1.2rem; margin: 25px 0 10px;">حماية وسرية البيانات</h2>
+                <p class="desc-text" style="text-align: right; text-align-last: right; font-size: 0.95rem; margin-bottom: 15px;">نؤكد لجميع عملائنا الكرام التزامنا الصارم بعدم بيع، أو تأجير، أو مشاركة أي بيانات شخصية تخصكم مع أي جهات تسويقية أو أطراف خارجية تحت أي ظرف من الظروف [1]. تظل معلوماتكم محفوظة بسرية تامة ومحمية بشكل كامل.</p>
+
+                <h2 style="color: var(--main-color); font-weight: 800; font-size: 1.2rem; margin: 25px 0 10px;">ملفات تعريف الارتباط وتتبع الإعلانات</h2>
+                <p class="desc-text" style="text-align: right; text-align-last: right; font-size: 0.95rem; margin-bottom: 20px;">يستخدم هذا الموقع ملفات تعريف ارتباط محدودة لتسريع أداء تصفح الصفحات على الجوال، بالإضافة إلى ربطه بأكواد وإحصاءات إعلانات Google لتقييم أداء فاعلية حملاتنا الإعلانية وتقديم تجربة استخدام أفضل وأسرع للزوار [1].</p>
+                
+                <div class="text-center" style="margin-top: 30px; padding-top: 20px; border-top: 1px solid var(--border-color);">
+                    <a href="tel:0536491079" class="btn btn-gold btn-lg" style="font-size: 0.95rem;"><i class="fa-solid fa-phone"></i> اتصل بنا للاستفسار: 0536491079</a>
+                </div>
+            </div>
             
-            <h2>كيف نستخدم البيانات؟</h2>
-            <p>تُستخدم البيانات التي يتم جمعها للأغراض التالية فقط:</p>
-            <ul>
-                <li>الاتصال بكم لمناقشة متطلبات تفصيل وتركيب المظلات والسواتر والساندوتش بانل [1].</li>
-                <li>تنسيق مواعيد أخذ المقاسات الميدانية لمواقعكم مجاناً بالرياض.</li>
-                <li>إرسال كشوف الحسابات والاتفاقات وتأكيد الضمانات الرسمية لأعمال الحدادة المنفذة.</li>
-            </ul>
-
-            <h2>حماية وسرية البيانات</h2>
-            <p>نؤكد لجميع عملائنا الكرام التزامنا الصارم بعدم بيع، أو تأجير، أو مشاركة أي بيانات شخصية تخصكم مع أي جهات تسويقية أو أطراف خارجية تحت أي ظرف من الظروف [1]. تظل معلوماتكم محفوظة بسرية تامة ومحمية بشكل كامل.</p>
-
-            <h2>ملفات تعريف الارتباط وتتبع الإعلانات</h2>
-            <p>يستخدم هذا الموقع ملفات تعريف ارتباط محدودة لتسريع أداء تصفح الصفحات على الجوال والكمبيوتر، بالإضافة إلى ربطه بأكواد وإحصاءات إعلانات Google لتقييم أداء فاعلية حملاتنا الإعلانية وتقديم تجربة استخدام أفضل وأسرع للزوار [1].</p>
         </div>
     </section>
 
-    <!-- فوتر الموقع الموحد -->
+    <!-- 4. التذييل والفوتر الفاخر الموحد المتوافق تماماً مع الجوال -->
     <footer class="footer-main">
-        <div class="container footer-grid">
-            <div class="footer-col">
-                <span class="logo logo-gold">حدادة الرياض</span>
-                <p>مؤسسة متخصصة في توفير وتركيب المظلات الفاخرة، السواتر الحديثة، وهياكل الساندوتش بانل في كافة أحياء مدينة الرياض بأعلى درجات الكفاءة الفنية والضمان وبأسعار مدروسة.</p>
-            </div>
-            <div class="footer-col">
-                <h4>روابط سريعة</h4>
-                <ul>
-                    <li><a href="mazallat.html">تركيب المظلات</a></li>
-                    <li><a href="sawater.html">تركيب السواتر</a></li>
-                    <li><a href="sandwich-panel.html">ساندوتش بانل</a></li>
-                    <li><a href="privacy.html">سياسة الخصوصية</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h4>تواصل معنا</h4>
-                <p><i class="fa-solid fa-phone"></i> <a href="tel:0536491079">0536491079</a></p>
-                <p><i class="fa-solid fa-location-dot"></i> الرياض، المملكة العربية السعودية</p>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <div class="container footer-bottom-flex">
-                <p>&copy; 2026 حدادة الرياض. جميع الحقوق محفوظة.</p>
-                <div class="footer-links">
-                    <a href="privacy.html">سياسة الخصوصية</a>
+        <div class="container">
+            <div class="footer-grid">
+                <!-- نبذة عن المؤسسة -->
+                <div class="footer-col">
+                    <div class="logo" style="border: none; padding: 0; margin-bottom: 15px; font-size: 1.5rem;">
+                        مقاول <span class="logo-gold">حداد الرياض</span>
+                    </div>
+                    <p class="footer-desc">نحن مؤسسة متخصصة في تركيب المظلات الفاخرة، السواتر الحديثة، وهياكل الساندوتش بانل في كافة أحياء مدينة الرياض بأعلى كفاءة فنية وبأسعار مدروسة وضمان طويل المدى.</p>
                 </div>
+                <!-- الروابط السريعة الموحدة للفوتر -->
+                <div class="footer-col">
+                    <h4>روابط سريعة</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html"><i class="fa-solid fa-chevron-left"></i> الصفحة الرئيسية</a></li>
+                        <li><a href="about.html"><i class="fa-solid fa-chevron-left"></i> من نحن</a></li>
+                        <li><a href="mazallat.html"><i class="fa-solid fa-chevron-left"></i> مظلات السيارات والحدائق</a></li>
+                        <li><a href="sawater.html"><i class="fa-solid fa-chevron-left"></i> سواتر الأسوار والفلل</a></li>
+                        <li><a href="sandwich-panel.html"><i class="fa-solid fa-chevron-left"></i> ساندوتش بانل معزول</a></li>
+                        <li><a href="contact.html"><i class="fa-solid fa-chevron-left"></i> تواصل معنا</a></li>
+                    </ul>
+                </div>
+                <!-- روابط الخدمات والدعم الموحدة للفوتر -->
+                <div class="footer-col">
+                    <h4>روابط الدعم والسياسات</h4>
+                    <ul class="footer-links">
+                        <li><a href="faq.html"><i class="fa-solid fa-chevron-left"></i> الأسئلة الشائعة</a></li>
+                        <li><a href="privacy.html"><i class="fa-solid fa-chevron-left"></i> سياسة الخصوصية</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- شريط الحقوق ورابط المطور الرعد التقني للواتساب -->
+            <div class="footer-bottom">
+                <p>جميع الحقوق محفوظة © 2026 مقاول حداد الرياض.</p>
+                <p>تطوير: 
+                    <a href="https://wa.me/966573589687?text=مرحباً%20الرعد%20التقني%20أود%20الاستفسار%20عن%20خدماتكم" target="_blank" rel="noopener noreferrer" class="dev-link">
+                        الرعد التقني <i class="fab fa-whatsapp"></i>
+                    </a>
+                </p>
             </div>
         </div>
     </footer>
 
-    <!-- أزرار الجنب العائمة الثابتة -->
+    <!-- 5. الأزرار الثابتة بيمين أسفل الشاشة للاتصال والواتساب السريع (مهمة جداً لعملاء إعلانات الجوال) -->
     <div class="fixed-widgets">
-        <a href="https://wa.me/966536491079" target="_blank" class="widget-btn widget-wa" aria-label="راسلنا على واتساب"><i class="fa-brands fa-whatsapp"></i></a>
-        <a href="tel:0536491079" class="widget-btn widget-phone" aria-label="اتصل بنا"><i class="fa-solid fa-phone"></i></a>
+        <a href="https://wa.me/966536491079" target="_blank" class="widget-btn widget-wa pulse" aria-label="راسلنا على واتساب"><i class="fa-brands fa-whatsapp"></i></a>
+        <a href="tel:0536491079" class="widget-btn widget-phone pulse" aria-label="اتصل بنا الآن"><i class="fa-solid fa-phone"></i></a>
     </div>
 
-    <!-- زر الصعود للأعلى (يسار) -->
-    <button class="back-to-top" id="backToTop" aria-label="العودة للأعلى"><i class="fa-solid fa-arrow-up"></i></button>
+    <!-- 6. زر الصعود للأعلى يسار الشاشة -->
+    <div class="back-to-top" id="backToTop" title="صعود للأعلى">
+        <i class="fa-solid fa-chevron-up"></i>
+    </div>
 
     <!-- استدعاء ملف الحركات والتفاعل -->
     <script src="script.js"></script>
