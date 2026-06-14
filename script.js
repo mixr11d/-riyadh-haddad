@@ -77,17 +77,30 @@ if (menuToggle && navMenu) {
    ========================================================================== */
 const backToTopBtn = document.getElementById('backToTop');
 
-window.addEventListener('scroll', function() {
-    // يظهر الزر في جهة اليسار فوراً بعد النزول بمقدار 300 بكسل
-    if (window.scrollY > 300) {
-        backToTopBtn.classList.add('show');
-    } else {
-        backToTopBtn.classList.remove('show');
-    }
-});
-
-// تنفيذ حركة الصعود الناعمة والمريحة للعين عند النقر
+// نضمن وجود الزر في الصفحة أولاً لتفادي الأخطاء البرمجية
 if (backToTopBtn) {
+    // إخفاء مبدئي برمجي لتجنب أي مشاكل مع ملفات CSS القديمة في ذاكرة التصفح
+    backToTopBtn.style.display = 'none'; 
+
+    window.addEventListener('scroll', function() {
+        if (window.scrollY > 300) {
+            backToTopBtn.style.display = 'flex'; // إظهار الزر فوراً كـ flex
+            // تأخير بسيط بمقدار 10 مللي ثانية لإتاحة تشغيل تأثير التلاشي والدخول السلس (CSS transitions)
+            setTimeout(function() {
+                backToTopBtn.classList.add('show');
+            }, 10);
+        } else {
+            backToTopBtn.classList.remove('show'); // بدء تأثير الاختفاء
+            // إخفاء الـ display بالكامل بعد انتهاء حركة التلاشي (بانتظار حركة CSS الاختفاء)
+            setTimeout(function() {
+                if (!backToTopBtn.classList.contains('show')) {
+                    backToTopBtn.style.display = 'none';
+                }
+            }, 250);
+        }
+    });
+
+    // تنفيذ حركة الصعود الناعمة عند النقر
     backToTopBtn.addEventListener('click', function() {
         window.scrollTo({
             top: 0,
