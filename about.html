@@ -5,143 +5,168 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>من نحن | حدادة الرياض للمظلات والسواتر والساندوتش بانل</title>
     <meta name="description" content="تعرف على مؤسسة حدادة الرياض. رائدون في تصميم وتركيب مظلات السيارات، السواتر، الساندوتش بانل، والهياكل المعدنية بضمان حقيقي وخبرة فنية ممتدة.">
-    <link rel="stylesheet" href="style.css">
+    <meta name="keywords" content="من نحن حدادة الرياض, مقاول حدادة بالرياض, مؤسسة مظلات وسواتر الرياض, ساندوتش بانل الرياض">
+    
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- استدعاء ملف التنسيق الموحد الفاخر -->
+    <link rel="stylesheet" href="style.css">
 
-    <!-- Google Ads - كود التتبع التلقائي الخاص بك -->
-    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=AW-xxxxxxxxxx"></script>
-    <script>
-    window.dataLayer=window.dataLayer||[];
-    function gtag(){dataLayer.push(arguments)}
-    gtag('js', new Date());
-    gtag('config', 'AW-xxxxxxxxxxxx');
-
-    const G_ID='AW-xxxxxxxxxxxx';
-    const C_L='xxxxxxxxxxxx';
-    const W_L='xxxxxxxxxxxx';
-
-    document.addEventListener('click', function(e){
-      var a = e.target.closest('a');
-      if(!a) return;
-      var href = a.href || '';
-      if(href.startsWith('tel:')){
-        gtag('event','conversion',{'send_to':G_ID+'/'+C_L,'value':50.0,'currency':'SAR'});
-      }
-      if(href.includes('wa.me') || href.includes('whatsapp')){
-        gtag('event','conversion',{'send_to':G_ID+'/'+W_L,'value':40.0,'currency':'SAR'});
-      }
-    }, true);
-    </script>
+    <!-- [ملاحظة]: تتبع تحويلات إعلانات جوجل يتم تحميله ديناميكياً وعبر النقرات من ملف script.js الموحد -->
 </head>
 <body>
 
-    <!-- شريط الإعلان العلوي -->
+    <!-- 1. شريط الخصم والتنبيه العلوي -->
     <div class="promo-strip">
         <div class="container">
-            <span><i class="fa-solid fa-gift"></i> خصم خاص 15% لعملاء إعلانات قوقل الجدد بالرياض - اتصل بنا اليوم!</span>
+            <span><i class="fa-solid fa-gift"></i> خصم خاص 15% للمتصلين الجدد بالرياض - اتصل بنا اليوم!</span>
         </div>
     </div>
 
-    <!-- الهيدر الموحد -->
-    <header class="main-header">
-        <div class="container header-flex">
+    <!-- 2. الهيدر الموحد الفاخر المتوافق مع الجوال -->
+    <header class="main-navigation">
+        <div class="container nav-container">
             <div class="logo">
-                <a href="index.html"><span class="logo-gold">حدادة</span> الرياض</a>
+                <a href="index.html">مقاول <span class="logo-gold">حداد الرياض</span></a>
             </div>
-            <nav class="nav-menu" id="navMenu">
-                <ul>
-                    <li><a href="index.html" class="nav-link">الرئيسية</a></li>
-                    <li><a href="mazallat.html" class="nav-link">مظلات</a></li>
-                    <li><a href="sawater.html" class="nav-link">سواتر</a></li>
-                    <li><a href="sandwich-panel.html" class="nav-link">ساندوتش بانل</a></li>
-                    <li><a href="about.html" class="nav-link active">من نحن</a></li>
-                    <li><a href="faq.html" class="nav-link">الأسئلة الشائعة</a></li>
-                    <li><a href="contact.html" class="nav-link">اتصل بنا</a></li>
-                </ul>
-            </nav>
-            <div class="header-btn">
-                <a href="tel:0536491079" class="btn btn-gold"><i class="fa-solid fa-phone"></i> 0536491079</a>
-            </div>
-            <button class="mobile-toggle" id="mobileToggle" aria-label="قائمة التنقل">
+            
+            <button class="mobile-toggle" id="menuToggle" aria-label="قائمة التنقل">
                 <i class="fa-solid fa-bars"></i>
             </button>
+
+            <nav class="nav-menu" id="navMenu">
+                <ul class="nav-links">
+                    <li><a href="index.html" class="nav-item">الصفحة الرئيسية</a></li>
+                    <li><a href="about.html" class="nav-item active">من نحن</a></li>
+                    
+                    <li class="dropdown">
+                        <button class="dropbtn nav-item">مظلات وسواتر <i class="fa-solid fa-chevron-down"></i></button>
+                        <div class="dropdown-content">
+                            <a href="mazallat.html">مظلات السيارات والحدائق</a>
+                            <a href="sawater.html">سواتر الأسوار والفلل</a>
+                        </div>
+                    </li>
+                    
+                    <li><a href="sandwich-panel.html" class="nav-item">ساندوتش بانل</a></li>
+                    <li><a href="contact.html" class="nav-item">تواصل معنا</a></li>
+                </ul>
+            </nav>
         </div>
     </header>
 
-    <!-- بانر الصفحة الداخلي الفخم -->
-    <section class="inner-banner" style="background-image: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.85)), url('https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=1200&q=80');">
-        <div class="inner-banner-overlay"></div>
-        <div class="container inner-banner-content">
+    <!-- 3. بانر الصفحة الداخلي الفخم والملائم للجوال -->
+    <section class="hero" style="background-image: url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=1200&q=80');">
+        <div class="hero-overlay"></div>
+        <div class="container hero-content">
+            <span class="badge">الريادة الفنية والأمان الهندسي بالرياض</span>
             <h1>مؤسسة حدادة الرياض الفاخرة</h1>
-            <p>الجودة والأمان الهندسي في تشييد المظلات والسواتر والهياكل المعدنية</p>
+            <p>خبرة عريقة في تصميم وتشييد المظلات الفاخرة والسواتر والهياكل المعدنية بأعلى جودة</p>
+            <div class="hero-actions">
+                <a href="tel:0536491079" class="btn btn-gold btn-lg"><i class="fa-solid fa-phone"></i> اتصل الآن: 0536491079</a>
+            </div>
         </div>
     </section>
 
-    <!-- تفاصيل من نحن -->
-    <section class="content-section section-padding">
+    <!-- 4. تفاصيل من نحن (مقسمة لعمودين تترتب تلقائياً تحت بعضها في الجوال) -->
+    <section class="section-padding bg-light">
         <div class="container">
-            <div class="grid grid-2" style="align-items: center; gap: 50px;">
-                <div class="rich-text">
-                    <h2>ريادة وخبرة طويلة في أعمال الحدادة والمقاولات المعدنية بالرياض</h2>
-                    <p>بدأت مسيرة مؤسستنا في الرياض ككيان متخصص في أعمال المقاولات الإنشائية المعدنية والحدادة الفنية. حرصنا منذ اليوم الأول على تقديم خدمات استثنائية وبمعايير هندسية متطورة تلائم احتياجات المشاريع السكنية والتجارية في المملكة العربية السعودية.</p>
-                    <p>نعمل بجد واحترافية عالية لتقديم خدمات تفصيل وتركيب مظلات السيارات والحدائق، السواتر الجدارية لحفظ الخصوصية، وملاحق الساندوتش بانل المعزولة، مستعينين بأفضل طواقم العمل من فنيين وحدادين ذوي كفاءة فنية عالية وخبرة واسعة بمتطلبات السوق المحلي.</p>
+            <div class="grid grid-2">
+                
+                <!-- العمود الأول: نصوص قوية لإقناع العميل بالمؤسسة -->
+                <div class="why-us-box">
+                    <h2 style="color: var(--main-color); font-weight: 900; margin-bottom: 20px;">ريادة وخبرة طويلة في أعمال الحدادة بالرياض</h2>
+                    <p class="desc-text" style="text-align: right; text-align-last: right;">بدأت مسيرة مؤسستنا في الرياض ككيان متخصص في أعمال المقاولات الإنشائية المعدنية والحدادة الفنية. حرصنا منذ اليوم الأول على تقديم خدمات استثنائية وبمعايير هندسية متطورة تلائم تطلعات عملاء المشاريع السكنية والتجارية في منطقة الرياض وضواحيها.</p>
+                    <p class="desc-text" style="text-align: right; text-align-last: right; margin-bottom: 25px;">نعمل بجد واحترافية عالية لتقديم خدمات تفصيل وتركيب مظلات السيارات والحدائق، السواتر الجدارية لحفظ الخصوصية، وملاحق الساندوتش بانل المعزولة، مستعينين بأفضل طواقم العمل من فنيين وحدادين ذوي كفاءة فنية عالية وخبرة واسعة بمتطلبات السوق المحلي.</p>
                     
-                    <h3>لماذا يثق بنا العملاء في الرياض؟</h3>
-                    <ul>
-                        <li><strong>خامات ممتازة ومعتمدة:</strong> نستخدم حديد سابك الأصلي بسماكات متميزة، وتغطيات قماشية PVC كورية وألمانية مقاومة للحرارة والاشتعال.</li>
-                        <li><strong>فريق إشراف متخصص:</strong> يتم الإشراف على جميع أعمال التفصيل والتثبيت لضمان أعلى درجات الأمان ومقاومة الرياح.</li>
-                        <li><strong>الالتزام التام بالمواعيد:</strong> نحافظ على وقت عملائنا ونسلم المشاريع في الأوقات المتفق عليها دون أي تأخير.</li>
-                        <li><strong>تغطية جغرافية شاملة:</strong> نلبي طلباتكم في كافة أحياء الرياض وضواحيها ونوفر زيارات رفع مقاسات مجانية بالكامل.</li>
+                    <h3 style="color: var(--main-color); font-weight: 800; margin-bottom: 15px;">لماذا يثق بنا عملائنا بالرياض؟</h3>
+                    <ul class="features-list" style="gap: 10px;">
+                        <li style="padding: 10px; font-size: 0.9rem;"><strong>خامات ممتازة ومعتمدة:</strong> نستخدم حديد سابك الأصلي بسماكات متميزة، وتغطيات قماشية PVC كورية وألمانية مقاومة للحرارة والاشتعال.</li>
+                        <li style="padding: 10px; font-size: 0.9rem;"><strong>فريق إشراف متخصص:</strong> يتم الإشراف على جميع أعمال التفصيل والتثبيت لضمان أعلى درجات الأمان ومقاومة الرياح.</li>
+                        <li style="padding: 10px; font-size: 0.9rem;"><strong>الالتزام التام بالمواعيد:</strong> نحافظ على وقت عملائنا ونسلم المشاريع في الأوقات المتفق عليها دون أي تأخير.</li>
+                        <li style="padding: 10px; font-size: 0.9rem;"><strong>زيارات ميدانية مجانية:</strong> نلبي طلباتكم في كافة أحياء الرياض ونوفر زيارات رفع مقاسات مجانية بالكامل.</li>
                     </ul>
                 </div>
-                <div class="about-img">
-                    <img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=600&q=80" alt="حدادة ومقاولات الرياض" style="border-radius: 12px; box-shadow: var(--shadow); border: 2px solid var(--gold-color);">
+                
+                <!-- العمود الثاني: الصورة الإبداعية والتحويل السريع -->
+                <div style="display: flex; flex-direction: column; gap: 20px;">
+                    <div class="about-img" style="text-align: center;">
+                        <img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=600&q=80" alt="حدادة ومقاولات الرياض" style="width: 100%; height: auto; border-radius: 12px; box-shadow: var(--shadow); border: 2px solid var(--gold-color);">
+                    </div>
+                    
+                    <div class="why-us-box" style="border: 2px solid var(--gold-color); background-color: var(--white); text-align: center;">
+                        <h3 style="color: var(--main-color); font-weight: 900; margin-bottom: 10px; font-size: 1.25rem;">احجز موعد الزيارة الآن</h3>
+                        <p class="desc-text" style="font-size: 0.85rem; margin-bottom: 20px;">اتصل بنا اليوم أو تواصل معنا عبر الواتساب وسنقوم بإرسال مندوبنا الفني لمعاينة الموقع وتجهيز التصاميم المناسبة مجاناً.</p>
+                        
+                        <div style="display: flex; flex-direction: column; gap: 12px;">
+                            <a href="tel:0536491079" class="btn btn-gold btn-lg" style="width: 100%; font-size: 1rem;"><i class="fa-solid fa-phone"></i> اتصل بـ 0536491079</a>
+                            <a href="https://wa.me/966536491079" target="_blank" class="btn btn-whatsapp btn-lg" style="width: 100%; font-size: 1rem;"><i class="fa-brands fa-whatsapp"></i> تواصل عبر الواتساب</a>
+                        </div>
+                    </div>
                 </div>
+
             </div>
         </div>
     </section>
 
-    <!-- فوتر الموقع الموحد -->
+    <!-- 5. التذييل والفوتر الفاخر الموحد المتوافق تماماً مع الجوال -->
     <footer class="footer-main">
-        <div class="container footer-grid">
-            <div class="footer-col">
-                <span class="logo logo-gold">حدادة الرياض</span>
-                <p>مؤسسة متخصصة في توفير وتركيب المظلات الفاخرة، السواتر الحديثة، وهياكل الساندوتش بانل في كافة أحياء مدينة الرياض بأعلى درجات الكفاءة الفنية والضمان وبأسعار مدروسة.</p>
-            </div>
-            <div class="footer-col">
-                <h4>روابط سريعة</h4>
-                <ul>
-                    <li><a href="mazallat.html">تركيب المظلات</a></li>
-                    <li><a href="sawater.html">تركيب السواتر</a></li>
-                    <li><a href="sandwich-panel.html">ساندوتش بانل</a></li>
-                    <li><a href="privacy.html">سياسة الخصوصية</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h4>تواصل معنا</h4>
-                <p><i class="fa-solid fa-phone"></i> <a href="tel:0536491079">0536491079</a></p>
-                <p><i class="fa-solid fa-location-dot"></i> الرياض، المملكة العربية السعودية</p>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <div class="container footer-bottom-flex">
-                <p>&copy; 2026 حدادة الرياض. جميع الحقوق محفوظة.</p>
-                <div class="footer-links">
-                    <a href="privacy.html">سياسة الخصوصية</a>
+        <div class="container">
+            <div class="footer-grid">
+                <!-- نبذة عن المؤسسة -->
+                <div class="footer-col">
+                    <div class="logo" style="border: none; padding: 0; margin-bottom: 15px; font-size: 1.5rem;">
+                        مقاول <span class="logo-gold">حداد الرياض</span>
+                    </div>
+                    <p class="footer-desc">نحن مؤسسة متخصصة في تركيب المظلات الفاخرة، السواتر الحديثة، وهياكل الساندوتش بانل في كافة أحياء مدينة الرياض بأعلى كفاءة فنية وبأسعار مدروسة وضمان طويل المدى.</p>
                 </div>
+                <!-- الروابط السريعة الموحدة للفوتر -->
+                <div class="footer-col">
+                    <h4>روابط سريعة</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html"><i class="fa-solid fa-chevron-left"></i> الصفحة الرئيسية</a></li>
+                        <li><a href="about.html"><i class="fa-solid fa-chevron-left"></i> من نحن</a></li>
+                        <li><a href="mazallat.html"><i class="fa-solid fa-chevron-left"></i> مظلات السيارات والحدائق</a></li>
+                        <li><a href="sawater.html"><i class="fa-solid fa-chevron-left"></i> سواتر الأسوار والفلل</a></li>
+                        <li><a href="sandwich-panel.html"><i class="fa-solid fa-chevron-left"></i> ساندوتش بانل معزول</a></li>
+                        <li><a href="contact.html"><i class="fa-solid fa-chevron-left"></i> تواصل معنا</a></li>
+                    </ul>
+                </div>
+                <!-- روابط الخدمات والدعم الموحدة للفوتر -->
+                <div class="footer-col">
+                    <h4>روابط الدعم والسياسات</h4>
+                    <ul class="footer-links">
+                        <li><a href="faq.html"><i class="fa-solid fa-chevron-left"></i> الأسئلة الشائعة</a></li>
+                        <li><a href="privacy.html"><i class="fa-solid fa-chevron-left"></i> سياسة الخصوصية</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- شريط الحقوق ورابط المطور الرعد التقني للواتساب -->
+            <div class="footer-bottom">
+                <p>جميع الحقوق محفوظة © 2026 مقاول حداد الرياض.</p>
+                <p>تطوير: 
+                    <a href="https://wa.me/966573589687?text=مرحباً%20الرعد%20التقني%20أود%20الاستفسار%20عن%20خدماتكم" target="_blank" rel="noopener noreferrer" class="dev-link">
+                        الرعد التقني <i class="fab fa-whatsapp"></i>
+                    </a>
+                </p>
             </div>
         </div>
     </footer>
 
-    <!-- أزرار الجنب العائمة الثابتة -->
+    <!-- 6. الأزرار الثابتة بيمين أسفل الشاشة للاتصال والواتساب السريع (مهمة جداً لعملاء إعلانات الجوال) -->
     <div class="fixed-widgets">
-        <a href="https://wa.me/966536491079" target="_blank" class="widget-btn widget-wa" aria-label="راسلنا على واتساب"><i class="fa-brands fa-whatsapp"></i></a>
-        <a href="tel:0536491079" class="widget-btn widget-phone" aria-label="اتصل بنا"><i class="fa-solid fa-phone"></i></a>
+        <a href="https://wa.me/966536491079" target="_blank" class="widget-btn widget-wa pulse" aria-label="راسلنا على واتساب"><i class="fa-brands fa-whatsapp"></i></a>
+        <a href="tel:0536491079" class="widget-btn widget-phone pulse" aria-label="اتصل بنا الآن"><i class="fa-solid fa-phone"></i></a>
     </div>
 
-    <!-- زر الصعود للأعلى (يسار) -->
-    <button class="back-to-top" id="backToTop" aria-label="العودة للأعلى"><i class="fa-solid fa-arrow-up"></i></button>
+    <!-- 7. زر الصعود للأعلى يسار الشاشة -->
+    <div class="back-to-top" id="backToTop" title="صعود للأعلى">
+        <i class="fa-solid fa-chevron-up"></i>
+    </div>
 
     <!-- استدعاء ملف الحركات والتفاعل -->
     <script src="script.js"></script>
