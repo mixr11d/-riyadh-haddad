@@ -1,5 +1,47 @@
 // ==========================================================================
-// 1. التحكم بفتح وإغلاق قائمة الجوال (Hamburger Menu)
+// 1. محرك تتبع إعلانات Google الموحد (تعدله من هنا فقط وسيعمل في كل الصفحات)
+// ==========================================================================
+const G_ID = 'AW-xxxxxxxxxxxx'; // اكتب هنا معرف الحساب الإعلاني للعميل
+const C_L  = 'xxxxxxxxxxxx';    // اكتب هنا معرف تحويل الاتصال الهاتفي
+const W_L  = 'xxxxxxxxxxxx';    // اكتب هنا معرف تحويل نقرات الواتساب
+
+// سكربت التثبيت التلقائي لـ Google Ads في المتصفح دون الحاجة لكتابته في الصفحات
+(function() {
+    if (G_ID && G_ID !== 'AW-xxxxxxxxxxxx') {
+        // تحميل مكتبة gtag.js ديناميكياً
+        var script = document.createElement('script');
+        script.async = true;
+        script.src = 'https://www.googletagmanager.com/gtag/js?id=' + G_ID;
+        document.head.appendChild(script);
+
+        // تهيئة دالة gtag
+        window.dataLayer = window.dataLayer || [];
+        window.gtag = function(){ dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', G_ID);
+    }
+})();
+
+// تتبع النقرات التلقائي للاتصال والواتساب عبر جميع صفحات الموقع
+document.addEventListener('click', function(e){
+    var a = e.target.closest('a');
+    if(!a) return;
+    var href = a.href || '';
+    
+    // التحقق من تفعيل الـ ID قبل الإرسال لمنع الأخطاء البرمجية
+    if (typeof gtag === 'function' && G_ID !== 'AW-xxxxxxxxxxxx') {
+        if(href.startsWith('tel:')){
+            gtag('event','conversion',{'send_to': G_ID + '/' + C_L,'value':50.0,'currency':'SAR'});
+        }
+        if(href.includes('wa.me') || href.includes('whatsapp')){
+            gtag('event','conversion',{'send_to': G_ID + '/' + W_L,'value':40.0,'currency':'SAR'});
+        }
+    }
+}, true);
+
+
+// ==========================================================================
+// 2. التحكم بفتح وإغلاق قائمة الجوال (Hamburger Menu)
 // ==========================================================================
 const mobileToggle = document.getElementById('mobileToggle');
 const navMenu = document.getElementById('navMenu');
@@ -7,7 +49,6 @@ const navMenu = document.getElementById('navMenu');
 if (mobileToggle && navMenu) {
     mobileToggle.addEventListener('click', () => {
         navMenu.classList.toggle('open');
-        // تغيير شكل الأيقونة عند الفتح والإغلاق
         const icon = mobileToggle.querySelector('i');
         if (navMenu.classList.contains('open')) {
             icon.classList.remove('fa-bars');
@@ -19,7 +60,6 @@ if (mobileToggle && navMenu) {
     });
 }
 
-// إغلاق القائمة تلقائياً عند الضغط في أي مكان خارجها
 document.addEventListener('click', (event) => {
     if (navMenu && navMenu.classList.contains('open')) {
         if (!navMenu.contains(event.target) && !mobileToggle.contains(event.target)) {
@@ -31,8 +71,9 @@ document.addEventListener('click', (event) => {
     }
 });
 
+
 // ==========================================================================
-// 2. التحكم بأكورديون الأسئلة الشائعة (Collapse/Expand)
+// 3. التحكم بأكورديون الأسئلة الشائعة (Collapse/Expand)
 // ==========================================================================
 const faqButtons = document.querySelectorAll('.faq-btn');
 
@@ -41,13 +82,11 @@ faqButtons.forEach(btn => {
         const item = btn.parentElement;
         const isActive = item.classList.contains('active');
         
-        // إغلاق جميع الأسئلة الأخرى أولاً ليكون المظهر مرتباً
         document.querySelectorAll('.faq-item').forEach(el => {
             el.classList.remove('active');
             el.querySelector('i').className = "fa-solid fa-plus";
         });
         
-        // فتح السؤال الذي تم الضغط عليه فقط
         if (!isActive) {
             item.classList.add('active');
             btn.querySelector('i').className = "fa-solid fa-xmark";
@@ -55,8 +94,9 @@ faqButtons.forEach(btn => {
     });
 });
 
+
 // ==========================================================================
-// 3. إظهار وإخفاء زر الصعود للأعلى (Back to Top)
+// 4. إظهار وإخفاء زر الصعود للأعلى (Back to Top)
 // ==========================================================================
 const backToTop = document.getElementById('backToTop');
 
@@ -77,8 +117,9 @@ if (backToTop) {
     });
 }
 
+
 // ==========================================================================
-// 4. إرسال نموذج الاتصال وتحويل العميل مباشرة للواتساب للتحويل الإعلاني
+// 5. إرسال نموذج الاتصال وتحويل العميل مباشرة للواتساب
 // ==========================================================================
 const contactForm = document.getElementById('contactForm');
 const formSuccess = document.getElementById('formSuccess');
@@ -95,7 +136,6 @@ if (contactForm) {
         if (clientName && clientPhone && clientService) {
             formSuccess.style.display = 'block';
             
-            // تجهيز نص الرسالة التي ستصل للمقاول في الواتساب تلقائياً
             const messageText = `السلام عليكم ورحمة الله وبركاته، أرغب في طلب معاينة وسعر لمشروعي بالرياض:\n\n` +
                                 `👤 الاسم الكريم: ${clientName}\n` +
                                 `📞 الجوال: ${clientPhone}\n` +
@@ -105,10 +145,8 @@ if (contactForm) {
             const encodedText = encodeURIComponent(messageText);
             const targetWhatsappUrl = `https://wa.me/966536491079?text=${encodedText}`;
             
-            // تفريغ الحقول بعد الإرسال
             contactForm.reset();
             
-            // تحويل العميل للواتساب بعد ثانية واحدة
             setTimeout(() => {
                 window.open(targetWhatsappUrl, '_blank');
                 formSuccess.style.display = 'none';
