@@ -5,198 +5,241 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>اتصل بنا | حدادة الرياض للمظلات والسواتر</title>
     <meta name="description" content="تواصل معنا الآن لأخذ قياسات ومعاينة مجانية لمشروعك بالرياض. هاتف وواتساب 0536491079 لتركيب مظلات السيارات وسواتر الفلل وملاحق الساندوتش بانل.">
-    <link rel="stylesheet" href="style.css">
+    <meta name="keywords" content="اتصل بنا حدادة الرياض, رقم حداد بالرياض, ارقام مظلات وسواتر الرياض, رقم ساندوتش بانل">
+    
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- استدعاء ملف التنسيق الموحد الفاخر -->
+    <link rel="stylesheet" href="style.css">
 
-    <!-- Google Ads - كود التتبع التلقائي الخاص بك -->
-    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=AW-xxxxxxxxxx"></script>
-    <script>
-    window.dataLayer=window.dataLayer||[];
-    function gtag(){dataLayer.push(arguments)}
-    gtag('js', new Date());
-    gtag('config', 'AW-xxxxxxxxxxxx');
-
-    const G_ID='AW-xxxxxxxxxxxx';
-    const C_L='xxxxxxxxxxxx';
-    const W_L='xxxxxxxxxxxx';
-
-    document.addEventListener('click', function(e){
-      var a = e.target.closest('a');
-      if(!a) return;
-      var href = a.href || '';
-      if(href.startsWith('tel:')){
-        gtag('event','conversion',{'send_to':G_ID+'/'+C_L,'value':50.0,'currency':'SAR'});
-      }
-      if(href.includes('wa.me') || href.includes('whatsapp')){
-        gtag('event','conversion',{'send_to':G_ID+'/'+W_L,'value':40.0,'currency':'SAR'});
-      }
-    }, true);
-    </script>
+    <!-- [ملاحظة]: تتبع تحويلات إعلانات جوجل يتم تحميله ديناميكياً وعبر النقرات من ملف script.js الموحد -->
 </head>
 <body>
 
-    <!-- شريط الإعلان العلوي -->
+    <!-- 1. شريط الخصم والتنبيه العلوي -->
     <div class="promo-strip">
         <div class="container">
-            <span><i class="fa-solid fa-gift"></i> خصم خاص 15% لعملاء إعلانات قوقل الجدد بالرياض - اتصل بنا اليوم!</span>
+            <span><i class="fa-solid fa-gift"></i> خصم خاص 15% للمتصلين الجدد بالرياض - اتصل بنا اليوم!</span>
         </div>
     </div>
 
-    <!-- الهيدر الموحد -->
-    <header class="main-header">
-        <div class="container header-flex">
+    <!-- 2. الهيدر الموحد الفاخر المتوافق مع الجوال -->
+    <header class="main-navigation">
+        <div class="container nav-container">
             <div class="logo">
-                <a href="index.html"><span class="logo-gold">حدادة</span> الرياض</a>
+                <a href="index.html">مقاول <span class="logo-gold">حداد الرياض</span></a>
             </div>
-            <nav class="nav-menu" id="navMenu">
-                <ul>
-                    <li><a href="index.html" class="nav-link">الرئيسية</a></li>
-                    <li><a href="mazallat.html" class="nav-link">مظلات</a></li>
-                    <li><a href="sawater.html" class="nav-link">سواتر</a></li>
-                    <li><a href="sandwich-panel.html" class="nav-link">ساندوتش بانل</a></li>
-                    <li><a href="about.html" class="nav-link">من نحن</a></li>
-                    <li><a href="faq.html" class="nav-link">الأسئلة الشائعة</a></li>
-                    <li><a href="contact.html" class="nav-link active">اتصل بنا</a></li>
-                </ul>
-            </nav>
-            <div class="header-btn">
-                <a href="tel:0536491079" class="btn btn-gold"><i class="fa-solid fa-phone"></i> 0536491079</a>
-            </div>
-            <button class="mobile-toggle" id="mobileToggle" aria-label="قائمة التنقل">
+            
+            <button class="mobile-toggle" id="menuToggle" aria-label="قائمة التنقل">
                 <i class="fa-solid fa-bars"></i>
             </button>
+
+            <nav class="nav-menu" id="navMenu">
+                <ul class="nav-links">
+                    <li><a href="index.html" class="nav-item">الصفحة الرئيسية</a></li>
+                    <li><a href="about.html" class="nav-item">من نحن</a></li>
+                    
+                    <li class="dropdown">
+                        <button class="dropbtn nav-item">مظلات وسواتر <i class="fa-solid fa-chevron-down"></i></button>
+                        <div class="dropdown-content">
+                            <a href="mazallat.html">مظلات السيارات والحدائق</a>
+                            <a href="sawater.html">سواتر الأسوار والفلل</a>
+                        </div>
+                    </li>
+                    
+                    <li><a href="sandwich-panel.html" class="nav-item">ساندوتش بانل</a></li>
+                    <li><a href="contact.html" class="nav-item active">تواصل معنا</a></li>
+                </ul>
+            </nav>
         </div>
     </header>
 
-    <!-- بانر الصفحة الداخلي الفخم -->
-    <section class="inner-banner" style="background-image: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.85)), url('https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80');">
-        <div class="inner-banner-overlay"></div>
-        <div class="container inner-banner-content">
+    <!-- 3. بانر الصفحة الداخلي الفخم والملائم للجوال -->
+    <section class="hero" style="background-image: url('https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80');">
+        <div class="hero-overlay"></div>
+        <div class="container hero-content">
+            <span class="badge">خدمة سريعة واستجابة فورية بالرياض</span>
             <h1>تواصل معنا الآن</h1>
-            <p>يسعدنا خدمتك والرد على استفسارك على مدار الساعة بالرياض</p>
-        </div>
-    </section>
-
-    <!-- تفاصيل قنوات الاتصال والنموذج الذكي المربوط بالواتساب -->
-    <section class="contact-section section-padding">
-        <div class="container">
-            <div class="contact-grid">
-                <!-- كرت تفاصيل الاتصال المباشر -->
-                <div class="contact-card">
-                    <h2>قنوات اتصال مباشرة وسريعة</h2>
-                    <p style="color: var(--text-muted); margin-bottom: 30px;">تواصل معنا هاتفياً أو عبر الواتساب لإرسال فني متخصص لرفع قياسات الموقع وتحديد التكلفة الإجمالية بدقة:</p>
-                    
-                    <div class="contact-item">
-                        <div class="contact-item-icon"><i class="fa-solid fa-phone"></i></div>
-                        <div class="contact-item-text">
-                            <h4>رقم الجوال للاتصال المباشر:</h4>
-                            <p><a href="tel:0536491079">0536491079</a></p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-item-icon"><i class="fa-brands fa-whatsapp"></i></div>
-                        <div class="contact-item-text">
-                            <h4>تواصل فوري عبر الواتساب:</h4>
-                            <p><a href="https://wa.me/966536491079" target="_blank">اضغط لبدء محادثة فورية</a></p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-item-icon"><i class="fa-solid fa-location-dot"></i></div>
-                        <div class="contact-item-text">
-                            <h4>مناطق التغطية والعمل:</h4>
-                            <p>مدينة الرياض وكافة ضواحيها، المملكة العربية السعودية</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- نموذج الاتصال التفاعلي المربوط بـ script.js للواتساب -->
-                <div class="contact-form-col">
-                    <h3>طلب تسعيرة أو معاينة للموقع</h3>
-                    <p style="color: var(--text-muted); margin-bottom: 25px;">قم بتعبئة بياناتك وسيقوم مسؤول المبيعات بالتواصل الفوري معك:</p>
-                    
-                    <form id="contactForm">
-                        <div class="form-group">
-                            <label for="name">الاسم الكريم:</label>
-                            <input type="text" id="name" class="form-control" placeholder="اكتب اسمك بالكامل" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="phone">رقم الجوال:</label>
-                            <input type="tel" id="phone" class="form-control" placeholder="05XXXXXXXX" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="service">الخدمة المطلوبة:</label>
-                            <select id="service" class="form-control" required>
-                                <option value="">-- اختر الخدمة المطلوبة --</option>
-                                <option value="مظلات سيارات وحدائق">مظلات سيارات وحدائق</option>
-                                <option value="سواتر جدارية لأسوار الفلل">سواتر جدارية لأسوار الفلل</option>
-                                <option value="ساندوتش بانل وغرف معزولة">ساندوتش بانل وغرف معزولة</option>
-                                <option value="أعمال حدادة عامة ومنوعة">أعمال حدادة عامة ومنوعة</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">تفاصيل أو ملاحظات إضافية (اختياري):</label>
-                            <textarea id="message" class="form-control" rows="4" placeholder="اكتب مقاسات تقريبية أو أي تفاصيل إضافية للمشروع..."></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-gold btn-lg btn-full" style="width: 100%;">إرسال الطلب عبر الواتساب <i class="fa-solid fa-paper-plane"></i></button>
-                    </form>
-                    <div class="form-success-msg" id="formSuccess">تم استلام طلبك بنجاح! جاري تحويلك للمبيعات فوراً...</div>
-                </div>
+            <p>يسعدنا خدمتك والرد على استفسارك ومعاينة موقعك مجاناً على مدار الساعة بجميع أحياء العاصمة</p>
+            <div class="hero-actions">
+                <a href="tel:0536491079" class="btn btn-gold btn-lg"><i class="fa-solid fa-phone"></i> اتصل الآن: 0536491079</a>
             </div>
         </div>
     </section>
 
-    <!-- خريطة موقع العمل بالرياض -->
-    <section class="map-section" style="padding-bottom: 80px;">
+    <!-- 4. تفاصيل الاتصال والنموذج (مقسمة لعمودين تترتب تلقائياً تحت بعضها في الجوال) -->
+    <section class="section-padding bg-light">
         <div class="container">
-            <div class="map-container">
+            <div class="grid grid-2">
+                
+                <!-- العمود الأول: كروت الاتصال المباشر -->
+                <div class="why-us-box">
+                    <h2 style="color: var(--main-color); font-weight: 900; margin-bottom: 20px;">قنوات اتصال مباشرة وسريعة</h2>
+                    <p class="desc-text" style="text-align: right; text-align-last: right; margin-bottom: 30px;">تواصل معنا هاتفياً أو عبر الواتساب لإرسال فني متخصص لرفع قياسات الموقع وتحديد التكلفة الإجمالية بدقة لضمان أفضل خدمة:</p>
+                    
+                    <div class="features-list" style="gap: 15px; margin-top: 10px;">
+                        <li style="padding: 15px; font-size: 0.95rem; display: flex; flex-direction: column; align-items: flex-start; gap: 5px;">
+                            <span style="color: var(--main-color); font-weight: 800;"><i class="fa-solid fa-phone" style="color: var(--gold-color);"></i> الاتصال الهاتفي المباشر:</span>
+                            <a href="tel:0536491079" style="color: var(--gold-color); font-weight: 900; font-size: 1.15rem; direction: ltr; display: inline-block;">0536491079</a>
+                        </li>
+                        <li style="padding: 15px; font-size: 0.95rem; display: flex; flex-direction: column; align-items: flex-start; gap: 5px;">
+                            <span style="color: var(--main-color); font-weight: 800;"><i class="fa-brands fa-whatsapp" style="color: var(--whatsapp-green);"></i> محادثة فورية عبر الواتساب:</span>
+                            <a href="https://wa.me/966536491079" target="_blank" style="color: var(--whatsapp-green); font-weight: 800; font-size: 1rem;">اضغط هنا لبدء دردشة فورية مباشرة</a>
+                        </li>
+                        <li style="padding: 15px; font-size: 0.95rem; display: flex; flex-direction: column; align-items: flex-start; gap: 5px;">
+                            <span style="color: var(--main-color); font-weight: 800;"><i class="fa-solid fa-location-dot" style="color: var(--gold-color);"></i> مناطق التغطية والخدمة:</span>
+                            <span style="color: var(--text-dark); font-weight: 700;">مدينة الرياض وكافة ضواحيها، المملكة العربية السعودية</span>
+                        </li>
+                    </div>
+                </div>
+                
+                <!-- العمود الثاني: نموذج الطلب التفاعلي المربوط بالواتساب لتسهيل التحويل بالجوال -->
+                <div class="why-us-box" style="border: 2px solid var(--gold-color); background-color: var(--white);">
+                    <h3 style="color: var(--main-color); font-weight: 900; margin-bottom: 10px; font-size: 1.3rem; text-align: center;">طلب تسعيرة ومعاينة مجانية</h3>
+                    <p class="desc-text" style="font-size: 0.85rem; margin-bottom: 20px; text-align: center;">قم بتعبئة بياناتك وسيقوم مسؤول المبيعات بالتواصل المباشر معك:</p>
+                    
+                    <form id="contactForm" style="display: flex; flex-direction: column; gap: 15px;">
+                        <div>
+                            <label for="name" style="font-weight: 800; font-size: 0.9rem; color: var(--main-color); display: block; margin-bottom: 5px;">الاسم الكريم:</label>
+                            <input type="text" id="name" required placeholder="اكتب اسمك بالكامل" style="width: 100%; padding: 12px; border: 1px solid var(--border-color); border-radius: 8px; font-family: var(--font-main); font-size: 0.9rem;">
+                        </div>
+                        
+                        <div>
+                            <label for="phone" style="font-weight: 800; font-size: 0.9rem; color: var(--main-color); display: block; margin-bottom: 5px;">رقم الجوال:</label>
+                            <input type="tel" id="phone" required placeholder="05xxxxxxxx" style="width: 100%; padding: 12px; border: 1px solid var(--border-color); border-radius: 8px; font-family: var(--font-main); font-size: 0.9rem; text-align: right; direction: ltr;">
+                        </div>
+                        
+                        <div>
+                            <label for="service" style="font-weight: 800; font-size: 0.9rem; color: var(--main-color); display: block; margin-bottom: 5px;">الخدمة المطلوبة:</label>
+                            <select id="service" required style="width: 100%; padding: 12px; border: 1px solid var(--border-color); border-radius: 8px; font-family: var(--font-main); font-size: 0.9rem; background-color: var(--white);">
+                                <option value="">-- اختر نوع الخدمة --</option>
+                                <option value="تركيب مظلات سيارات وحدائق">تركيب مظلات سيارات وحدائق</option>
+                                <option value="تركيب سواتر جدارية وفلل">تركيب سواتر جدارية وفلل</option>
+                                <option value="تركيب غرف وملاحق ساندوتش بانل">تركيب غرف وملاحق ساندوتش بانل</option>
+                                <option value="أعمال حدادة منوعة وأخرى">أعمال حدادة منوعة وأخرى</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label for="message" style="font-weight: 800; font-size: 0.9rem; color: var(--main-color); display: block; margin-bottom: 5px;">تفاصيل وملاحظات إضافية (اختياري):</label>
+                            <textarea id="message" rows="3" placeholder="اكتب المقاسات التقريبية أو أي تفاصيل إضافية هنا..." style="width: 100%; padding: 12px; border: 1px solid var(--border-color); border-radius: 8px; font-family: var(--font-main); font-size: 0.9rem; resize: none;"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-gold btn-lg" style="width: 100%; font-size: 1rem;"><i class="fa-solid fa-paper-plane"></i> إرسال الطلب عبر الواتساب</button>
+                    </form>
+                    
+                    <!-- رسالة النجاح -->
+                    <div id="formSuccess" style="display: none; margin-top: 15px; padding: 12px; background-color: rgba(34, 197, 94, 0.1); border: 1px solid var(--whatsapp-green); color: var(--whatsapp-green); border-radius: 8px; font-weight: 800; font-size: 0.85rem; text-align: center;">
+                        <i class="fa-solid fa-circle-check"></i> تم تجهيز طلبك! جاري تحويلك للواتساب للتأكيد الفوري...
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. خريطة موقع العمل بالرياض لتسهيل السيو المحلي -->
+    <section class="map-section" style="padding-bottom: 60px; background-color: var(--bg-light);">
+        <div class="container">
+            <div style="width: 100%; height: 300px; border-radius: 12px; overflow: hidden; border: 1px solid var(--border-color); box-shadow: var(--shadow);">
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m12!1m3!1d115911.45262799511!2d46.721852!3d24.713552!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e2f03890d48939b%3A0xf2efbeba6e540d58!2sRiyadh%20Saudi%20Arabia!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
             </div>
         </div>
     </section>
 
-    <!-- فوتر الموقع الموحد -->
+    <!-- 6. التذييل والفوتر الفاخر الموحد المتوافق تماماً مع الجوال -->
     <footer class="footer-main">
-        <div class="container footer-grid">
-            <div class="footer-col">
-                <span class="logo logo-gold">حدادة الرياض</span>
-                <p>مؤسسة متخصصة في توفير وتركيب المظلات الفاخرة، السواتر الحديثة، وهياكل الساندوتش بانل في كافة أحياء مدينة الرياض بأعلى درجات الكفاءة الفنية والضمان وبأسعار مدروسة.</p>
-            </div>
-            <div class="footer-col">
-                <h4>روابط سريعة</h4>
-                <ul>
-                    <li><a href="mazallat.html">تركيب المظلات</a></li>
-                    <li><a href="sawater.html">تركيب السواتر</a></li>
-                    <li><a href="sandwich-panel.html">ساندوتش بانل</a></li>
-                    <li><a href="privacy.html">سياسة الخصوصية</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h4>تواصل معنا</h4>
-                <p><i class="fa-solid fa-phone"></i> <a href="tel:0536491079">0536491079</a></p>
-                <p><i class="fa-solid fa-location-dot"></i> الرياض، المملكة العربية السعودية</p>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <div class="container footer-bottom-flex">
-                <p>&copy; 2026 حدادة الرياض. جميع الحقوق محفوظة.</p>
-                <div class="footer-links">
-                    <a href="privacy.html">سياسة الخصوصية</a>
+        <div class="container">
+            <div class="footer-grid">
+                <!-- نبذة عن المؤسسة -->
+                <div class="footer-col">
+                    <div class="logo" style="border: none; padding: 0; margin-bottom: 15px; font-size: 1.5rem;">
+                        مقاول <span class="logo-gold">حداد الرياض</span>
+                    </div>
+                    <p class="footer-desc">نحن مؤسسة متخصصة في تركيب المظلات الفاخرة، السواتر الحديثة، وهياكل الساندوتش بانل في كافة أحياء مدينة الرياض بأعلى كفاءة فنية وبأسعار مدروسة وضمان طويل المدى.</p>
                 </div>
+                <!-- الروابط السريعة الموحدة للفوتر -->
+                <div class="footer-col">
+                    <h4>روابط سريعة</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html"><i class="fa-solid fa-chevron-left"></i> الصفحة الرئيسية</a></li>
+                        <li><a href="about.html"><i class="fa-solid fa-chevron-left"></i> من نحن</a></li>
+                        <li><a href="mazallat.html"><i class="fa-solid fa-chevron-left"></i> مظلات السيارات والحدائق</a></li>
+                        <li><a href="sawater.html"><i class="fa-solid fa-chevron-left"></i> سواتر الأسوار والفلل</a></li>
+                        <li><a href="sandwich-panel.html"><i class="fa-solid fa-chevron-left"></i> ساندوتش بانل معزول</a></li>
+                        <li><a href="contact.html"><i class="fa-solid fa-chevron-left"></i> تواصل معنا</a></li>
+                    </ul>
+                </div>
+                <!-- روابط الخدمات والدعم الموحدة للفوتر -->
+                <div class="footer-col">
+                    <h4>روابط الدعم والسياسات</h4>
+                    <ul class="footer-links">
+                        <li><a href="faq.html"><i class="fa-solid fa-chevron-left"></i> الأسئلة الشائعة</a></li>
+                        <li><a href="privacy.html"><i class="fa-solid fa-chevron-left"></i> سياسة الخصوصية</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- شريط الحقوق ورابط المطور الرعد التقني للواتساب -->
+            <div class="footer-bottom">
+                <p>جميع الحقوق محفوظة © 2026 مقاول حداد الرياض.</p>
+                <p>تطوير: 
+                    <a href="https://wa.me/966573589687?text=مرحباً%20الرعد%20التقني%20أود%20الاستفسار%20عن%20خدماتكم" target="_blank" rel="noopener noreferrer" class="dev-link">
+                        الرعد التقني <i class="fab fa-whatsapp"></i>
+                    </a>
+                </p>
             </div>
         </div>
     </footer>
 
-    <!-- أزرار الجنب العائمة الثابتة -->
+    <!-- 7. الأزرار الثابتة بيمين أسفل الشاشة للاتصال والواتساب السريع (مهمة جداً لعملاء إعلانات الجوال) -->
     <div class="fixed-widgets">
-        <a href="https://wa.me/966536491079" target="_blank" class="widget-btn widget-wa" aria-label="راسلنا على واتساب"><i class="fa-brands fa-whatsapp"></i></a>
-        <a href="tel:0536491079" class="widget-btn widget-phone" aria-label="اتصل بنا"><i class="fa-solid fa-phone"></i></a>
+        <a href="https://wa.me/966536491079" target="_blank" class="widget-btn widget-wa pulse" aria-label="راسلنا على واتساب"><i class="fa-brands fa-whatsapp"></i></a>
+        <a href="tel:0536491079" class="widget-btn widget-phone pulse" aria-label="اتصل بنا الآن"><i class="fa-solid fa-phone"></i></a>
     </div>
 
-    <!-- زر الصعود للأعلى (يسار) -->
-    <button class="back-to-top" id="backToTop" aria-label="العودة للأعلى"><i class="fa-solid fa-arrow-up"></i></button>
+    <!-- 8. زر الصعود للأعلى يسار الشاشة -->
+    <div class="back-to-top" id="backToTop" title="صعود للأعلى">
+        <i class="fa-solid fa-chevron-up"></i>
+    </div>
 
     <!-- استدعاء ملف الحركات والتفاعل -->
     <script src="script.js"></script>
+
+    <!-- برمجة نموذج إرسال الرسالة للواتساب تلقائياً بالبيانات المدخلة -->
+    <script>
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // جلب المدخلات من الحقول
+        var name = document.getElementById('name').value;
+        var phone = document.getElementById('phone').value;
+        var service = document.getElementById('service').value;
+        var message = document.getElementById('message').value || 'لا يوجد ملاحظات إضافية';
+        
+        // صياغة نص الرسالة للواتساب بشكل منسق وجذاب جداً
+        var waMessage = "*طلب معاينة وتسعيرة مجانية جديدة*\n" +
+                        "-----------------------------\n" +
+                        "*الاسم:* " + name + "\n" +
+                        "*رقم الجوال:* " + phone + "\n" +
+                        "*نوع الخدمة:* " + service + "\n" +
+                        "*الملاحظات:* " + message;
+        
+        // رابط توجيه الواتساب للرقم الخاص بك
+        var waUrl = "https://wa.me/966536491079?text=" + encodeURIComponent(waMessage);
+        
+        // إظهار رسالة النجاح
+        document.getElementById('formSuccess').style.display = 'block';
+        
+        // توجيه العميل تلقائياً بعد ثانية ونصف
+        setTimeout(function() {
+            window.open(waUrl, '_blank');
+        }, 1500);
+    });
+    </script>
 </body>
 </html>
