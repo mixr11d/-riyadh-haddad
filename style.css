@@ -1,9 +1,9 @@
 /* ==========================================================================
-   إعدادات الألوان والهوية البصرية الفاخرة لـ حدادة الرياض
+   إعدادات الألوان والهوية البصرية للجوال أولاً
    ========================================================================== */
 :root {
     --main-color: #0f172a;       /* كحلي ملكي داكن */
-    --gold-color: #c5a028;       /* ذهبي فخم ومطابق تماماً لكودك */
+    --gold-color: #c5a028;       /* ذهبي فخم دافئ */
     --gold-hover: #b59020;
     --bg-light: #f8fafc;         /* خلفية ناصعة ومريحة للقراءة */
     --white: #ffffff;
@@ -14,22 +14,24 @@
     --border-color: #cbd5e1;
     --transition-speed: 0.3s;
     --font-main: 'Cairo', 'Segoe UI', Tahoma, sans-serif;
-    --shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.1);
+    --shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
 }
 
-/* تصفير الإعدادات الافتراضية */
+/* تصفير الإعدادات ومنع التمدد الأفقي على الجوال */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body {
+html, body {
     font-family: var(--font-main);
     color: var(--text-dark);
     background-color: var(--white);
     line-height: 1.8;
-    overflow-x: hidden;
+    width: 100%;
+    overflow-x: hidden; /* لمنع أي اهتزاز أو تمدد أفقي في الجوال */
+    -webkit-text-size-adjust: 100%;
 }
 
 a {
@@ -40,13 +42,13 @@ a {
 
 .container {
     width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
     padding: 0 20px;
+    margin: 0 auto;
 }
 
+/* مسافات الأقسام للجوال */
 .section-padding {
-    padding: 80px 0;
+    padding: 50px 0;
 }
 
 .bg-light {
@@ -57,34 +59,32 @@ a {
     text-align: center;
 }
 
-/* شبكة توزيع العناصر المرنة والمتجاوبة */
+/* افتراضياً على الجوال: كل العناصر تترتب عمودياً في عمود واحد لمنع الضيق */
 .grid {
     display: grid;
-    gap: 25px;
+    grid-template-columns: 1fr; /* عمود واحد للجوال */
+    gap: 20px;
 }
 
-.grid-2 { grid-template-columns: repeat(2, 1fr); }
-.grid-3 { grid-template-columns: repeat(3, 1fr); }
-.grid-4 { grid-template-columns: repeat(4, 1fr); }
-
-@media (max-width: 992px) {
-    .grid-3, .grid-4 { grid-template-columns: repeat(2, 1fr); }
-}
-
-@media (max-width: 768px) {
-    .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
+/* التنسيق للشاشات الأكبر (الكمبيوتر والتابلت) */
+@media (min-width: 769px) {
+    .grid-2 { grid-template-columns: repeat(2, 1fr); }
+    .grid-3 { grid-template-columns: repeat(3, 1fr); }
+    .grid-4 { grid-template-columns: repeat(4, 1fr); }
+    .section-padding { padding: 80px 0; }
 }
 
 /* ==========================================================================
-   تصميم الهيدر الموحد الفاخر
+   تصميم الهيدر وقائمة الجوال (Hamburger)
    ========================================================================== */
 .promo-strip {
     background-color: var(--gold-color);
     color: var(--main-color);
     text-align: center;
-    padding: 10px 0;
-    font-size: 0.9rem;
+    padding: 10px 15px;
+    font-size: 0.85rem;
     font-weight: 800;
+    line-height: 1.4;
 }
 
 .main-navigation {
@@ -104,30 +104,55 @@ a {
 }
 
 .logo {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     font-weight: 900;
     color: var(--white);
     border-right: 4px solid var(--gold-color);
-    padding-right: 12px;
+    padding-right: 10px;
 }
 
 .logo-gold {
     color: var(--gold-color);
 }
 
-.nav-links {
+/* قائمة الملاحة الافتراضية للجوال (مخفية وتظهر كدرج جانبي) */
+.nav-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 280px;
+    height: 100vh;
+    background-color: var(--main-color);
+    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.3);
+    z-index: 999;
     display: flex;
-    gap: 15px;
-    align-items: center;
+    flex-direction: column;
+    padding: 90px 25px 40px;
+    transition: right 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.nav-links a {
-    font-size: 0.95rem;
-    background: rgba(255,255,255,0.05);
-    padding: 8px 16px;
-    border-radius: 20px;
-    color: #e2e8f0;
+.nav-menu.open {
+    right: 0;
+}
+
+.nav-links {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+}
+
+.nav-links a, .dropbtn {
+    font-size: 1.05rem;
+    color: #cbd5e1;
     font-weight: 700;
+    width: 100%;
+    background: rgba(255,255,255,0.03);
+    padding: 12px 18px;
+    border-radius: 8px;
+    display: block;
+    border: none;
+    text-align: right;
 }
 
 .nav-links a:hover, .nav-links a.active {
@@ -135,48 +160,24 @@ a {
     color: var(--main-color);
 }
 
-/* دروب داون منيو الخدمات في الهيدر */
+/* القائمة المنسدلة للخدمات على الجوال */
 .dropdown {
     position: relative;
-}
-
-.dropbtn {
-    font-size: 0.95rem;
-    background: rgba(255,255,255,0.05);
-    padding: 8px 16px;
-    border-radius: 20px;
-    color: #e2e8f0;
-    font-weight: 700;
-    border: none;
-    cursor: pointer;
-    font-family: var(--font-main);
+    width: 100%;
 }
 
 .dropdown-content {
     display: none;
-    position: absolute;
-    right: 0;
-    background: var(--white);
-    min-width: 180px;
-    box-shadow: var(--shadow);
+    background: rgba(0, 0, 0, 0.2);
     border-radius: 8px;
-    z-index: 1000;
-    border-top: 3px solid var(--gold-color);
+    margin-top: 5px;
+    padding: 5px;
 }
 
 .dropdown-content a {
-    display: block;
-    padding: 12px 16px;
-    color: var(--text-dark);
-    border-bottom: 1px solid #f1f5f9;
-    font-size: 0.9rem;
-    border-radius: 0;
     background: none;
-}
-
-.dropdown-content a:hover {
-    background-color: var(--bg-light);
-    color: var(--gold-color);
+    font-size: 0.95rem;
+    border-bottom: 1px solid rgba(255,255,255,0.03);
 }
 
 .dropdown:hover .dropdown-content {
@@ -184,7 +185,7 @@ a {
 }
 
 .mobile-toggle {
-    display: none;
+    display: block;
     background: none;
     border: none;
     color: var(--white);
@@ -192,15 +193,52 @@ a {
     cursor: pointer;
 }
 
+/* تنسيقات الشاشات الكبيرة للهيدر */
+@media (min-width: 993px) {
+    .nav-menu {
+        position: static;
+        width: auto;
+        height: auto;
+        background: none;
+        box-shadow: none;
+        padding: 0;
+        display: block;
+    }
+    .nav-links {
+        flex-direction: row;
+        gap: 15px;
+    }
+    .nav-links a, .dropbtn {
+        font-size: 0.95rem;
+        background: rgba(255,255,255,0.05);
+        padding: 8px 16px;
+        border-radius: 20px;
+    }
+    .dropdown-content {
+        position: absolute;
+        right: 0;
+        background: var(--white);
+        min-width: 180px;
+        box-shadow: var(--shadow);
+        border-top: 3px solid var(--gold-color);
+    }
+    .dropdown-content a {
+        color: var(--text-dark);
+    }
+    .mobile-toggle {
+        display: none;
+    }
+}
+
 /* ==========================================================================
-   تنسيقات واجهة الهيرو والخصومات والإعلانات
+   تنسيق واجهة الهيرو والخصومات (تجاوب مطلق 100% للجوال)
    ========================================================================== */
 .hero {
     position: relative;
-    background-image: url('https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=1600');
+    background-image: url('https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=800');
     background-size: cover;
     background-position: center;
-    padding: 100px 0;
+    padding: 60px 0;
     text-align: center;
     color: var(--white);
 }
@@ -211,42 +249,42 @@ a {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(rgba(15, 23, 42, 0.88), rgba(15, 23, 42, 0.8));
+    background: linear-gradient(rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.82));
     z-index: 1;
 }
 
 .hero-content {
     position: relative;
     z-index: 2;
-    max-width: 850px;
-    margin: 0 auto;
+    width: 100%;
 }
 
 .hero h1 {
-    font-size: 3rem;
+    font-size: 1.8rem; /* حجم ممتاز ومريح لجوالات الآيفون والأندرويد */
     font-weight: 900;
-    line-height: 1.35;
+    line-height: 1.4;
     margin-bottom: 15px;
 }
 
 .hero p {
-    font-size: 1.15rem;
+    font-size: 0.95rem;
     color: #cbd5e1;
-    margin-bottom: 35px;
+    margin-bottom: 25px;
+    padding: 0 10px;
 }
 
 .main-phone {
-    font-size: 2.3rem;
+    font-size: 2rem;
     color: var(--gold-color);
     font-weight: 900;
     display: inline-block;
-    margin: 15px 0;
+    margin: 10px 0;
     animation: phonePulse 1.5s infinite;
 }
 
 @keyframes phonePulse {
     0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.06); }
+    50% { transform: scale(1.04); }
 }
 
 .btn {
@@ -255,10 +293,11 @@ a {
     justify-content: center;
     font-family: var(--font-main);
     font-weight: 800;
-    padding: 12px 28px;
+    padding: 14px 24px; /* مساحة لمس مريحة جداً للإصبع */
     border-radius: 30px;
     border: none;
     cursor: pointer;
+    font-size: 0.95rem;
     transition: var(--transition-speed) ease;
 }
 
@@ -267,30 +306,29 @@ a {
     color: var(--main-color);
 }
 
-.btn-gold:hover {
-    background-color: var(--gold-hover);
-    transform: translateY(-2px);
-}
-
 .btn-whatsapp {
     background-color: var(--whatsapp-green);
     color: var(--white);
 }
 
-.btn-whatsapp:hover {
-    transform: translateY(-2px);
-}
-
 .btn-lg {
-    padding: 16px 36px;
-    font-size: 1.05rem;
-    gap: 10px;
+    width: 100%; /* تأخذ عرض الشاشة بالكامل في الجوال لتسهيل النقر */
+    max-width: 340px;
 }
 
 .hero-actions {
     display: flex;
-    justify-content: center;
-    gap: 20px;
+    flex-direction: column; /* ترتيب الأزرار عمودياً تحت بعض في الجوال */
+    align-items: center;
+    gap: 15px;
+}
+
+@media (min-width: 769px) {
+    .hero { padding: 100px 0; }
+    .hero h1 { font-size: 2.8rem; }
+    .hero p { font-size: 1.15rem; }
+    .hero-actions { flex-direction: row; justify-content: center; }
+    .btn-lg { width: auto; }
 }
 
 .badge {
@@ -298,23 +336,22 @@ a {
     background-color: rgba(197, 160, 40, 0.15);
     color: var(--gold-color);
     border: 1px solid var(--gold-color);
-    padding: 6px 18px;
-    font-size: 0.85rem;
+    padding: 6px 15px;
+    font-size: 0.8rem;
     font-weight: 800;
     border-radius: 30px;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 
-/* النص العريض الترويجي المكتوب بأسلوب فخم */
+/* النص العريض الترويجي للمقاول */
 .intro-banner-text {
     background-color: var(--white);
-    padding: 30px 20px;
+    padding: 25px 15px;
     text-align: center;
-    font-size: 1.15rem;
+    font-size: 1rem;
     line-height: 1.8;
     border-bottom: 4px solid var(--gold-color);
     font-weight: 700;
-    box-shadow: var(--shadow-sm);
 }
 
 .intro-banner-text span {
@@ -323,67 +360,61 @@ a {
 }
 
 /* ==========================================================================
-   كروت الخدمات الفاخرة
+   تنسيق كروت الخدمات وعناصر الصفحة الرئيسية للجوال
    ========================================================================== */
 .section-title {
-    margin-bottom: 50px;
+    margin-bottom: 35px;
 }
 
 .section-subtitle {
     color: var(--gold-color);
     font-weight: 800;
-    font-size: 0.95rem;
+    font-size: 0.85rem;
     display: block;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
 }
 
 .section-title h2 {
-    font-size: 2.2rem;
+    font-size: 1.6rem; /* حجم مناسب تماماً لعناوين الجوال */
     font-weight: 900;
     color: var(--main-color);
 }
 
 .section-title .line {
-    width: 70px;
-    height: 4px;
+    width: 60px;
+    height: 3px;
     background-color: var(--gold-color);
-    margin: 15px auto 0;
+    margin: 12px auto 0;
     border-radius: 2px;
 }
 
 .ser-card {
     background: var(--white);
-    padding: 40px 25px;
+    padding: 30px 20px;
     border-radius: 12px;
     text-align: center;
-    box-shadow: var(--shadow-sm);
-    border: 1px solid #e2e8f0;
-    transition: var(--transition-speed) ease;
-}
-
-.ser-card:hover {
-    transform: translateY(-5px);
     box-shadow: var(--shadow);
+    border: 1px solid #f1f5f9;
 }
 
 .ser-card i {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
     color: var(--gold-color);
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     display: block;
 }
 
 .ser-card h3 {
-    font-size: 1.3rem;
+    font-size: 1.25rem;
     font-weight: 800;
     color: var(--main-color);
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 }
 
 .ser-card p {
     color: var(--text-muted);
-    font-size: 0.95rem;
-    margin-bottom: 25px;
+    font-size: 0.9rem;
+    margin-bottom: 20px;
 }
 
 .card-link {
@@ -392,202 +423,139 @@ a {
     display: inline-flex;
     align-items: center;
     gap: 8px;
+    font-size: 0.9rem;
 }
 
-/* ==========================================================================
-   قسم لوجو البانر والمميزات الفنية والعدادات
-   ========================================================================== */
+/* شعار المؤسسة */
 .logo-banner-section {
-    padding: 40px 0;
-    text-align: center;
+    padding: 30px 0;
 }
 
 .logo-banner {
-    background: linear-gradient(rgba(15,23,42,0.7),rgba(15,23,42,0.7)), url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1600');
+    background: linear-gradient(rgba(15,23,42,0.7),rgba(15,23,42,0.7)), url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800');
     background-size: cover;
     background-position: center;
-    padding: 50px 20px;
-    border-radius: 20px;
-    box-shadow: var(--shadow);
-    border: 3px solid var(--white);
+    padding: 30px 15px;
+    border-radius: 12px;
 }
 
 .logo-banner img {
-    width: 90%;
-    max-width: 550px;
-    height: 220px;
-    object-fit: contain;
+    width: 100%;
+    max-width: 450px;
+    height: auto; /* منع تشوه الشعار على الجوال */
     background: var(--white);
-    padding: 15px;
-    border-radius: 16px;
-    border: 4px solid var(--gold-color);
-    box-shadow: 0 0 30px rgba(197,160,40,0.3);
+    padding: 10px;
+    border-radius: 12px;
+    border: 3px solid var(--gold-color);
 }
 
-/* بوكس لماذا نحن */
+/* بوكس لماذا نحن وقائمة المميزات */
 .why-us-box {
     background-color: var(--white);
-    padding: 45px 30px;
-    border-radius: 15px;
+    padding: 30px 20px;
+    border-radius: 12px;
     border: 1px solid var(--border-color);
-    text-align: center;
-    box-shadow: var(--shadow-sm);
 }
 
 .why-us-box h2 {
     color: var(--main-color);
-    font-size: 1.8rem;
+    font-size: 1.4rem;
     font-weight: 900;
-    margin-bottom: 10px;
 }
 
 .features-list {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
+    grid-template-columns: 1fr; /* عمود واحد دائماً للجوال */
+    gap: 10px;
     padding: 0;
     text-align: right;
+    margin-top: 25px;
 }
 
 .features-list li {
     background: #f8fafc;
-    padding: 15px;
+    padding: 12px;
     border-radius: 8px;
     font-weight: 800;
     border-right: 4px solid var(--gold-color);
-    font-size: 1rem;
+    font-size: 0.9rem;
     display: flex;
     align-items: center;
-    gap: 10px;
-}
-
-.features-list li i {
-    color: var(--gold-color);
-    font-size: 1.15rem;
+    gap: 8px;
 }
 
 /* العداد التفاعلي */
-.stats-section {
-    background-color: var(--main-color);
-    color: var(--white);
-}
-
 .stats-container {
-    background-color: rgba(255,255,255,0.02);
-    border: 1px solid rgba(255,255,255,0.05);
-    border-radius: 15px;
-    padding: 40px 20px;
-    text-align: center;
-}
-
-.stat-item {
-    padding: 15px;
+    padding: 30px 15px;
+    border-radius: 12px;
 }
 
 .stat-num {
-    font-size: 2.8rem;
-    font-weight: 900;
-    color: var(--gold-color);
-    display: block;
-    margin-bottom: 10px;
+    font-size: 2.2rem;
 }
 
 .stat-item p {
-    font-size: 1.1rem;
-    font-weight: 700;
+    font-size: 0.95rem;
 }
 
 /* ==========================================================================
-   التذييل والأزرار العائمة (أخضر يمين، أحمر يمين، الصعود يسار)
+   التذييل والودجت العائمة والأزرار الثابتة (أمان وتجاوب 100%)
    ========================================================================== */
 .footer-main {
-    background-color: var(--primary-dark, #0b0f19);
+    background-color: #0b0f19;
     color: #cbd5e1;
-    padding: 60px 0 0;
-    border-top: 5px solid var(--gold-color);
+    padding: 50px 0 0;
+    border-top: 4px solid var(--gold-color);
 }
 
 .footer-grid {
     display: grid;
-    grid-template-columns: 1.5fr 1fr 1.2fr;
-    gap: 50px;
-    margin-bottom: 40px;
+    grid-template-columns: 1fr;
+    gap: 30px;
 }
 
-@media (max-width: 768px) {
-    .footer-grid { grid-template-columns: 1fr; gap: 40px; }
+@media (min-width: 769px) {
+    .footer-grid { grid-template-columns: 1.5fr 1fr 1.2fr; }
 }
 
 .footer-col h4 {
     color: var(--white);
-    font-size: 1.15rem;
-    font-weight: 700;
-    margin-bottom: 20px;
-    position: relative;
-    padding-bottom: 10px;
-}
-
-.footer-col h4::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    width: 40px;
-    height: 2px;
-    background-color: var(--gold-color);
-}
-
-.footer-col ul li {
-    margin-bottom: 12px;
-}
-
-.footer-col ul a:hover {
-    color: var(--gold-color);
-    padding-right: 5px;
-}
-
-.footer-bottom {
-    background-color: #060911;
-    padding: 20px 0;
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
-    font-size: 0.85rem;
+    font-size: 1.1rem;
+    margin-bottom: 15px;
 }
 
 .footer-bottom-flex {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
 }
 
-.footer-links a {
-    margin-right: 15px;
+@media (min-width: 576px) {
+    .footer-bottom-flex { flex-direction: row; justify-content: space-between; }
 }
 
-.footer-links a:hover {
-    color: var(--gold-color);
-}
-
-/* أزرار التواصل العائمة يمين (مع كود تتبع وحركات النبض) */
+/* الأزرار العائمة يمين (تم تعديل الهوامش والبرمجة لتكون فائقة الحضور والدقة) */
 .fixed-widgets {
     position: fixed;
-    right: 25px;
-    bottom: 30px;
+    right: 15px; /* مسافة أمان مريحة من حافة شاشة الجوال */
+    bottom: 25px;
     display: flex;
     flex-direction: column;
-    gap: 15px;
-    z-index: 9999 !important; /* لضمان ظهورها فوق الفوتر */
+    gap: 12px;
+    z-index: 9999 !important; /* تظهر دائماً فوق كل النصوص والصور والفوتر */
 }
 
 .widget-btn {
-    width: 60px;
-    height: 60px;
+    width: 56px;
+    height: 56px;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     color: var(--white) !important;
-    font-size: 1.8rem;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+    font-size: 1.7rem;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
     position: relative;
 }
 
@@ -599,7 +567,7 @@ a {
     background-color: var(--call-red);
 }
 
-/* تأثير النبض الاحترافي للأزرار */
+/* تأثير النبض الإعلاني الجاذب للعملاء */
 .pulse::before {
     content: '';
     position: absolute;
@@ -615,92 +583,31 @@ a {
 
 @keyframes pulse-anim {
     0% { transform: scale(1); opacity: 0.8; }
-    100% { transform: scale(1.6); opacity: 0; }
+    100% { transform: scale(1.5); opacity: 0; }
 }
 
-/* زر الصعود للأعلى (يسار - يظهر تدريجياً وبشكل مرتب) */
+/* زر الصعود للأعلى (يسار - يظهر على الجوال والكمبيوتر بوضوح وسلاسة) */
 .back-to-top {
     position: fixed;
-    bottom: 30px;
-    left: 25px;
-    width: 55px;
-    height: 55px;
+    bottom: 25px;
+    left: 15px; /* مسافة مريحة ومطابقة لليمين */
+    width: 50px;
+    height: 50px;
     background-color: var(--main-color);
     color: var(--white);
     border-radius: 50%;
-    display: none; /* يبدأ مخفي والـ JS يظهره */
+    display: none; /* يتم تشغيله تلقائياً بالـ JS عند النزول */
     align-items: center;
     justify-content: center;
     z-index: 9999 !important;
     cursor: pointer;
     border: 2px solid var(--gold-color);
-    font-size: 1.25rem;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+    font-size: 1.15rem;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
     transition: var(--transition-speed);
 }
 
 .back-to-top:hover {
     background-color: var(--gold-color);
     color: var(--main-color);
-}
-
-/* توافق الجوال المطلق والشامل للمقاطع التفاعلية */
-@media (max-width: 992px) {
-    .nav-menu {
-        position: fixed;
-        top: 0;
-        right: -100%;
-        width: 280px;
-        height: 100vh;
-        background-color: var(--main-color);
-        box-shadow: -10px 0 30px rgba(0, 0, 0, 0.2);
-        z-index: 999;
-        display: flex;
-        flex-direction: column;
-        padding: 100px 30px 40px;
-        transition: right 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-
-    .nav-menu.open {
-        right: 0;
-    }
-
-    .nav-links {
-        flex-direction: column;
-        align-items: flex-start;
-        width: 100%;
-    }
-
-    .nav-links a, .dropbtn {
-        width: 100%;
-        background: none;
-        padding: 10px 0;
-        border-radius: 0;
-        border-bottom: 1px solid rgba(255,255,255,0.05);
-    }
-
-    .dropdown-content {
-        position: static;
-        width: 100%;
-        background: none;
-        box-shadow: none;
-        border-top: none;
-        padding-right: 15px;
-    }
-
-    .dropdown-content a {
-        color: #cbd5e1;
-    }
-
-    .mobile-toggle {
-        display: block;
-    }
-
-    .header-btn {
-        display: none;
-    }
-
-    .features-list {
-        grid-template-columns: 1fr;
-    }
 }
