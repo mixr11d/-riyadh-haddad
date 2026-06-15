@@ -6,15 +6,15 @@ const C_L = 'xxxxx';    // استبدل xxxxx بلابل الاتصال لاحق
 const W_L = 'xxxxx';    // استبدل xxxxx بلابل الواتساب لاحقاً (مثال: xy_z1234567)
 
 /* ==========================================================================
-   2. تحميل وتحميل كود تتبع جوجل تلقائياً في كل الصفحات
+   2. تحميل كود تتبع جوجل تلقائياً بعد اكتمال تحميل الصفحة لتسريع الـ FCP والـ LCP
    ========================================================================== */
-(function() {
-    // إنشاء عنصر الـ script وحقنه ديناميكياً في رأس الصفحة
+window.addEventListener('load', function() {
+    // إنشاء عنصر الـ script وحقنه ديناميكياً بعد انتهاء تحميل العناصر الحيوية للموقع
     var gScript = document.createElement('script');
     gScript.async = true;
     gScript.src = 'https://www.googletagmanager.com/gtag/js?id=' + G_ID;
     document.head.appendChild(gScript);
-})();
+});
 
 // إعدادات الـ dataLayer الافتراضية
 window.dataLayer = window.dataLayer || [];
@@ -82,23 +82,30 @@ if (backToTopBtn) {
     // إخفاء مبدئي برمجي لتجنب أي مشاكل مع ملفات CSS القديمة في ذاكرة التصفح
     backToTopBtn.style.display = 'none'; 
 
+    let isScrolling = false;
+
+    // استخدام مستمع حدث خفيف لمنع اهتزاز الشاشة وتخفيف الحمل على المعالج بالجوال
     window.addEventListener('scroll', function() {
-        if (window.scrollY > 300) {
-            backToTopBtn.style.display = 'flex'; // إظهار الزر فوراً كـ flex
-            // تأخير بسيط بمقدار 10 مللي ثانية لإتاحة تشغيل تأثير التلاشي والدخول السلس (CSS transitions)
-            setTimeout(function() {
-                backToTopBtn.classList.add('show');
-            }, 10);
-        } else {
-            backToTopBtn.classList.remove('show'); // بدء تأثير الاختفاء
-            // إخفاء الـ display بالكامل بعد انتهاء حركة التلاشي (بانتظار حركة CSS الاختفاء)
-            setTimeout(function() {
-                if (!backToTopBtn.classList.contains('show')) {
-                    backToTopBtn.style.display = 'none';
+        if (!isScrolling) {
+            window.requestAnimationFrame(function() {
+                if (window.scrollY > 300) {
+                    backToTopBtn.style.display = 'flex'; // إظهار الزر فوراً كـ flex
+                    setTimeout(function() {
+                        backToTopBtn.classList.add('show');
+                    }, 10);
+                } else {
+                    backToTopBtn.classList.remove('show'); // بدء تأثير الاختفاء
+                    setTimeout(function() {
+                        if (!backToTopBtn.classList.contains('show')) {
+                            backToTopBtn.style.display = 'none';
+                        }
+                    }, 250);
                 }
-            }, 250);
+                isScrolling = false;
+            });
+            isScrolling = true;
         }
-    });
+    }, { passive: true }); // passive: true تسرع تمرير الصفحة على الجوال بشكل ملحوظ
 
     // تنفيذ حركة الصعود الناعمة عند النقر
     backToTopBtn.addEventListener('click', function() {
