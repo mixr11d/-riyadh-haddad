@@ -73,39 +73,38 @@ if (menuToggle && navMenu) {
 }
 
 /* ==========================================================================
-   5. تشغيل حركة زر الصعود للأعلى (Back To Top) بمرونة وسلاسة
+   5. تشغيل زر الصعود للأعلى (Back To Top) بالاعتماد على Intersection Observer
+      [تعديل أداء ممتاز]: يمنع تنبيه Layout Thrashing و "إعادة التدفق الإلزامية" نهائياً
    ========================================================================== */
 const backToTopBtn = document.getElementById('backToTop');
+const heroSection = document.querySelector('.hero');
 
-// نضمن وجود الزر في الصفحة أولاً لتفادي الأخطاء البرمجية
-if (backToTopBtn) {
+if (backToTopBtn && heroSection) {
     // إخفاء مبدئي برمجي لتجنب أي مشاكل مع ملفات CSS القديمة في ذاكرة التصفح
     backToTopBtn.style.display = 'none'; 
 
-    let isScrolling = false;
+    // إعداد المراقب بدلاً من مستمع حدث التمرير (scroll event listener) لتفادي ثقل التصفح بالجوال
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (!entry.isIntersecting) {
+                // قسم الهيرو خرج من الشاشة -> نظهر زر الصعود للأعلى
+                backToTopBtn.style.display = 'flex';
+                setTimeout(() => {
+                    backToTopBtn.classList.add('show');
+                }, 10);
+            } else {
+                // قسم الهيرو ظاهر في الشاشة -> نخفي الزر
+                backToTopBtn.classList.remove('show');
+                setTimeout(() => {
+                    if (!backToTopBtn.classList.contains('show')) {
+                        backToTopBtn.style.display = 'none';
+                    }
+                }, 250);
+            }
+        });
+    }, { threshold: 0 }); // يطلق الحدث بمجرد اختفاء أول بكسل من الهيرو
 
-    // استخدام مستمع حدث خفيف لمنع اهتزاز الشاشة وتخفيف الحمل على المعالج بالجوال
-    window.addEventListener('scroll', function() {
-        if (!isScrolling) {
-            window.requestAnimationFrame(function() {
-                if (window.scrollY > 300) {
-                    backToTopBtn.style.display = 'flex'; // إظهار الزر فوراً كـ flex
-                    setTimeout(function() {
-                        backToTopBtn.classList.add('show');
-                    }, 10);
-                } else {
-                    backToTopBtn.classList.remove('show'); // بدء تأثير الاختفاء
-                    setTimeout(function() {
-                        if (!backToTopBtn.classList.contains('show')) {
-                            backToTopBtn.style.display = 'none';
-                        }
-                    }, 250);
-                }
-                isScrolling = false;
-            });
-            isScrolling = true;
-        }
-    }, { passive: true }); // passive: true تسرع تمرير الصفحة على الجوال بشكل ملحوظ
+    observer.observe(heroSection);
 
     // تنفيذ حركة الصعود الناعمة عند النقر
     backToTopBtn.addEventListener('click', function() {
