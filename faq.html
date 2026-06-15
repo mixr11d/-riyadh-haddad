@@ -7,11 +7,17 @@
     <meta name="description" content="إجابات كاملة وتفصيلية على الأسئلة الشائعة حول أسعار ومواصفات تركيب المظلات، السواتر، وألواح الساندوتش بانل بالرياض. اعرف المزيد عن التفاصيل الفنية والضمان.">
     <meta name="keywords" content="الاسئلة الشائعة حدادة الرياض, اسعار مظلات السيارات الرياض, اسعار السواتر, ضمان الساندوتش بانل">
     
+    <!-- تحسين LCP: تحميل مسبق لصورة الخلفية للبانر الرئيسي لزيادة سرعة الفتح -->
+    <link rel="preload" as="image" href="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80">
+
     <!-- Fonts & Icons -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- تحميل غير مانع لعرض الأيقونات لتسريع ظهور الصفحة (Non-blocking FontAwesome) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
     
     <!-- استدعاء ملف التنسيق الموحد الفاخر -->
     <link rel="stylesheet" href="style.css">
@@ -166,72 +172,77 @@
         </div>
     </header>
 
-    <!-- 3. بانر الصفحة الداخلي الفخم والملائم للجوال (معتم 100% لمقروئية فائقة وتطابق مع بقية الصفحات) -->
-    <section class="hero" style="background-image: linear-gradient(rgba(7, 10, 19, 0.94), rgba(7, 10, 19, 0.96)), url('https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80');">
-        <div class="hero-overlay"></div>
-        <div class="container hero-content">
-            <span class="badge">إجابات كاملة وتفصيلية تهمك بالرياض</span>
-            <h1>الأسئلة الشائعة والإجابات</h1>
-            <p>إجابات كاملة وشفافة عن كل ما تود معرفته حول الأسعار والضمان وتفاصيل مواد البناء</p>
-            <div class="hero-actions">
-                <!-- زر الاتصال بلون أحمر إنشائي فخم ومقاوم تماماً للبهتان والتشويش البصري -->
-                <a href="tel:0536491079" class="btn-luxury-phone"><i class="fa-solid fa-phone"></i> اتصل بنا الآن: 0536491079</a>
-            </div>
-        </div>
-    </section>
+    <!-- [تعديل إمكانية الوصول]: تم إضافة وسم main لحل مشكلة معلم المستند وتسهيل قراءته من محركات البحث وقارئات الشاشة -->
+    <main id="main-content">
 
-    <!-- 4. الأسئلة الشائعة التفاعلية -->
-    <section class="section-padding bg-light">
-        <div class="container">
-            <div class="section-title text-center">
-                <span class="section-subtitle">الاستفسارات الأكثر تكراراً</span>
-                <h2>كل ما تود معرفته عن خدماتنا بالرياض</h2>
-                <div class="line"></div>
-            </div>
-            
-            <div class="faq-container">
-                <!-- السؤال 1 -->
-                <div class="faq-item">
-                    <button class="faq-btn">كم تكلفة تركيب مظلات السيارات في الرياض؟ <i class="fa-solid fa-plus"></i></button>
-                    <div class="faq-content">
-                        <p>تختلف التكلفة الكلية بناءً على نوعية التغطية المختارة (مثل قماش PVC الكوري ذو الكثافة العالية أو القماش الألماني الأصلي)، ومساحة التظليل الكلية وسماكة الهياكل الحديدية المطلوبة للتثبيت الآمن والمقاوم للرياح. نسعد بتقديم زيارة ميدانية مجانية بالكامل لرفع المقاسات وتقديم كشف سعر دقيق ومناسب لميزانيتكم.</p>
-                    </div>
-                </div>
-
-                <!-- السؤال 2 -->
-                <div class="faq-item">
-                    <button class="faq-btn">ما هي السواتر الأكثر فاعلية لحجب الرؤية لأسوار الفلل؟ <i class="fa-solid fa-plus"></i></button>
-                    <div class="faq-content">
-                        <p>تعتبر سواتر الحديد الشرايح (لوفر) وسواتر الخشب البلاستيكي المعالج (WPC) الخيار الأفضل لحجب الرؤية كلياً بنسبة 100%، وتتميز بصلابتها ومتانتها العالية ومقاومتها للرياح القوية مع المحافظة على المظهر الجمالي الفاخر للفلل والمنازل السكنية بالرياض.</p>
-                    </div>
-                </div>
-
-                <!-- السؤال 3 -->
-                <div class="faq-item">
-                    <button class="faq-btn">هل تقدمون ضماناً موثقاً على المظلات والساندوتش بانل؟ <i class="fa-solid fa-plus"></i></button>
-                    <div class="faq-content">
-                        <p>نعم, نلتزم بتقديم ضمان رسمي معتمد يمتد من 5 إلى 10 سنوات على كافة أعمال الحدادة، المظلات، السواتر، والساندوتش بانل. ويشمل الضمان سلامة الهيكل المعدني واللحامات وضمان عدم صدأ الحديد وتغطية القماش من التشقق أو تسريب المياه.</p>
-                    </div>
-                </div>
-
-                <!-- السؤال 4 -->
-                <div class="faq-item">
-                    <button class="faq-btn">كم يستغرق تفصيل وتركيب غرف وملاحق الساندوتش بانل؟ <i class="fa-solid fa-plus"></i></button>
-                    <div class="faq-content">
-                        <p>تتراوح مدة تشييد وبناء ملاحق الأسطح وغرف الساندوتش بانل للمقاسات المتوسطة من 3 إلى 7 أيام عمل، ويتم ذلك بعد أخذ القياسات الفنية الدقيقة وتجهيز وتفصيل الهياكل الحديدية وتثبيتها بشكل كامل في الموقع لضمان أقصى درجات العزل ومقاومة الرطوبة والتسريبات.</p>
-                    </div>
+        <!-- 3. بانر الصفحة الداخلي الفخم والملائم للجوال -->
+        <section class="hero" style="background-image: linear-gradient(rgba(7, 10, 19, 0.94), rgba(7, 10, 19, 0.96)), url('https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80');">
+            <div class="hero-overlay"></div>
+            <div class="container hero-content">
+                <span class="badge">إجابات كاملة وتفصيلية تهمك بالرياض</span>
+                <h1>الأسئلة الشائعة والإجابات</h1>
+                <p>إجابات كاملة وشفافة عن كل ما تود معرفته حول الأسعار والضمان وتفاصيل مواد البناء</p>
+                <div class="hero-actions">
+                    <!-- زر الاتصال بلون أحمر إنشائي فخم ومقاوم تماماً للبهتان والتشويش البصري -->
+                    <a href="tel:0536491079" class="btn-luxury-phone"><i class="fa-solid fa-phone"></i> اتصل بنا الآن: 0536491079</a>
                 </div>
             </div>
-            
-            <div class="text-center" style="margin-top: 50px;">
-                <p style="margin-bottom: 20px; font-weight: 800; font-size: 1.1rem; color: var(--main-color);">هل لديك استفسار آخر لم تجد إجابته هنا؟</p>
-                <div class="hero-actions-container">
-                    <a href="tel:0536491079" class="btn btn-gold btn-lg" style="width: 100%; max-width: 340px;"><i class="fa-solid fa-phone"></i> اتصل بنا الآن: 0536491079</a>
-                    <a href="https://wa.me/966536491079" target="_blank" class="btn btn-whatsapp btn-lg" style="width: 100%; max-width: 340px;"><i class="fa-brands fa-whatsapp"></i> تواصل عبر الواتساب</a>
+        </section>
+
+        <!-- 4. الأسئلة الشائعة التفاعلية -->
+        <section class="section-padding bg-light">
+            <div class="container">
+                <div class="section-title text-center">
+                    <span class="section-subtitle">الاستفسارات الأكثر تكراراً</span>
+                    <h2>كل ما تود معرفته عن خدماتنا بالرياض</h2>
+                    <div class="line"></div>
+                </div>
+                
+                <div class="faq-container">
+                    <!-- السؤال 1 -->
+                    <div class="faq-item">
+                        <button class="faq-btn">كم تكلفة تركيب مظلات السيارات في الرياض؟ <i class="fa-solid fa-plus"></i></button>
+                        <div class="faq-content">
+                            <p>تختلف التكلفة الكلية بناءً على نوعية التغطية المختارة (مثل قماش PVC الكوري ذو الكثافة العالية أو القماش الألماني الأصلي)، ومساحة التظليل الكلية وسماكة الهياكل الحديدية المطلوبة للتثبيت الآمن والمقاوم للرياح. نسعد بتقديم زيارة ميدانية مجانية بالكامل لرفع المقاسات وتقديم كشف سعر دقيق ومناسب لميزانيتكم.</p>
+                        </div>
+                    </div>
+
+                    <!-- السؤال 2 -->
+                    <div class="faq-item">
+                        <button class="faq-btn">ما هي السواتر الأكثر فاعلية لحجب الرؤية لأسوار الفلل؟ <i class="fa-solid fa-plus"></i></button>
+                        <div class="faq-content">
+                            <p>تعتبر سواتر الحديد الشرايح (لوفر) وسواتر الخشب البلاستيكي المعالج (WPC) الخيار الأفضل لحجب الرؤية كلياً بنسبة 100%، وتتميز بصلابتها ومتانتها العالية ومقاومتها للرياح القوية مع المحافظة على المظهر الجمالي الفاخر للفلل والمنازل السكنية بالرياض.</p>
+                        </div>
+                    </div>
+
+                    <!-- السؤال 3 -->
+                    <div class="faq-item">
+                        <button class="faq-btn">هل تقدمون ضماناً موثقاً على المظلات والساندوتش بانل؟ <i class="fa-solid fa-plus"></i></button>
+                        <div class="faq-content">
+                            <p>نعم, نلتزم بتقديم ضمان رسمي معتمد يمتد من 5 إلى 10 سنوات على كافة أعمال الحدادة، المظلات، السواتر، والساندوتش بانل. ويشمل الضمان سلامة الهيكل المعدني واللحامات وضمان عدم صدأ الحديد وتغطية القماش من التشقق أو تسريب المياه.</p>
+                        </div>
+                    </div>
+
+                    <!-- السؤال 4 -->
+                    <div class="faq-item">
+                        <button class="faq-btn">كم يستغرق تفصيل وتركيب غرف وملاحق الساندوتش بانل؟ <i class="fa-solid fa-plus"></i></button>
+                        <div class="faq-content">
+                            <p>تتراوح مدة تشييد وبناء ملاحق الأسطح وغرف الساندوتش بانل للمقاسات المتوسطة من 3 إلى 7 أيام عمل، ويتم ذلك بعد أخذ القياسات الفنية الدقيقة وتجهيز وتفصيل الهياكل الحديدية وتثبيتها بشكل كامل في الموقع لضمان أقصى درجات العزل ومقاومة الرطوبة والتسريبات.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="text-center" style="margin-top: 50px;">
+                    <p style="margin-bottom: 20px; font-weight: 800; font-size: 1.1rem; color: var(--main-color);">هل لديك استفسار آخر لم تجد إجابته هنا؟</p>
+                    <div class="hero-actions-container">
+                        <a href="tel:0536491079" class="btn btn-gold btn-lg" style="width: 100%; max-width: 340px;"><i class="fa-solid fa-phone"></i> اتصل بنا الآن: 0536491079</a>
+                        <a href="https://wa.me/966536491079" target="_blank" class="btn btn-whatsapp btn-lg" style="width: 100%; max-width: 340px;"><i class="fa-brands fa-whatsapp"></i> تواصل عبر الواتساب</a>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+
+    </main> <!-- [إغلاق وسم التعديل]: نهاية وسم main -->
 
     <!-- 5. التذييل والفوتر الفاخر الموحد المتوافق تماماً مع الجوال -->
     <footer class="footer-main">
