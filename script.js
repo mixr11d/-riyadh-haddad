@@ -1,15 +1,15 @@
 /* ==========================================================================
    1. إعدادات ومعرفات إعلانات جوجل (تعديل من مكان واحد لكل الموقع)
    ========================================================================== */
-const G_ID = 'AW-18133337619'; // استبدل xxxxx بمعرف الحساب لاحقاً (مثال: AW-123456789)
-const C_L = 'S71QCP2X0r8cEJOM08ZD';    // استبدل xxxxx بلابل الاتصال لاحقاً (مثال: ab_cDEfGhIjK)
-const W_L = '7SpFCKSb0r8cEJOM08ZD';    // استبدل xxxxx بلابل الواتساب لاحقاً (مثال: xy_z1234567)
+const G_ID = 'AW-18133337619'; 
+const C_L = 'S71QCP2X0r8cEJOM08ZD';    // لابل الاتصال الهاتفي
+const W_L = '7SpFCKSb0r8cEJOM08ZD';    // لابل نقرة الواتساب المباشرة
+const F_L = 'r2sNCJP17b8cEJOM08ZD';    // [تحديث]: لابل إرسال نموذج الاتصال المطور
 
 /* ==========================================================================
    2. تحميل كود تتبع جوجل تلقائياً بعد اكتمال تحميل الصفحة لتسريع الـ FCP والـ LCP
    ========================================================================== */
 window.addEventListener('load', function() {
-    // إنشاء عنصر الـ script وحقنه ديناميكياً بعد انتهاء تحميل العناصر الحيوية للموقع
     var gScript = document.createElement('script');
     gScript.async = true;
     gScript.src = 'https://www.googletagmanager.com/gtag/js?id=' + G_ID;
@@ -26,13 +26,12 @@ gtag('config', G_ID);
    3. مستشعر رصد النقرات التلقائي لإعلانات جوجل (اتصال وواتساب)
    ========================================================================== */
 document.addEventListener('click', function(e) {
-    // البحث عن أقرب عنصر رابط تم النقر عليه
     var a = e.target.closest('a');
     if (!a) return;
     
     var href = a.href || '';
     
-    // رصد نقرة الاتصال الهاتفي وإرسال التحويل لجوجل
+    // رصد نقرة الاتصال الهاتفي
     if (href.startsWith('tel:')) {
         gtag('event', 'conversion', {
             'send_to': G_ID + '/' + C_L,
@@ -41,7 +40,7 @@ document.addEventListener('click', function(e) {
         });
     }
     
-    // رصد نقرة الواتساب وإرسال التحويل لجوجل
+    // رصد نقرة الواتساب المباشرة
     if (href.includes('wa.me') || href.includes('whatsapp')) {
         gtag('event', 'conversion', {
             'send_to': G_ID + '/' + W_L,
@@ -52,19 +51,31 @@ document.addEventListener('click', function(e) {
 }, true);
 
 /* ==========================================================================
+   3.1 مستشعر رصد إرسال النموذج (برمجية خاصة لصفحة اتصل بنا)
+   ========================================================================== */
+document.addEventListener('submit', function(e) {
+    // التأكد من أن النموذج المرسل هو نموذج الاتصال المطور لموقعك
+    if (e.target && e.target.id === 'contactForm') {
+        gtag('event', 'conversion', {
+            'send_to': G_ID + '/' + F_L,
+            'value': 45.0,
+            'currency': 'SAR'
+        });
+    }
+});
+
+/* ==========================================================================
    4. تفعيل وإغلاق قائمة الجوال (Hamburger Menu)
    ========================================================================== */
-// فحص المعرفين لضمان العمل على أي هيكلية HTML في الهيدر
 const menuToggle = document.getElementById('menuToggle') || document.getElementById('mobileToggle');
 const navMenu = document.getElementById('navMenu');
 
 if (menuToggle && navMenu) {
     menuToggle.addEventListener('click', function(e) {
-        e.stopPropagation(); // منع انتقال النقرة لإبقاء القائمة مستقرة
+        e.stopPropagation(); 
         navMenu.classList.toggle('open');
     });
 
-    // إغلاق القائمة تلقائياً عند النقر خارجها لتسهيل تصفح الزائر
     document.addEventListener('click', function(e) {
         if (!navMenu.contains(e.target) && !menuToggle.contains(e.target)) {
             navMenu.classList.remove('open');
@@ -74,26 +85,21 @@ if (menuToggle && navMenu) {
 
 /* ==========================================================================
    5. تشغيل زر الصعود للأعلى (Back To Top) بالاعتماد على Intersection Observer
-      [تعديل أداء ممتاز]: يمنع تنبيه Layout Thrashing و "إعادة التدفق الإلزامية" نهائياً
    ========================================================================== */
 const backToTopBtn = document.getElementById('backToTop');
 const heroSection = document.querySelector('.hero');
 
 if (backToTopBtn && heroSection) {
-    // إخفاء مبدئي برمجي لتجنب أي مشاكل مع ملفات CSS القديمة في ذاكرة التصفح
     backToTopBtn.style.display = 'none'; 
 
-    // إعداد المراقب بدلاً من مستمع حدث التمرير (scroll event listener) لتفادي ثقل التصفح بالجوال
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (!entry.isIntersecting) {
-                // قسم الهيرو خرج من الشاشة -> نظهر زر الصعود للأعلى
                 backToTopBtn.style.display = 'flex';
                 setTimeout(() => {
                     backToTopBtn.classList.add('show');
                 }, 10);
             } else {
-                // قسم الهيرو ظاهر في الشاشة -> نخفي الزر
                 backToTopBtn.classList.remove('show');
                 setTimeout(() => {
                     if (!backToTopBtn.classList.contains('show')) {
@@ -102,11 +108,10 @@ if (backToTopBtn && heroSection) {
                 }, 250);
             }
         });
-    }, { threshold: 0 }); // يطلق الحدث بمجرد اختفاء أول بكسل من الهيرو
+    }, { threshold: 0 }); 
 
     observer.observe(heroSection);
 
-    // تنفيذ حركة الصعود الناعمة عند النقر
     backToTopBtn.addEventListener('click', function() {
         window.scrollTo({
             top: 0,
