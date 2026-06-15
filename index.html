@@ -13,11 +13,17 @@
     <meta property="og:description" content="تنفيذ كافة أعمال المقاولات المعدنية والحدادة الإنشائية في الرياض بجودة عالية وضمان رسمي.">
     <meta property="og:image" content="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1200&q=80">
 
+    <!-- تحسين LCP: تحميل مسبق لصورة الخلفية للبانر الرئيسي -->
+    <link rel="preload" as="image" href="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1200&q=80">
+
     <!-- Fonts & Icons (استدعاء الأيقونات والخطوط المهمة) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- تحميل غير مانع لعرض الأيقونات (Non-blocking FontAwesome) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
     
     <!-- استدعاء ملف التنسيق الموحد الفاخر -->
     <link rel="stylesheet" href="style.css">
@@ -178,139 +184,147 @@
         </div>
     </header>
 
-    <!-- 3. واجهة الهيرو (البانر الرئيسي الفخم الموجه للتحويل المباشر لزوار الجوال) -->
-    <section class="hero" style="background-image: linear-gradient(rgba(7, 10, 19, 0.94), rgba(7, 10, 19, 0.96)), url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1200&q=80');">
-        <div class="hero-overlay"></div>
-        <div class="container hero-content">
-            <span class="badge">أعمال حدادة إنشائية معتمدة بضمان 10 سنوات</span>
-            <h1>تركيب مظلات وسواتر وساندوتش بانل بالرياض بأعلى معايير الجودة</h1>
-            <p>نصمم وننفذ المظلات الفاخرة، السواتر الحديثة، وهياكل الساندوتش بانل المعزولة حرارياً ومائياً للفلل والقصور والمشاريع بالرياض مع تقديم ضمان رسمي معتمد ضد الصدأ وعيوب التثبيت.</p>
-            
-            <!-- صندوق الاتصال والطلب الفاخر والمقروء تماماً -->
-            <div class="main-contact-box">
-                <span class="contact-label">لطلب تسعيرة أو زيارة ميدانية فورية:</span>
-                <a href="tel:0536491079" class="glowing-phone-link">
-                    <i class="fa-solid fa-phone"></i> 0536491079
-                </a>
-            </div>
+    <!-- [تعديل إمكانية الوصول]: تم لف محتوى الصفحة الرئيسي بداخل وسم main لحل مشكلة معلم المستند -->
+    <main id="main-content">
 
-            <!-- زر واتساب فائق البروز والوضوح للجوال لمنع التداخل والتعليق -->
-            <div class="hero-actions-container">
-                <a href="https://wa.me/966536491079" target="_blank" class="btn-whatsapp-hero"><i class="fa-brands fa-whatsapp" style="font-size: 1.4rem;"></i> تواصل عبر الواتساب الفوري</a>
-            </div>
-        </div>
-    </section>
+        <!-- 3. واجهة الهيرو (البانر الرئيسي الفخم الموجه للتحويل المباشر لزوار الجوال) -->
+        <section class="hero" style="background-image: linear-gradient(rgba(7, 10, 19, 0.94), rgba(7, 10, 19, 0.96)), url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1200&q=80');">
+            <div class="hero-overlay"></div>
+            <div class="container hero-content">
+                <span class="badge">أعمال حدادة إنشائية معتمدة بضمان 10 سنوات</span>
+                <h1>تركيب مظلات وسواتر وساندوتش بانل بالرياض بأعلى معايير الجودة</h1>
+                <p>نصمم وننفذ المظلات الفاخرة، السواتر الحديثة، وهياكل الساندوتش بانل المعزولة حرارياً ومائياً للفلل والقصور والمشاريع بالرياض مع تقديم ضمان رسمي معتمد ضد الصدأ وعيوب التثبيت.</p>
+                
+                <!-- صندوق الاتصال والطلب الفاخر والمقروء تماماً -->
+                <div class="main-contact-box">
+                    <span class="contact-label">لطلب تسعيرة أو زيارة ميدانية فورية:</span>
+                    <a href="tel:0536491079" class="glowing-phone-link">
+                        <i class="fa-solid fa-phone"></i> 0536491079
+                    </a>
+                </div>
 
-    <!-- 4. كروت الخدمات الثلاثة المنظمة -->
-    <section class="services section-padding bg-light">
-        <div class="container">
-            <div class="section-title text-center">
-                <span class="section-subtitle">خدماتنا الرئيسية بالرياض</span>
-                <h2>مقاولات معدنية متخصصة وعالية الجودة</h2>
-                <div class="line"></div>
-            </div>
-            <div class="grid grid-3">
-                <!-- كارت المظلات -->
-                <div class="ser-card">
-                    <div>
-                        <i class="fa-solid fa-tents"></i>
-                        <h3>مظلات سيارات وحدائق</h3>
-                        <p class="desc-text">نصمم ونركب مظلات قماش PVC كوري وألماني عالي الكثافة، والمظلات الخشبية والحديدية للحدائق ومواقف السيارات بأفضل عزل حراري ومقاومة للرياح.</p>
-                    </div>
-                    <a href="mazallat.html" class="card-link">استكشف المظلات <i class="fa-solid fa-arrow-left"></i></a>
-                </div>
-                <!-- كارت السواتر -->
-                <div class="ser-card">
-                    <div>
-                        <i class="fa-solid fa-border-all"></i>
-                        <h3>سواتر جدارية للأسوار</h3>
-                        <p class="desc-text">تركيب سواتر حديدية شرايح ومجدول، وسواتر بلاستيكية معالجة لحفظ خصوصية منزلك وتأمين الفلل بأسعار مدروسة ومناسبة لكافة أحياء الرياض.</p>
-                    </div>
-                    <a href="sawater.html" class="card-link">استكشف السواتر <i class="fa-solid fa-arrow-left"></i></a>
-                </div>
-                <!-- كارت الساندوتش بانل -->
-                <div class="ser-card">
-                    <div>
-                        <i class="fa-solid fa-warehouse"></i>
-                        <h3>ساندوتش بانل معزول</h3>
-                        <p class="desc-text">بناء وتغطية غرف السطح, الملاحق الخارجية، الهناجر، ومستودعات التبريد بألواح الساندوتش بانل المعزولة حرارياً ومائياً بالكامل لحماية مضمونة.</p>
-                    </div>
-                    <a href="sandwich-panel.html" class="card-link">استكشف الساندوتش بانل <i class="fa-solid fa-arrow-left"></i></a>
+                <!-- زر واتساب فائق البروز والوضوح للجوال لمنع التداخل والتعليق -->
+                <div class="hero-actions-container">
+                    <a href="https://wa.me/966536491079" target="_blank" class="btn-whatsapp-hero"><i class="fa-brands fa-whatsapp" style="font-size: 1.4rem;"></i> تواصل عبر الواتساب الفوري</a>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- 5. قسم سابقة الأعمال لزيادة الموثوقية (مربوط بصورك الحقيقية المرفوعة على خوادم جوجل السريعة 100%) -->
-    <section class="section-padding">
-        <div class="container">
-            <div class="section-title text-center">
-                <span class="section-subtitle">إنجازاتنا الميدانية بالصور المطابقة</span>
-                <h2>من مشاريعنا الأخيرة في أحياء الرياض</h2>
-                <div class="line"></div>
+        <!-- 4. كروت الخدمات الثلاثة المنظمة -->
+        <section class="services section-padding bg-light">
+            <div class="container">
+                <div class="section-title text-center">
+                    <span class="section-subtitle">خدماتنا الرئيسية بالرياض</span>
+                    <h2>مقاولات معدنية متخصصة وعالية الجودة</h2>
+                    <div class="line"></div>
+                </div>
+                <div class="grid grid-3">
+                    <!-- كارت المظلات -->
+                    <div class="ser-card">
+                        <div>
+                            <i class="fa-solid fa-tents"></i>
+                            <h3>مظلات سيارات وحدائق</h3>
+                            <p class="desc-text">نصمم ونركب مظلات قماش PVC كوري وألماني عالي الكثافة، والمظلات الخشبية والحديدية للحدائق ومواقف السيارات بأفضل عزل حراري ومقاومة للرياح.</p>
+                        </div>
+                        <a href="mazallat.html" class="card-link">استكشف المظلات <i class="fa-solid fa-arrow-left"></i></a>
+                    </div>
+                    <!-- كارت السواتر -->
+                    <div class="ser-card">
+                        <div>
+                            <i class="fa-solid fa-border-all"></i>
+                            <h3>سواتر جدارية للأسوار</h3>
+                            <p class="desc-text">تركيب سواتر حديدية شرايح ومجدول، وسواتر بلاستيكية معالجة لحفظ خصوصية منزلك وتأمين الفلل بأسعار مدروسة ومناسبة لكافة أحياء الرياض.</p>
+                        </div>
+                        <a href="sawater.html" class="card-link">استكشف السواتر <i class="fa-solid fa-arrow-left"></i></a>
+                    </div>
+                    <!-- كارت الساندوتش بانل -->
+                    <div class="ser-card">
+                        <div>
+                            <i class="fa-solid fa-warehouse"></i>
+                            <h3>ساندوتش بانل معزول</h3>
+                            <p class="desc-text">بناء وتغطية غرف السطح, الملاحق الخارجية، الهناجر، ومستودعات التبريد بألواح الساندوتش بانل المعزولة حرارياً ومائياً بالكامل لحماية مضمونة.</p>
+                        </div>
+                        <a href="sandwich-panel.html" class="card-link">استكشف الساندوتش بانل <i class="fa-solid fa-arrow-left"></i></a>
+                    </div>
+                </div>
             </div>
-            
-            <div class="grid grid-3">
-                <!-- مشروع 1: مظلة مواقف سيارات حقيقية من رابط بلوجر السريع والموثوق -->
-                <div class="ser-card" style="padding: 0; overflow: hidden;">
-                    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEghGWxSUBP3ZuRJZwDMvCcDn_XocIrTJY46OfTbppEwTwKycJubT6Tor9dTt9TPKT2K82VHOqOMqaAKB9IgoTZJZ_itp1uOvjz4-G0yCTIrdnZv5z645eCosj5LLmNC8byZngpxSahLcMwp9We1Sv1REVkHE4YxgsOxDB2aFrrV5uj2ZSOTROIS2NQnaFw/s1280/%D8%AA%D8%B1%D9%83%D9%8A%D8%A8-%D9%85%D8%B8%D9%84%D8%A7%D8%AA-%D9%85%D9%85%D9%88%D8%A2%D9%82%D9%81-%D8%B3%D9%8A%D8%A7%D8%B1%D8%A7%D8%AA.jpg" alt="تركيب مظلات سيارات كابولي معلقة بالرياض" style="width: 100%; height: 200px; object-fit: cover;">
-                    <div style="padding: 20px; text-align: right;">
-                        <h4 style="color: var(--main-color); font-weight: 800; margin-bottom: 8px;">مظلات سيارات كابولي وشراعية</h4>
-                        <p class="desc-text" style="font-size: 0.85rem; text-align: right; text-align-last: right;">تصميم وتثبيت مظلة مواقف سيارات بنظام كابولي وشراعي معلق في فناء فيلا فخمة، لحماية قصوى من أشعة الشمس المباشرة.</p>
-                    </div>
-                </div>
-                <!-- مشروع 2: سواتر حوش جدارية حقيقية من رابط بلوجر السريع والموثوق -->
-                <div class="ser-card" style="padding: 0; overflow: hidden;">
-                    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhmDPbs5839fl3kiQytFKJ3wvKHB02RnyI5R3ll4SVoX_raM2rvhEk3bk8zn_npqrKN0Kv82YXpHThDQkinOKUnl1mAVS8VsplCdmTfOAWC7XcX1bhlha4b0SqRStKUS0eOf9tDjZajlD8ZGvX6TO3DNaT_-7OzSsW4RWvf2agTClxRchAd9QHDYvOCj-c/s1280/%D8%AA%D8%B1%D9%83%D9%8A%D8%A8-%D8%B3%D8%A7%D8%AA%D8%B1-%D8%AD%D9%88%D8%B4.jpeg" alt="تركيب سواتر حديد شرايح للفلل بالرياض" style="width: 100%; height: 200px; object-fit: cover;">
-                    <div style="padding: 20px; text-align: right;">
-                        <h4 style="color: var(--main-color); font-weight: 800; margin-bottom: 8px;">سواتر حديد شرايح لأسوار الفلل</h4>
-                        <p class="desc-text" style="font-size: 0.85rem; text-align: right; text-align-last: right;">تغطية ورفع سور جداري لفيلا خاصة بتركيب سواتر حديد شرايح لوفر معدنية فخمة باللون البني الفخم لحجب الرؤية كلياً.</p>
-                    </div>
-                </div>
-                <!-- مشروع 3: بناء غرف ساندوتش بانل معزول حقيقي من رابط بلوجر السريع والموثوق -->
-                <div class="ser-card" style="padding: 0; overflow: hidden;">
-                    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhj4GrTdTMUV5EYJZrMq9OhAhk1zSYbF1wEl1pdDYWjkfjctwb23TacQQTmJj2d1da5Z2ogPvz4fkdO7FhIJqQ6tevAsneplyh37rBquqeUT-ZnTijhL5ACXeZD0pjOcwAfaKl-GVWLVTkNBq1-AVi4p2VZQ5yTQAIQi0MbfVileiakkrtz8ilMbTS9s6A/s1080/%D8%BA%D8%B1%D9%81-%D8%B3%D8%A7%D9%86%D8%AF%D9%88%D8%AA%D8%B4-%D8%A8%D8%A7%D9%86%D9%84-%D9%85%D8%B9%D8%B2%D9%88%D9%84.jpg" alt="بناء ملحق غرف سطح معزول ساندوتش بانل بالرياض" style="width: 100%; height: 200px; object-fit: cover;">
-                    <div style="padding: 20px; text-align: right;">
-                        <h4 style="color: var(--main-color); font-weight: 800; margin-bottom: 8px;">بناء ملحق غرف سطح معزول</h4>
-                        <p class="desc-text" style="font-size: 0.85rem; text-align: right; text-align-last: right;">أعمال تشييد وتثبيت ملحق أسطح معزول بالكامل ضد تسريبات الأمطار وحرارة الصيف باستخدام ألواح جدران وأسقف الساندوتش بانل.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- 6. قسم لماذا نحن (رموز القوة والضمان والموثوقية لعملاء الرياض) -->
-    <section class="section-padding bg-light">
-        <div class="container">
-            <div class="grid grid-2" style="align-items: center; gap: 40px;">
-                <div class="why-us-box">
-                    <h2 style="color: var(--main-color); font-weight: 900; margin-bottom: 20px; font-size: 1.5rem;">لماذا نحن خيارك الأفضل في أعمال الحدادة بالرياض؟</h2>
-                    <p class="desc-text" style="text-align: right; text-align-last: right;">نلتزم في أعمالنا بأعلى المعايير الإنشائية المعدنية التي تضمن لك عمراً افتراضياً طويلاً وسلامة تامة للمنشأ ومقاومة مطلقة لتقلبات طقس العاصمة.</p>
-                    
-                    <ul class="features-list" style="margin-top: 20px; gap: 10px;">
-                        <li style="font-size: 0.9rem; padding: 10px;"><strong>حديد سابك الأصلي:</strong> نعتمد كلياً على حديد سابك ذو السماكات الممتازة لضمان متانة وأمان الهياكل المعدنية.</li>
-                        <li style="font-size: 0.9rem; padding: 10px;"><strong>ضمان معتمد 10 سنوات:</strong> نوفر ضماناً حقيقياً ومكتباً يحمي ممتلكاتك ضد عيوب التثبيت والتسريب والصدأ.</li>
-                        <li style="font-size: 0.9rem; padding: 10px;"><strong>سرعة ودقة التنفيذ:</strong> لدينا طواقم فنية متخصصة تضمن تسليم العمل خلال أوقات قياسية ودون أي تأخير.</li>
-                    </ul>
+        <!-- 5. قسم سابقة الأعمال لزيادة الموثوقية -->
+        <section class="section-padding">
+            <div class="container">
+                <div class="section-title text-center">
+                    <span class="section-subtitle">إنجازاتنا الميدانية بالصور المطابقة</span>
+                    <h2>من مشاريعنا الأخيرة في أحياء الرياض</h2>
+                    <div class="line"></div>
                 </div>
                 
-                <div style="background-image: url('https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=600&q=80'); background-size: cover; background-position: center; height: 350px; border-radius: 12px; border: 2px solid var(--gold-color); box-shadow: var(--shadow);">
+                <div class="grid grid-3">
+                    <!-- مشروع 1: مظلة مواقف سيارات حقيقية مع قيم الأبعاد والتحميل الذكي -->
+                    <div class="ser-card" style="padding: 0; overflow: hidden;">
+                        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEghGWxSUBP3ZuRJZwDMvCcDn_XocIrTJY46OfTbppEwTwKycJubT6Tor9dTt9TPKT2K82VHOqOMqaAKB9IgoTZJZ_itp1uOvjz4-G0yCTIrdnZv5z645eCosj5LLmNC8byZngpxSahLcMwp9We1Sv1REVkHE4YxgsOxDB2aFrrV5uj2ZSOTROIS2NQnaFw/s1280/%D8%AA%D8%B1%D9%83%D9%8A%D8%A8-%D9%85%D8%B8%D9%84%D8%A7%D8%AA-%D9%85%D9%85%D9%88%D8%A2%D9%8قب-%D8%B3%D9%8A%D8%A7%D8%B1%D8%A7%D8%AA.jpg" alt="تركيب مظلات سيارات كابولي معلقة بالرياض" width="400" height="200" loading="lazy" style="width: 100%; height: 200px; object-fit: cover;">
+                        <div style="padding: 20px; text-align: right;">
+                            <!-- تم التعديل إلى H3 لضمان التسلسل الصحيح للعناوين -->
+                            <h3 style="color: var(--main-color); font-weight: 800; margin-bottom: 8px; font-size: 1.15rem;">مظلات سيارات كابولي وشراعية</h3>
+                            <p class="desc-text" style="font-size: 0.85rem; text-align: right; text-align-last: right;">تصميم وتثبيت مظلة مواقف سيارات بنظام كابولي وشراعي معلق في فناء فيلا فخمة، لحماية قصوى من أشعة الشمس المباشرة.</p>
+                        </div>
+                    </div>
+                    <!-- مشروع 2: سواتر حوش جدارية حقيقية مع قيم الأبعاد والتحميل الذكي -->
+                    <div class="ser-card" style="padding: 0; overflow: hidden;">
+                        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhmDPbs5839fl3kiQytFKJ3wvKHB02RnyI5R3ll4SVoX_raM2rvhEk3bk8zn_npqrKN0Kv82YXpHThDQkinOKUnl1mAVS8VsplCdmTfOAWC7XcX1bhlha4b0SqRStKUS0eOf9tDjZajlD8ZGvX6TO3DNaT_-7OzSsW4RWvf2agTClxRchAd9QHDYvOCj-c/s1280/%D8%AA%D8%B1%D9%83%D9%8A%D8%A8-%D8%B3%D8%A7%D8%AA%D8%B1-%D8%AD%D9%88%D8%B4.jpeg" alt="تركيب سواتر حديد شرايح للفلل بالرياض" width="400" height="200" loading="lazy" style="width: 100%; height: 200px; object-fit: cover;">
+                        <div style="padding: 20px; text-align: right;">
+                            <!-- تم التعديل إلى H3 لضمان التسلسل الصحيح للعناوين -->
+                            <h3 style="color: var(--main-color); font-weight: 800; margin-bottom: 8px; font-size: 1.15rem;">سواتر حديد شرايح لأسوار الفلل</h3>
+                            <p class="desc-text" style="font-size: 0.85rem; text-align: right; text-align-last: right;">تغطية ورفع سور جداري لفيلا خاصة بتركيب سواتر حديد شرايح لوفر معدنية فخمة باللون البني الفخم لحجب الرؤية كلياً.</p>
+                        </div>
+                    </div>
+                    <!-- مشروع 3: بناء غرف ساندوتش بانل مع قيم الأبعاد والتحميل الذكي -->
+                    <div class="ser-card" style="padding: 0; overflow: hidden;">
+                        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhj4GrTdTMUV5EYJZrMq9OhAhk1zSYbF1wEl1pdDYWjkfjctwb23TacQQTmJj2d1da5Z2ogPvz4fkdO7FhIJqQ6tevAsneplyh37rBquqeUT-ZnTijhL5ACXeZD0pjOcwAfaKl-GVWLVTkNBq1-AVi4p2VZQ5yTQAIQi0MbfVileiakkrtz8ilMbTS9s6A/s1080/%D8%BA%D8%B1%D9%81-%D8%B3%D8%A7%D9%86%D8%AF%D9%88%D8%AA%D8%B4-%D8%A8%D8%A7%D9%86%D9%84-%D9%85%D8%B9%D8%B2%D9%8ول.jpg" alt="بناء ملحق غرف سطح معزول ساندوتش بانل بالرياض" width="400" height="200" loading="lazy" style="width: 100%; height: 200px; object-fit: cover;">
+                        <div style="padding: 20px; text-align: right;">
+                            <!-- تم التعديل إلى H3 لضمان التسلسل الصحيح للعناوين -->
+                            <h3 style="color: var(--main-color); font-weight: 800; margin-bottom: 8px; font-size: 1.15rem;">بناء ملحق غرف سطح معزول</h3>
+                            <p class="desc-text" style="font-size: 0.85rem; text-align: right; text-align-last: right;">أعمال تشييد وتثبيت ملحق أسطح معزول بالكامل ضد تسريبات الأمطار وحرارة الصيف باستخدام ألواح جدران وأسقف الساندوتش بانل.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- 7. قسم إعلاني قوي ومحفز للتحويل الفوري للعملاء بالجوال -->
-    <section class="section-padding text-center" style="background-color: var(--main-color); color: var(--white);">
-        <div class="container">
-            <h2 style="font-weight: 900; font-size: 1.6rem; margin-bottom: 15px;">هل ترغب في رفع مقاسات موقعك بالرياض مجاناً؟</h2>
-            <p style="color: #cbd5e1; margin-bottom: 30px; font-size: 0.95rem;">نوفر خدمة الزيارة الميدانية السريعة وأخذ القياسات وتقديم تسعيرة مجانية بدون أي التزامات على العميل.</p>
-            <div class="hero-actions">
-                <a href="tel:0536491079" class="btn btn-gold btn-lg"><i class="fa-solid fa-phone"></i> اتصل بـ 0536491079</a>
-                <a href="https://wa.me/966536491079" target="_blank" class="btn btn-whatsapp btn-lg"><i class="fa-brands fa-whatsapp"></i> راسلنا الآن عبر الواتساب</a>
+        <!-- 6. قسم لماذا نحن -->
+        <section class="section-padding bg-light">
+            <div class="container">
+                <div class="grid grid-2" style="align-items: center; gap: 40px;">
+                    <div class="why-us-box">
+                        <h2 style="color: var(--main-color); font-weight: 900; margin-bottom: 20px; font-size: 1.5rem;">لماذا نحن خيارك الأفضل في أعمال الحدادة بالرياض؟</h2>
+                        <p class="desc-text" style="text-align: right; text-align-last: right;">نلتزم في أعمالنا بأعلى المعايير الإنشائية المعدنية التي تضمن لك عمراً افتراضياً طويلاً وسلامة تامة للمنشأ ومقاومة مطلقة لتقلبات طقس العاصمة.</p>
+                        
+                        <ul class="features-list" style="margin-top: 20px; gap: 10px;">
+                            <li style="font-size: 0.9rem; padding: 10px;"><strong>حديد سابك الأصلي:</strong> نعتمد كلياً على حديد سابك ذو السماكات الممتازة لضمان متانة وأمان الهياكل المعدنية.</li>
+                            <li style="font-size: 0.9rem; padding: 10px;"><strong>ضمان معتمد 10 سنوات:</strong> نوفر ضماناً حقيقياً ومكتباً يحمي ممتلكاتك ضد عيوب التثبيت والتسريب والصدأ.</li>
+                            <li style="font-size: 0.9rem; padding: 10px;"><strong>سرعة ودقة التنفيذ:</strong> لدينا طواقم فنية متخصصة تضمن تسليم العمل خلال أوقات قياسية ودون أي تأخير.</li>
+                        </ul>
+                    </div>
+                    
+                    <div style="background-image: url('https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=600&q=80'); background-size: cover; background-position: center; height: 350px; border-radius: 12px; border: 2px solid var(--gold-color); box-shadow: var(--shadow);">
+                    </div>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
+
+        <!-- 7. قسم إعلاني قوي ومحفز للتحويل الفوري للعملاء بالجوال -->
+        <section class="section-padding text-center" style="background-color: var(--main-color); color: var(--white);">
+            <div class="container">
+                <h2 style="font-weight: 900; font-size: 1.6rem; margin-bottom: 15px;">هل ترغب في رفع مقاسات موقعك بالرياض مجاناً؟</h2>
+                <p style="color: #cbd5e1; margin-bottom: 30px; font-size: 0.95rem;">نوفر خدمة الزيارة الميدانية السريعة وأخذ القياسات وتقديم تسعيرة مجانية بدون أي التزامات على العميل.</p>
+                <div class="hero-actions">
+                    <a href="tel:0536491079" class="btn btn-gold btn-lg"><i class="fa-solid fa-phone"></i> اتصل بـ 0536491079</a>
+                    <a href="https://wa.me/966536491079" target="_blank" class="btn btn-whatsapp btn-lg"><i class="fa-brands fa-whatsapp"></i> راسلنا الآن عبر الواتساب</a>
+                </div>
+            </div>
+        </section>
+
+    </main> <!-- [إغلاق وسم التعديل]: نهاية وسم main -->
 
     <!-- 8. التذييل والفوتر الفاخر الموحد المتوافق تماماً مع إعلانات الجوال -->
     <footer class="footer-main">
