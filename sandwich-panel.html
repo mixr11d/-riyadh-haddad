@@ -7,11 +7,17 @@
     <meta name="description" content="نقوم بتوريد وتركيب ألواح الساندوتش بانل بالرياض لبناء الغرف والملاحق والهناجر ومستودعات التبريد بأوزان وسماكات متميزة وعزل تام للحرارة والأمطار.">
     <meta name="keywords" content="ساندوتش بانل الرياض, تركيب ساندوتش بانل, ملاحق ساندوتش بانل, غرف أسطح معزولة, هناجر الرياض, مستودعات تبريد">
     
+    <!-- تحسين LCP: تحميل مسبق لصورة الخلفية للبانر الرئيسي لزيادة سرعة الفتح -->
+    <link rel="preload" as="image" href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhL4sKJCSVmNUui5aK8jT7ZT4vgW5xMQJMPNdNRBtltgRRhsScHaIn4Mv7qdJ7SI1Q0VJ1Yj5coX5uLiLFMjd3Y_376PzIk8LGDp2W9pkpfA8Rchn8AxP1rZAcEyuet9UKq9zbZNZI7a1uy7dNvtmd-dgn_DfZvkf7neV5wJF60A41mRUDceWxLBxpTn3o/s1000-rw/IMG-20250303-WA0014.jpg">
+
     <!-- Fonts & Icons -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- تحميل غير مانع لعرض الأيقونات لتسريع ظهور الصفحة (Non-blocking FontAwesome) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
     
     <!-- استدعاء ملف التنسيق الموحد الفاخر -->
     <link rel="stylesheet" href="style.css">
@@ -109,82 +115,91 @@
         </div>
     </header>
 
-    <!-- 3. بانر الصفحة الداخلي الفخم والملائم للجوال (مربوط بصورتك الحقيقية الأولى في بلوجر ومعتم قسرياً لبروز دائم للكلام) -->
-    <section class="hero" style="background-image: linear-gradient(rgba(7, 10, 19, 0.94), rgba(7, 10, 19, 0.96)), url('https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhL4sKJCSVmNUui5aK8jT7ZT4vgW5xMQJMPNdNRBtltgRRhsScHaIn4Mv7qdJ7SI1Q0VJ1Yj5coX5uLiLFMjd3Y_376PzIk8LGDp2W9pkpfA8Rchn8AxP1rZAcEyuet9UKq9zbZNZI7a1uy7dNvtmd-dgn_DfZvkf7neV5wJF60A41mRUDceWxLBxpTn3o/s1000-rw/IMG-20250303-WA0014.jpg');">
-        <div class="hero-overlay"></div>
-        <div class="container hero-content">
-            <span class="badge">عزل مائي وحراري متكامل 100% بضمان معتمد</span>
-            <h1>تركيب ألواح وجدران ساندوتش بانل بالرياض</h1>
-            <p>حلول البناء السريع والآمن للغرف والملاحق والهناجر بمقاومة تامة للتسريبات وعوامل الرطوبة</p>
-            <div class="hero-actions">
-                <!-- زر الاتصال بلون جديد فاخر ومقاوم تماماً للبهتان والتشويش البصري -->
-                <a href="tel:0536491079" class="btn-luxury-phone"><i class="fa-solid fa-phone"></i> اتصل الآن: 0536491079</a>
-            </div>
-        </div>
-    </section>
+    <!-- [تعديل إمكانية الوصول]: تم إضافة وسم main لحل مشكلة معلم المستند وتسهيل قراءته من محركات البحث -->
+    <main id="main-content">
 
-    <!-- 4. تفاصيل الخدمة (مقسمة لعمودين تترتب تلقائياً تحت بعضها في الجوال) -->
-    <section class="section-padding bg-light">
-        <div class="container">
-            <div class="grid grid-2">
-                
-                <!-- العمود الأول: تفاصيل العمل والنصوص التسويقية القوية والداعمة للسيو وقوقل ادز -->
-                <div class="why-us-box">
-                    <h2 style="color: var(--main-color); font-weight: 900; margin-bottom: 20px;">كفاءة عزل متميزة وبناء سريع وغرف متكاملة</h2>
-                    <p class="desc-text" style="text-align: right; text-align-last: right;">تعتبر ألواح الساندوتش بانل (Sandwich Panel) الحل الأمثل والبديل الاقتصادي والآمن للتغطية وتشييد الملاحق وغرف الأسطح في الرياض. بفضل جودتها الفائقة في العزل الحراري والمائي، تسهم هذه الألواح بشكل ملحوظ في خفض استهلاك مكيفات الهواء وتقليل فواتير الكهرباء لعملائنا الكرام.</p>
+        <!-- 3. بانر الصفحة الداخلي الفخم والملائم للجوال -->
+        <section class="hero" style="background-image: linear-gradient(rgba(7, 10, 19, 0.94), rgba(7, 10, 19, 0.96)), url('https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhL4sKJCSVmNUui5aK8jT7ZT4vgW5xMQJMPNdNRBtltgRRhsScHaIn4Mv7qdJ7SI1Q0VJ1Yj5coX5uLiLFMjd3Y_376PzIk8LGDp2W9pkpfA8Rchn8AxP1rZAcEyuet9UKq9zbZNZI7a1uy7dNvtmd-dgn_DfZvkf7neV5wJF60A41mRUDceWxLBxpTn3o/s1000-rw/IMG-20250303-WA0014.jpg');">
+            <div class="hero-overlay"></div>
+            <div class="container hero-content">
+                <span class="badge">عزل مائي وحراري متكامل 100% بضمان معتمد</span>
+                <h1>تركيب ألواح وجدران ساندوتش بانل بالرياض</h1>
+                <p>حلول البناء السريع والآمن للغرف والملاحق والهناجر بمقاومة تامة للتسريبات وعوامل الرطوبة</p>
+                <div class="hero-actions">
+                    <!-- زر الاتصال بلون جديد فاخر ومقاوم تماماً للبهتان والتشويش البصري -->
+                    <a href="tel:0536491079" class="btn-luxury-phone"><i class="fa-solid fa-phone"></i> اتصل الآن: 0536491079</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. تفاصيل الخدمة (مقسمة لعمودين تترتب تلقائياً تحت بعضها في الجوال) -->
+        <section class="section-padding bg-light">
+            <div class="container">
+                <div class="grid grid-2">
                     
-                    <!-- عرض مميزات الساندوتش بانل بالصور الحقيقية الفخمة من بلوجر المجهزة والمحولة لـ WebP تلقائياً -->
-                    <div class="grid" style="gap: 25px; margin-top: 30px;">
+                    <!-- العمود الأول: تفاصيل العمل والنصوص التسويقية القوية والداعمة للسيو وقوقل ادز -->
+                    <div class="why-us-box">
+                        <h2 style="color: var(--main-color); font-weight: 900; margin-bottom: 20px;">كفاءة عزل متميزة وبناء سريع وغرف متكاملة</h2>
+                        <p class="desc-text" style="text-align: right; text-align-last: right;">تعتبر ألواح الساندوتش بانل (Sandwich Panel) الحل الأمثل والبديل الاقتصادي والآمن للتغطية وتشييد الملاحق وغرف الأسطح في الرياض. بفضل جودتها الفائقة في العزل الحراري والمائي، تسهم هذه الألواح بشكل ملحوظ في خفض استهلاك مكيفات الهواء وتقليل فواتير الكهرباء لعملائنا الكرام.</p>
                         
-                        <!-- نوع 1: ملاحق غرف الأسطح (مربوط بصورتك الحقيقية لغرفة السطح الجاهزة) -->
-                        <div style="background: var(--bg-light); padding: 15px; border-radius: 8px; border-right: 4px solid var(--gold-color);">
-                            <h4 style="color: var(--main-color); font-weight: 800; margin-bottom: 10px;">1. غرف وملاحق الأسطح والمجالس السكنية الجاهزة:</h4>
-                            <p class="desc-text" style="text-align: right; text-align-last: right; font-size: 0.9rem; margin-bottom: 15px;">نصمم ونبني ملاحق الأسطح بهياكل حديدية وسماكات عالية، مغطاة بألواح البانل المعزولة بالبولي يوريثين الكثيف الذي يمنع تسربات مياه الأمطار والحرارة لراحة تامة داخل الغرفة.</p>
-                            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhibkcnBTEMQLdaZYKQI6AT1RYfQyBKowX2xQuVJ9Sv80We3WY0X-RRmkilu5aG3Qv-AYHKkQRS0owMPkwxQl3_F0l2QBQPhuPX8U6yZtQs2DQm5BIp8848qlVLOpRZA1KZRWXyjYB2bGLwq4gi_eUm3Xop4evtWvzwtPbNw1h8um1-u4zU5PNRP21wxjY/s600-rw/IMG-20250303-WA0017.jpg" alt="ملاحق ساندوتش بانل بالرياض" style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px; box-shadow: var(--shadow);">
-                        </div>
+                        <!-- عرض مميزات الساندوتش بانل بالصور الحقيقية الفخمة -->
+                        <div class="grid" style="gap: 25px; margin-top: 30px;">
+                            
+                            <!-- نوع 1: ملاحق غرف الأسطح مع تحديد قيم الأبعاد والتحميل الذكي لمنع CLS واستهلاك البيانات -->
+                            <div style="background: var(--bg-light); padding: 15px; border-radius: 8px; border-right: 4px solid var(--gold-color);">
+                                <!-- تم تعديل درجة العنوان إلى h3 لضمان الهيكلية المتسلسلة الصحيحة -->
+                                <h3 style="color: var(--main-color); font-weight: 800; margin-bottom: 10px; font-size: 1.15rem;">1. غرف وملاحق الأسطح والمجالس السكنية الجاهزة:</h3>
+                                <p class="desc-text" style="text-align: right; text-align-last: right; font-size: 0.9rem; margin-bottom: 15px;">نصمم ونبني ملاحق الأسطح بهياكل حديدية وسماكات عالية، مغطاة بألواح البانل المعزولة بالبولي يوريثين الكثيف الذي يمنع تسربات مياه الأمطار والحرارة لراحة تامة داخل الغرفة.</p>
+                                <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhibkcnBTEMQLdaZYKQI6AT1RYfQyBKowX2xQuVJ9Sv80We3WY0X-RRmkilu5aG3Qv-AYHKkQRS0owMPkwxQl3_F0l2QBQPhuPX8U6yZtQs2DQm5BIp8848qlVLOpRZA1KZRWXyjYB2bGLwq4gi_eUm3Xop4evtWvzwtPbNw1h8um1-u4zU5PNRP21wxjY/s600-rw/IMG-20250303-WA0017.jpg" alt="ملاحق ساندوتش بانل بالرياض" width="400" height="200" loading="lazy" style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px; box-shadow: var(--shadow);">
+                            </div>
 
-                        <!-- نوع 2: هناجر ومستودعات (مربوط بصورتك الحقيقية لتركيب جدران الحديد) -->
-                        <div style="background: var(--bg-light); padding: 15px; border-radius: 8px; border-right: 4px solid var(--gold-color);">
-                            <h4 style="color: var(--main-color); font-weight: 800; margin-bottom: 10px;">2. تغطية وتشييد الهناجر والمستودعات الفاخرة:</h4>
-                            <p class="desc-text" style="text-align: right; text-align-last: right; font-size: 0.9rem; margin-bottom: 15px;">بناء وتغطية مستودعات الشركات والمخازن بأسقف وجدران من الساندوتش بانل لضمان حماية مطلقة وحفظ لسلامة البضائع والمعدات من أشعة الشمس المباشرة والرطوبة.</p>
-                            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgqRXGw0HEzWKu134jKzn8rFO6l8Q5BQNeN9T7WnANi_3ggA6Chbc2djZIlP8TfV6EPdl9BuJuwQiI6jlmiBJqbhirAdqQXWOlk0RffbAKz4HkX4Ufzw_sya3XQ4YSvf7LfOIoanaRo28n2XakbNSedoZ3vQWqng_qR6sZhn7jfJVZEs4cxL4APql5uYM4/s600-rw/WhatsApp%20Image%202025-12-26%20at%209.45.29%20PM%20%282%29.jpeg" alt="مستودعات ساندوتش بانل بالرياض" style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px; box-shadow: var(--shadow);">
-                        </div>
+                            <!-- نوع 2: هناجر ومستودعات مع تحديد قيم الأبعاد والتحميل الذكي لمنع CLS واستهلاك البيانات -->
+                            <div style="background: var(--bg-light); padding: 15px; border-radius: 8px; border-right: 4px solid var(--gold-color);">
+                                <!-- تم تعديل درجة العنوان إلى h3 لضمان الهيكلية المتسلسلة الصحيحة -->
+                                <h3 style="color: var(--main-color); font-weight: 800; margin-bottom: 10px; font-size: 1.15rem;">2. تغطية وتشييد الهناجر والمستودعات الفاخرة:</h3>
+                                <p class="desc-text" style="text-align: right; text-align-last: right; font-size: 0.9rem; margin-bottom: 15px;">بناء وتغطية مستودعات الشركات والمخازن بأسقف وجدران من الساندوتش بانل لضمان حماية مطلقة وحفظ لسلامة البضائع والمعدات من أشعة الشمس المباشرة والرطوبة.</p>
+                                <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgqRXGw0HEzWKu134jKzn8rFO6l8Q5BQNeN9T7WnANi_3ggA6Chbc2djZIlP8TfV6EPdl9BuJuwQiI6jlmiBJqbhirAdqQXWOlk0RffbAKz4HkX4Ufzw_sya3XQ4YSvf7LfOIoanaRo28n2XakbNSedoZ3vQWqng_qR6sZhn7jfJVZEs4cxL4APql5uYM4/s600-rw/WhatsApp%20Image%202025-12-26%20at%209.45.29%20PM%20%282%29.jpeg" alt="مستودعات ساندوتش بانل بالرياض" width="400" height="200" loading="lazy" style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px; box-shadow: var(--shadow);">
+                            </div>
 
-                        <!-- نوع 3: غرف تبريد وتجميد (مربوط بصورتك الحقيقية المربعة الكبيرة لغرفة البانر الجاهزة) -->
-                        <div style="background: var(--bg-light); padding: 15px; border-radius: 8px; border-right: 4px solid var(--gold-color);">
-                            <h4 style="color: var(--main-color); font-weight: 800; margin-bottom: 10px;">3. غرف ومستودعات التبريد والتجميد الطبية والغذائية:</h4>
-                            <p class="desc-text" style="text-align: right; text-align-last: right; font-size: 0.9rem; margin-bottom: 15px;">نركب ألواح البانل بسماكات عزل ممتازة (من 5 سم إلى 15 سم) للمصانع والشركات التي تتطلب بيئة تبريد فائقة الدقة وثبات تام لدرجات الحرارة المنخفضة جداً.</p>
-                            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgwF1-iw-5BzzXf1zeWI-6NNh0qVifNUj5LUoitk5R9pl2bAmXu6pnpoX4vB9vXo3B-_PQoVK6wXbKqFBhRQSM89kybUvd2Xvcybv6rQ7C9YJ4MQ_WG5vuw7igNOlqzzs_zxUGciFWAHLGSHjwCagAcl-QaQ-Wt9Tl6VFxQDR-5VFrWYhiLI8DdNKcOgLE/s600-rw/WhatsApp%20Image%202025-12-26%20at%209.45.29%20PM.jpeg" alt="غرف تبريد ساندوتش بانل بالرياض" style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px; box-shadow: var(--shadow);">
-                        </div>
+                            <!-- نوع 3: غرف تبريد وتجميد مع تحديد قيم الأبعاد والتحميل الذكي لمنع CLS واستهلاك البيانات -->
+                            <div style="background: var(--bg-light); padding: 15px; border-radius: 8px; border-right: 4px solid var(--gold-color);">
+                                <!-- تم تعديل درجة العنوان إلى h3 لضمان الهيكلية المتسلسلة الصحيحة -->
+                                <h3 style="color: var(--main-color); font-weight: 800; margin-bottom: 10px; font-size: 1.15rem;">3. غرف ومستودعات التبريد والتجميد الطبية والغذائية:</h3>
+                                <p class="desc-text" style="text-align: right; text-align-last: right; font-size: 0.9rem; margin-bottom: 15px;">نركب ألواح البانل بسماكات عزل ممتازة (من 5 سم إلى 15 سم) للمصانع والشركات التي تتطلب بيئة تبريد فائقة الدقة وثبات تام لدرجات الحرارة المنخفضة جداً.</p>
+                                <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgwF1-iw-5BzzXf1zeWI-6NNh0qVifNUj5LUoitk5R9pl2bAmXu6pnpoX4vB9vXo3B-_PQoVK6wXbKqFBhRQSM89kybUvd2Xvcybv6rQ7C9YJ4MQ_WG5vuw7igNOlqzzs_zxUGciFWAHLGSHjwCagAcl-QaQ-Wt9Tl6VFxQDR-5VFrWYhiLI8DdNKcOgLE/s600-rw/WhatsApp%20Image%202025-12-26%20at%209.45.29%20PM.jpeg" alt="غرف تبريد ساندوتش بانل بالرياض" width="400" height="200" loading="lazy" style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px; box-shadow: var(--shadow);">
+                            </div>
 
-                    </div>
-                </div>
-                
-                <!-- العمود الثاني: صندوق التحويل وحجز الطلبات السريع (مثالي لإعلانات الجوال) -->
-                <div style="display: flex; flex-direction: column; gap: 20px;">
-                    <div class="why-us-box" style="border: 2px solid var(--gold-color); background-color: var(--white); text-align: center;">
-                        <h3 style="color: var(--main-color); font-weight: 900; margin-bottom: 10px; font-size: 1.3rem;">معاينة وقياس مجاني بالرياض</h3>
-                        <p class="desc-text" style="font-size: 0.9rem; margin-bottom: 20px;">تواصل مباشرة مع المهندس الفني لترتيب زيارة ميدانية لرفع المقاسات ومعاينة موقعك مجاناً لضمان تقديم أفضل تسعيرة دقيقة.</p>
-                        
-                        <div style="display: flex; flex-direction: column; gap: 12px;">
-                            <a href="tel:0536491079" class="btn btn-gold btn-lg" style="width: 100%; font-size: 1rem;"><i class="fa-solid fa-phone"></i> اتصل بـ 0536491079</a>
-                            <a href="https://wa.me/966536491079" target="_blank" class="btn btn-whatsapp btn-lg" style="width: 100%; font-size: 1rem;"><i class="fa-brands fa-whatsapp"></i> تواصل عبر الواتساب</a>
-                        </div>
-
-                        <div style="margin-top: 25px; padding-top: 20px; border-top: 1px solid var(--border-color); text-align: right;">
-                            <h5 style="color: var(--main-color); font-weight: 800; margin-bottom: 10px; font-size: 0.95rem;"><i class="fa-solid fa-circle-check" style="color: var(--gold-color);"></i> ما نضمنه لك:</h5>
-                            <ul class="features-list" style="margin-top: 10px; gap: 8px;">
-                                <li style="font-size: 0.85rem; padding: 8px;">بناء معدني متين مقاوم للرطوبة وتسربات الأمطار</li>
-                                <li style="font-size: 0.85rem; padding: 8px;">حشوة بولي يوريثين عالية الكثافة ذات عزل هائل</li>
-                                <li style="font-size: 0.85rem; padding: 8px;">أسعار تنافسية ومدروسة وضمان طويل المدى</li>
-                            </ul>
                         </div>
                     </div>
-                </div>
+                    
+                    <!-- العمود الثاني: صندوق التحويل وحجز الطلبات السريع -->
+                    <div style="display: flex; flex-direction: column; gap: 20px;">
+                        <div class="why-us-box" style="border: 2px solid var(--gold-color); background-color: var(--white); text-align: center;">
+                            <h3 style="color: var(--main-color); font-weight: 900; margin-bottom: 10px; font-size: 1.3rem;">معاينة وقياس مجاني بالرياض</h3>
+                            <p class="desc-text" style="font-size: 0.9rem; margin-bottom: 20px;">تواصل مباشرة مع المهندس الفني لترتيب زيارة ميدانية لرفع المقاسات ومعاينة موقعك مجاناً لضمان تقديم أفضل تسعيرة دقيقة.</p>
+                            
+                            <div style="display: flex; flex-direction: column; gap: 12px;">
+                                <a href="tel:0536491079" class="btn btn-gold btn-lg" style="width: 100%; font-size: 1rem;"><i class="fa-solid fa-phone"></i> اتصل بـ 0536491079</a>
+                                <a href="https://wa.me/966536491079" target="_blank" class="btn btn-whatsapp btn-lg" style="width: 100%; font-size: 1rem;"><i class="fa-brands fa-whatsapp"></i> تواصل عبر الواتساب</a>
+                            </div>
 
+                            <div style="margin-top: 25px; padding-top: 20px; border-top: 1px solid var(--border-color); text-align: right;">
+                                <!-- تم التعديل إلى h4 بدلاً من h5 لمنع القفز البرمجي للعناوين -->
+                                <h4 style="color: var(--main-color); font-weight: 800; margin-bottom: 10px; font-size: 0.95rem;"><i class="fa-solid fa-circle-check" style="color: var(--gold-color);"></i> ما نضمنه لك:</h4>
+                                <ul class="features-list" style="margin-top: 10px; gap: 8px;">
+                                    <li style="font-size: 0.85rem; padding: 8px;">بناء معدني متين مقاوم للرطوبة وتسربات الأمطار</li>
+                                    <li style="font-size: 0.85rem; padding: 8px;">حشوة بولي يوريثين عالية الكثافة ذات عزل هائل</li>
+                                    <li style="font-size: 0.85rem; padding: 8px;">أسعار تنافسية ومدروسة وضمان طويل المدى</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
+
+    </main> <!-- [إغلاق وسم التعديل]: نهاية وسم main -->
 
     <!-- 5. التذييل والفوتر الفاخر الموحد المتوافق تماماً مع الجوال -->
     <footer class="footer-main">
