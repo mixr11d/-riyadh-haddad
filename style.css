@@ -1,9 +1,4 @@
 /* ==========================================================================
-   استيراد خط القاهرة الرسمي (Cairo Font) لجمالية الخطوط وسرعة تحميلها
-   ========================================================================== */
-@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap');
-
-/* ==========================================================================
    إعدادات الألوان والهوية البصرية للجوال أولاً
    ========================================================================== */
 :root {
@@ -15,7 +10,7 @@
     --whatsapp-green: #22c55e;   /* أخضر واتساب الرسمي */
     --call-red: #dc2626;         /* أحمر الاتصال لجذب الانتباه */
     --text-dark: #1e293b;
-    --text-muted: #64748b;
+    --text-muted: #475569;       /* [تعديل تباين]: تعديل الدرجة من #64748b إلى #475569 لضمان وضوح القراءة للعين واجتياز فحص المنظمات العالمية للوصول */
     --border-color: #cbd5e1;
     --transition-speed: 0.25s;
     --font-main: 'Cairo', 'Segoe UI', Tahoma, sans-serif;
@@ -138,11 +133,12 @@ a {
     color: var(--gold-color);
 }
 
-/* قائمة الجوال (تفتح كدرج جانبي مرن) */
+/* [تعديل الأداء]: تحويل طريقة تحريك القائمة لاستخدام transform بدلاً من right لتشغيلها عبر كرت الشاشة (GPU) مباشرة ومنع أي تعليق بالجوال */
 .nav-menu {
     position: fixed;
     top: 0;
-    right: -100%;
+    right: 0;
+    transform: translateX(100%); /* البداية خارج الشاشة تماماً لليمين */
     width: 280px;
     height: 100vh;
     background-color: var(--main-color);
@@ -151,11 +147,12 @@ a {
     display: flex;
     flex-direction: column;
     padding: 80px 20px 40px;
-    transition: right 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: transform;
 }
 
 .nav-menu.open {
-    right: 0;
+    transform: translateX(0); /* الدخول السلس لداخل الشاشة */
 }
 
 .nav-links {
@@ -235,6 +232,7 @@ a {
         display: flex;
         flex-direction: row;
         align-items: center;
+        transform: translateX(0); /* إلغاء التحريك في الشاشات الكبيرة */
     }
     .nav-links {
         flex-direction: row;
@@ -278,8 +276,9 @@ a {
     margin-bottom: 30px;
 }
 
+/* [تعديل التباين]: استخدام لون ذهبي داكن وغني مخصص للقراءة على الخلفيات البيضاء والرمادية الفاتحة لتجاوز متطلبات التباين */
 .section-subtitle {
-    color: var(--gold-color);
+    color: #856404; 
     font-weight: 800;
     font-size: 0.8rem;
     display: block;
