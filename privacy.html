@@ -11,7 +11,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- تحميل غير مانع لعرض الأيقونات لتسريع ظهور الصفحة (Non-blocking FontAwesome) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
     
     <!-- استدعاء ملف التنسيق الموحد الفاخر -->
     <link rel="stylesheet" href="style.css">
@@ -58,39 +61,44 @@
         </div>
     </header>
 
-    <!-- 3. تفاصيل سياسة الخصوصية القانونية الموحدة لبنية الموقع وتوافق قوقل أدز -->
-    <section class="section-padding bg-light">
-        <div class="container" style="max-width: 800px; margin: 0 auto;">
-            
-            <div class="why-us-box" style="text-align: right; background-color: var(--white); padding: 30px 20px;">
-                <span class="badge" style="margin-bottom: 15px;">تنظيمات قانونية معتمدة</span>
-                <h1 style="color: var(--main-color); font-weight: 900; font-size: 1.8rem; margin-bottom: 20px;">سياسة الخصوصية للموقع</h1>
-                <p class="desc-text" style="text-align: right; text-align-last: right; font-size: 0.95rem; margin-bottom: 20px;">مرحباً بكم في موقع حدادة الرياض. نحن نولي خصوصية بيانات زوارنا الكرام أهمية بالغة ونلتزم تماماً بحماية بياناتكم الشخصية وفق الأنظمة السائدة لحماية البيانات الشخصية بالمملكة العربية السعودية [1].</p>
-                
-                <h2 style="color: var(--main-color); font-weight: 800; font-size: 1.2rem; margin: 25px 0 10px;">البيانات الشخصية التي نجمعها</h2>
-                <p class="desc-text" style="text-align: right; text-align-last: right; font-size: 0.95rem; margin-bottom: 15px;">نقوم فقط بجمع البيانات التي تقدمونها لنا طواعية ورغبة منكم عند ملء النموذج البرمجي بصفحة الاتصال بنا، وتشمل هذه البيانات: الاسم بالكامل، رقم جوال الاتصال، ونوع الخدمة المطلوبة. نطلب هذه المعلومات فقط بهدف التواصل الفوري معكم لترتيب زيارات المعاينة وتقديم عروض أسعار دقيقة لمشروعاتكم [1].</p>
-                
-                <h2 style="color: var(--main-color); font-weight: 800; font-size: 1.2rem; margin: 25px 0 10px;">كيف نستخدم البيانات؟</h2>
-                <p class="desc-text" style="text-align: right; text-align-last: right; font-size: 0.95rem; margin-bottom: 15px;">تُستخدم البيانات التي يتم جمعها للأغراض التالية فقط:</p>
-                <ul class="features-list" style="margin-bottom: 20px; gap: 8px;">
-                    <li style="padding: 10px; font-size: 0.85rem;">الاتصال بكم لمناقشة متطلبات تفصيل وتركيب المظلات والسواتر والساندوتش بانل [1].</li>
-                    <li style="padding: 10px; font-size: 0.85rem;">تنسيق مواعيد أخذ المقاسات الميدانية لمواقعكم مجاناً بجميع أحياء الرياض.</li>
-                    <li style="padding: 10px; font-size: 0.85rem;">تأكيد الضمانات الرسمية لأعمال الحدادة والتركيبات المعدنية المنفذة لمصلحتكم.</li>
-                </ul>
+    <!-- [تعديل إمكانية الوصول]: تم إضافة وسم main لحل مشكلة معلم المستند وتسهيل قراءته من محركات البحث وقارئات الشاشة -->
+    <main id="main-content">
 
-                <h2 style="color: var(--main-color); font-weight: 800; font-size: 1.2rem; margin: 25px 0 10px;">حماية وسرية البيانات</h2>
-                <p class="desc-text" style="text-align: right; text-align-last: right; font-size: 0.95rem; margin-bottom: 15px;">نؤكد لجميع عملائنا الكرام التزامنا الصارم بعدم بيع، أو تأجير، أو مشاركة أي بيانات شخصية تخصكم مع أي جهات تسويقية أو أطراف خارجية تحت أي ظرف من الظروف [1]. تظل معلوماتكم محفوظة بسرية تامة ومحمية بشكل كامل.</p>
-
-                <h2 style="color: var(--main-color); font-weight: 800; font-size: 1.2rem; margin: 25px 0 10px;">ملفات تعريف الارتباط وتتبع الإعلانات</h2>
-                <p class="desc-text" style="text-align: right; text-align-last: right; font-size: 0.95rem; margin-bottom: 20px;">يستخدم هذا الموقع ملفات تعريف ارتباط محدودة لتسريع أداء تصفح الصفحات على الجوال، بالإضافة إلى ربطه بأكواد وإحصاءات إعلانات Google لتقييم أداء فاعلية حملاتنا الإعلانية وتقديم تجربة استخدام أفضل وأسرع للزوار [1].</p>
+        <!-- 3. تفاصيل سياسة الخصوصية القانونية الموحدة لبنية الموقع وتوافق قوقل أدز -->
+        <section class="section-padding bg-light">
+            <div class="container" style="max-width: 800px; margin: 0 auto;">
                 
-                <div class="text-center" style="margin-top: 30px; padding-top: 20px; border-top: 1px solid var(--border-color);">
-                    <a href="tel:0536491079" class="btn btn-gold btn-lg" style="font-size: 0.95rem;"><i class="fa-solid fa-phone"></i> اتصل بنا للاستفسار: 0536491079</a>
+                <div class="why-us-box" style="text-align: right; background-color: var(--white); padding: 30px 20px;">
+                    <span class="badge" style="margin-bottom: 15px;">تنظيمات قانونية معتمدة</span>
+                    <h1 style="color: var(--main-color); font-weight: 900; font-size: 1.8rem; margin-bottom: 20px;">سياسة الخصوصية للموقع</h1>
+                    <p class="desc-text" style="text-align: right; text-align-last: right; font-size: 0.95rem; margin-bottom: 20px;">مرحباً بكم في موقع حدادة الرياض. نحن نولي خصوصية بيانات زوارنا الكرام أهمية بالغة ونلتزم تماماً بحماية بياناتكم الشخصية وفق الأنظمة السائدة لحماية البيانات الشخصية بالمملكة العربية السعودية [1].</p>
+                    
+                    <h2 style="color: var(--main-color); font-weight: 800; font-size: 1.2rem; margin: 25px 0 10px;">البيانات الشخصية التي نجمعها</h2>
+                    <p class="desc-text" style="text-align: right; text-align-last: right; font-size: 0.95rem; margin-bottom: 15px;">نقوم فقط بجمع البيانات التي تقدمونها لنا طواعية ورغبة منكم عند ملء النموذج البرمجي بصفحة الاتصال بنا، وتشمل هذه البيانات: الاسم بالكامل، رقم جوال الاتصال، ونوع الخدمة المطلوبة. نطلب هذه المعلومات فقط بهدف التواصل الفوري معكم لترتيب زيارات المعاينة وتقديم عروض أسعار دقيقة لمشروعاتكم [1].</p>
+                    
+                    <h2 style="color: var(--main-color); font-weight: 800; font-size: 1.2rem; margin: 25px 0 10px;">كيف نستخدم البيانات؟</h2>
+                    <p class="desc-text" style="text-align: right; text-align-last: right; font-size: 0.95rem; margin-bottom: 15px;">تُستخدم البيانات التي يتم جمعها للأغراض التالية فقط:</p>
+                    <ul class="features-list" style="margin-bottom: 20px; gap: 8px;">
+                        <li style="padding: 10px; font-size: 0.85rem;">الاتصال بكم لمناقشة متطلبات تفصيل وتركيب المظلات والسواتر والساندوتش بانل [1].</li>
+                        <li style="padding: 10px; font-size: 0.85rem;">تنسيق مواعيد أخذ المقاسات الميدانية لمواقعكم مجاناً بجميع أحياء الرياض.</li>
+                        <li style="padding: 10px; font-size: 0.85rem;">تأكيد الضمانات الرسمية لأعمال الحدادة والتركيبات المعدنية المنفذة لمصلحتكم.</li>
+                    </ul>
+
+                    <h2 style="color: var(--main-color); font-weight: 800; font-size: 1.2rem; margin: 25px 0 10px;">حماية وسرية البيانات</h2>
+                    <p class="desc-text" style="text-align: right; text-align-last: right; font-size: 0.95rem; margin-bottom: 15px;">نؤكد لجميع عملائنا الكرام التزامنا الصارم بعدم بيع، أو تأجير، أو مشاركة أي بيانات شخصية تخصكم مع أي جهات تسويقية أو أطراف خارجية تحت أي ظرف من الظروف [1]. تظل معلوماتكم محفوظة بسرية تامة ومحمية بشكل كامل.</p>
+
+                    <h2 style="color: var(--main-color); font-weight: 800; font-size: 1.2rem; margin: 25px 0 10px;">ملفات تعريف الارتباط وتتبع الإعلانات</h2>
+                    <p class="desc-text" style="text-align: right; text-align-last: right; font-size: 0.95rem; margin-bottom: 20px;">يستخدم هذا الموقع ملفات تعريف ارتباط محدودة لتسريع أداء تصفح الصفحات على الجوال، بالإضافة إلى ربطه بأكواد وإحصاءات إعلانات Google لتقييم أداء فاعلية حملاتنا الإعلانية وتقديم تجربة استخدام أفضل وأسرع للزوار [1].</p>
+                    
+                    <div class="text-center" style="margin-top: 30px; padding-top: 20px; border-top: 1px solid var(--border-color);">
+                        <a href="tel:0536491079" class="btn btn-gold btn-lg" style="font-size: 0.95rem;"><i class="fa-solid fa-phone"></i> اتصل بنا للاستفسار: 0536491079</a>
+                    </div>
                 </div>
+                
             </div>
-            
-        </div>
-    </section>
+        </section>
+
+    </main> <!-- [إغلاق وسم التعديل]: نهاية وسم main -->
 
     <!-- 4. التذييل والفوتر الفاخر الموحد المتوافق تماماً مع الجوال -->
     <footer class="footer-main">
