@@ -7,10 +7,10 @@
     --gold-hover: #b59020;
     --bg-light: #f8fafc;         /* خلفية ناصعة ومريحة للقراءة */
     --white: #ffffff;
-    --whatsapp-green: #075e54;   /* [تعديل تباين]: تعديل درجة أخضر واتساب للأخضر الداكن الرسمي لضمان تحقيق تباين 4.5:1 مع النص الأبيض */
+    --whatsapp-green: #075e54;   /* أخضر واتساب الداكن الرسمي */
     --call-red: #dc2626;         /* أحمر الاتصال لجذب الانتباه */
     --text-dark: #1e293b;
-    --text-muted: #475569;       /* [تعديل تباين]: تعديل الدرجة لضمان وضوح القراءة للعين واجتياز فحص المنظمات العالمية للوصول */
+    --text-muted: #475569;       /* تعديل تباين لضمان وضوح القراءة للعين واجتياز فحص المنظمات العالمية */
     --border-color: #cbd5e1;
     --transition-speed: 0.25s;
     --font-main: 'Cairo', 'Segoe UI', Tahoma, sans-serif;
@@ -270,13 +270,133 @@ a {
 }
 
 /* ==========================================================================
+   تنسيق البانر الرئيسي لمنع انزياح العناصر (Hero Section Styles)
+   ========================================================================== */
+.hero {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    padding: 80px 0 60px;
+    min-height: 480px;
+    display: flex;
+    align-items: center;
+    color: var(--white);
+    text-align: center;
+    overflow: hidden;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(7, 10, 19, 0.7);
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* [تعديل التباين والأناقة]: تصميم ثابت متباين ومميز للوسم الملون ليناسب جميع خلفيات الموقع الفاتحة والداكنة */
+.badge {
+    display: inline-block;
+    background-color: var(--main-color) !important;
+    border: 1px solid var(--gold-color) !important;
+    color: var(--gold-color) !important;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+}
+
+/* ==========================================================================
+   تنسيق العروض والخصائص والشبكات (why-us-box & features-list)
+   ========================================================================== */
+.why-us-box {
+    background: var(--white);
+    padding: 30px 20px;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    border: 1px solid #f1f5f9;
+}
+
+.features-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.features-list li {
+    position: relative;
+    padding: 12px 15px;
+    background-color: var(--bg-light);
+    border-right: 4px solid var(--gold-color);
+    border-radius: 4px;
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
+/* ==========================================================================
+   تنسيق الأزرار العامة بالموقع وتثبيت التباين البرمجي
+   ========================================================================== */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 12px 28px;
+    border-radius: 30px;
+    font-weight: 800;
+    font-family: var(--font-main);
+    transition: var(--transition-speed) ease;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+}
+
+.btn-gold {
+    background-color: var(--gold-color) !important;
+    color: var(--main-color) !important; /* كحلي داكن على ذهبي دافئ يحقق أعلى درجات تباين للعين والزاحف البرمجي */
+}
+
+.btn-gold:hover {
+    background-color: var(--gold-hover) !important;
+    transform: translateY(-2px);
+}
+
+.btn-whatsapp {
+    background-color: var(--whatsapp-green) !important;
+    color: var(--white) !important;
+}
+
+.btn-whatsapp:hover {
+    background-color: #128c7e !important;
+    transform: translateY(-2px);
+}
+
+.btn-lg {
+    padding: 16px 36px;
+    font-size: 1.05rem;
+}
+
+/* ==========================================================================
    تنسيق كروت الخدمات وعناصر الصفحة لتكون منظمة للزائر
    ========================================================================== */
 .section-title {
     margin-bottom: 30px;
 }
 
-/* [تعديل التباين]: استخدام لون ذهبي داكن وغني مخصص للقراءة على الخلفيات البيضاء والرمادية الفاتحة لتجاوز متطلبات التباين */
 .section-subtitle {
     color: #856404; 
     font-weight: 800;
@@ -326,9 +446,10 @@ a {
     margin-bottom: 8px;
 }
 
+/* [تعديل تباين]: تعديل لون الروابط داخل الكروت إلى درجة ذهبية داكنة ملكية (#8c6b00) لتحقيق تباين تصفح مثالي يتجاوز 4.5:1 */
 .card-link {
     font-weight: 800;
-    color: var(--gold-color);
+    color: #8c6b00; 
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -357,7 +478,6 @@ a {
     .footer-grid { grid-template-columns: 1.2fr 1fr 1fr; }
 }
 
-/* [تعديل هيكلية الفوتر]: تحويل العنوان في الفوتر ليتطابق مع الـ h3 في الـ HTML لضمان تسلسل العناوين */
 .footer-col h3 {
     color: var(--white);
     font-size: 1.1rem;
@@ -400,7 +520,7 @@ a {
     align-items: center;
     gap: 8px;
     font-weight: 600;
-    padding: 4px 0; /* مساحة لمس مريحة بالجوال */
+    padding: 4px 0; 
 }
 
 .footer-links a i {
