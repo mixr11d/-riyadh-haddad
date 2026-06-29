@@ -1,10 +1,10 @@
 /* ==========================================================================
    1. إعدادات ومعرفات إعلانات جوجل (تعديل من مكان واحد لكل الموقع)
    ========================================================================== */
-const G_ID = 'AW-18133337619'; 
-const C_L = 'S71QCP2X0r8cEJOM08ZD';    // لابل الاتصال الهاتفي
-const W_L = '7SpFCKSb0r8cEJOM08ZD';    // لابل نقرة الواتساب المباشرة
-const F_L = 'r2sNCJP17b8cEJOM08ZD';    // [تحديث]: لابل إرسال نموذج الاتصال المطور
+const G_ID = 'AW-18257821050'; 
+const C_L = '_H85CIbT2MYcEPr6gIJE';    // لابل الاتصال الهاتفي
+const W_L = 'Kk0LCNXs2MYcEPr6gIJE';    // لابل نقرة الواتساب المباشرة
+const F_L = 'fMDmCKTyvcccEPr6gIJE';    // [تحديث]: لابل إرسال نموذج الاتصال المطور
 
 /* ==========================================================================
    2. تحميل كود تتبع جوجل تلقائياً بعد اكتمال هيكل الصفحة لتسريع FCP ومنع ضياع التحويلات
@@ -44,7 +44,7 @@ document.addEventListener('click', function(e) {
     if (href.includes('wa.me') || href.includes('whatsapp')) {
         gtag('event', 'conversion', {
             'send_to': G_ID + '/' + W_L,
-            'value': 40.0,
+            'value': 45.0,
             'currency': 'SAR'
         });
     }
@@ -58,7 +58,7 @@ document.addEventListener('submit', function(e) {
     if (e.target && e.target.id === 'contactForm') {
         gtag('event', 'conversion', {
             'send_to': G_ID + '/' + F_L,
-            'value': 45.0,
+            'value': 40.0,
             'currency': 'SAR'
         });
     }
